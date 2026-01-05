@@ -1,0 +1,79 @@
+@layer reset {
+    html {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    code, var, kbd, samp, tt, dir,
+    abbr, acronym, code, h1, h2, h3 {
+        -webkit-hyphens: none;
+        hyphens: none;
+    }
+
+    h1, h2, h3, h4 {
+        text-rendering: optimizeLegibility;
+        text-wrap: balance;
+        letter-spacing: clamp(
+                -0.05em,
+                calc((1em - 1rem) / -10),
+                0em
+        );
+    }
+    p {
+        text-wrap: pretty;
+    }
+}
+
+@layer fonts {
+    @font-face {
+        font-family: BigshotOne;
+        src: url("/assets/fonts/Bigshot_One/BigshotOne-Regular.woff2") format("woff2-variations");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer style {
+    body {
+        color: #252541;
+        background-color: #eef5ff;
+    }
+
+    h1, h2, h3, h4 {
+        font-family: BigshotOne, sans-serif;
+    }
+
+    header {
+        display: grid;
+        place-items: center;
+        margin: 40px 0 0 40px;
+        width: 80%;
+        height: 200px;
+        background-color: yellow;
+        box-shadow: 60px 20px 0 0 #ee90dc;
+
+        & > h1 {
+            margin: 0;
+            font-size: 140px;
+        }
+    }
+
+    main {
+        padding: 2rem;
+    }
+}
