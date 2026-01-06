@@ -51,7 +51,7 @@
 @layer style {
     body {
         color: #252541;
-        background-color: #eef5ff;
+        background-color: mintcream;
     }
 
     h1, h2, h3, h4 {
@@ -63,13 +63,13 @@
         place-items: center;
         margin: 40px 0 0 40px;
         width: 80%;
-        height: 200px;
+        height: 10vw;
         background-color: yellow;
-        box-shadow: 60px 20px 0 0 #ee90dc;
+        box-shadow: 6vw 2vw 0 0 #ee90dc;
 
         & > h1 {
             margin: 0;
-            font-size: 140px;
+            font-size: 8vw;
         }
     }
 
