@@ -46,12 +46,22 @@
         font-style: normal;
         font-display: swap;
     }
+
+    @font-face {
+        font-family: Moderustic;
+        src: url("/assets/fonts/Moderustic/Moderustic-VariableFont_wght.woff2") format("woff2-variations");
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
 }
 
 @layer style {
     body {
         color: #252541;
         background-color: mintcream;
+        font-family: Moderustic, sans-serif;
+        font-size: 1.5rem;
     }
 
     h1, h2, h3, h4 {
@@ -62,6 +72,7 @@
         display: grid;
         place-items: center;
         margin: 40px 0 0 40px;
+        padding-right: 8vw;
         width: 80%;
         height: 10vw;
         background-color: #f4f454;
@@ -73,12 +84,16 @@
         }
     }
 
+    p {
+        margin: 3rem 0;
+    }
+
     h2 {
         width: fit-content;
         margin: 2rem 0;
-        padding: 8px 16px;
+        padding: 8px 50px 8px 30px;
         background-color: #00ffb0;
-        box-shadow: 20px 6px 0 0 #b790ee;
+        box-shadow: 40px 12px 0 0 #cb90ee;
         font-size: 3rem;
     }
 
@@ -87,7 +102,13 @@
     }
 
     .box {
-        height: 200px;
-        background-color: gray;
+        height: 300px;
+        background-color: lightgray;
+    }
+
+    footer {
+        padding: 2rem;
+        font-family: monospace;
+        font-size: 1rem;
     }
 }
