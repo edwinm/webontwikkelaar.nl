@@ -64,7 +64,7 @@
         margin: 40px 0 0 40px;
         width: 80%;
         height: 10vw;
-        background-color: yellow;
+        background-color: #f4f454;
         box-shadow: 6vw 2vw 0 0 #ee90dc;
 
         & > h1 {
@@ -73,7 +73,21 @@
         }
     }
 
+    h2 {
+        width: fit-content;
+        margin: 2rem 0;
+        padding: 8px 16px;
+        background-color: #00ffb0;
+        box-shadow: 20px 6px 0 0 #b790ee;
+        font-size: 3rem;
+    }
+
     main {
         padding: 2rem;
+    }
+
+    .box {
+        height: 200px;
+        background-color: gray;
     }
 }
