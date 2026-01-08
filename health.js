@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 try {
     fs.writeFileSync('dist/health.txt', 'OK');
