@@ -102,13 +102,8 @@
     }
 
     .box {
-        height: 300px;
-        background-color: lightgray;
-    }
-
-    footer {
+        min-height: 300px;
         padding: 2rem;
-        font-family: monospace;
-        font-size: 1rem;
+        background-color: #c4fffb;
     }
 }

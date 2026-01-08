@@ -3,4 +3,26 @@ layout: page
 permalink: /index.html
 ---
 
+<p>Aenean facilisis urna eget pellentesque posuere. Maecenas faucibus sem sit amet diam euismod, mollis bibendum quam ornare. Quisque finibus arcu quis molestie pulvinar. Duis sed aliquam nibh, ut pharetra felis. Aenean vel fermentum risus, ac tincidunt enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+<h2>blogs and news</h2>
+
+<div class="box">
+
+{%- for post in feeds.posts -%}
+    <h3>{{ post.title }}</h3>
+
+    <ul>
+    {%- for item in post.items limit:10 -%}
+        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+    {%- endfor -%}
+    </ul>
+{%- endfor -%}
+
+</div>
+
+<h2>aliquam suscipit</h2>
+
+<div class="box"></div>
+
 <p>Last updated: {{ feeds.lastUpdated }}</p>
