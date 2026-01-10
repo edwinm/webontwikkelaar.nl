@@ -102,8 +102,17 @@
     }
 
     .box {
-        min-height: 400px;
+        min-height: 200px;
         padding: 2rem;
         background-color: #c4fffb;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 0.5rem 2rem;
+    }
+
+    .item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

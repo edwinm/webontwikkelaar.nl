@@ -7,19 +7,13 @@ permalink: /index.html
 
 <h2>blogs en nieuws</h2>
 
-<div class="box">
-
+<ul class="box">
 {%- for post in feeds.posts -%}
-    <h3>{{ post.title }}</h3>
-
-    <ul>
-    {%- for item in post.items limit:10 -%}
-        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+    {%- for item in post.items limit:12 -%}
+        <li class="item"><a href="{{ item.link }}">{{ item.title }}</a></li>
     {%- endfor -%}
-    </ul>
 {%- endfor -%}
-
-</div>
+</ul>
 
 <h2>aliquam suscipit</h2>
 
