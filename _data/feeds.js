@@ -1,5 +1,5 @@
 import Parser from 'rss-parser';
-import { promises as fs } from 'fs';
+import {writeJson, readJsonIfNew} from './cache.js'
 
 const CACHE_FILE_NAME = 'fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
@@ -36,39 +36,3 @@ async function getBlogs() {
     return feeds;
 }
 
-async function isFileOlder(filePath, seconds) {
-    try {
-        const stats = await fs.stat(filePath);
-        const fileAge = Date.now() - stats.mtime.getTime();
-        const exp = seconds * 1000; // milliseconds
-        return fileAge > exp;
-    } catch (error) {
-        if (error.code === 'ENOENT') {
-            return true; // File doesn't exist, treat as "old"
-        }
-        throw error;
-    }
-}
-
-async function readJsonIfNew(filePath, seconds) {
-    const isOld = await isFileOlder(filePath, seconds);
-
-    if (!isOld) {
-        try {
-            const data = await fs.readFile(filePath, 'utf8');
-            return JSON.parse(data);
-        } catch (error) {
-            if (error.code === 'ENOENT') {
-                return null; // File doesn't exist
-            }
-            throw error;
-        }
-    }
-
-    return null; // File is old
-}
-
-async function writeJson(filePath, data) {
-    const jsonString = JSON.stringify(data, null, 2);
-    await fs.writeFile(filePath, jsonString, 'utf8');
-}
