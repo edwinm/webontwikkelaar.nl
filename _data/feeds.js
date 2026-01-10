@@ -11,10 +11,8 @@ const blogs = ['https://www.w3.org/news/feed/', 'http://feeds.feedburner.com/Esn
 export default async function() {
     const fileData = await readJsonIfNew(CACHE_FILE_NAME, CACHE_FILE_EXP);
 
-    // console.log('fileData', fileData);
-
     if (fileData) {
-        console.log('return from cache');
+        console.log('>> Using data from cache');
         return fileData;
     }
 
@@ -37,14 +35,16 @@ async function getBlogs() {
         if (feed.items.length === 0) {
             return acc;
         }
-        const items = feed.items.map(item=>{
-            item.feedTitle = feed.title;
-            item.language = feed.language;
-            item.dateValue = Date.parse(item.pubDate)
 
-            return item;
-        }); // only first one or two
-        acc.push(items[0]); // assuming latest if on top
+        // assuming first item is most recent item
+        const item = feed.items[0];
+
+        item.feedTitle = feed.title;
+        item.language = feed.language;
+        item.dateValue = Date.parse(item.pubDate);
+
+        acc.push(item);
+
         return acc;
     }, []);
 
