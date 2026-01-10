@@ -9,9 +9,7 @@ permalink: /index.html
 
 <ul class="box">
 {%- for post in feeds.posts -%}
-    {%- for item in post.items limit:12 -%}
-        <li class="item"><a href="{{ item.link }}">{{ item.title }}</a></li>
-    {%- endfor -%}
+        <li class="item"><a href="{{ post.link }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
 

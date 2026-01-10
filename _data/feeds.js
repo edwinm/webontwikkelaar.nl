@@ -11,7 +11,7 @@ const blogs = ['https://www.w3.org/news/feed/', 'http://feeds.feedburner.com/Esn
 export default async function() {
     const fileData = await readJsonIfNew(CACHE_FILE_NAME, CACHE_FILE_EXP);
 
-    console.log('fileData', fileData);
+    // console.log('fileData', fileData);
 
     if (fileData) {
         console.log('return from cache');
@@ -33,6 +33,23 @@ async function getBlogs() {
 
     const feeds = await Promise.all(feedPromises);
 
-    return feeds;
+    const processed = feeds.reduce((acc, feed)=>{
+        if (feed.items.length === 0) {
+            return acc;
+        }
+        const items = feed.items.map(item=>{
+            item.feedTitle = feed.title;
+            item.language = feed.language;
+            item.dateValue = Date.parse(item.pubDate)
+
+            return item;
+        }); // only first one or two
+        acc.push(items[0]); // assuming latest if on top
+        return acc;
+    }, []);
+
+    const processedSorted = processed.sort((a, b) => a.dateValue - b.dateValue);
+
+    return processedSorted;
 }
 
