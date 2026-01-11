@@ -21,12 +21,30 @@ export default async function() {
 
     const data = {
         posts: await getBlogs(),
-        lastUpdated: new Date()
+        lastUpdated: getDutchDate(),
     };
+
+    console.log('write cache');
 
     await writeJson(CACHE_FILE_NAME, data);
 
+    console.log('done write cache');
+
     return data;
+}
+
+function getDutchDate() {
+    const date = new Date();
+
+    return date.toLocaleString('nl-NL', {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
 }
 
 async function getBlogs() {
@@ -43,24 +61,25 @@ async function getBlogs() {
             return acc;
         }
 
-        // assuming first item is most recent item
-        const item = feed.value.items[0];
+        const items = feed.value.items;
 
-        const newItem = {
-            ...item,
-            feedTitle: feed.value.title,
-            language: feed.value.language,
-            dateValue: Date.parse(item.pubDate),
-        }
+        items.forEach((item) => {
+            item.dateValue = Date.parse(item.pubDate)
+        });
 
-        acc.push(newItem);
+        const newestItem = items.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
+
+        newestItem.feedTitle = feed.value.title;
+        newestItem.language = feed.value.language;
+
+        acc.push(newestItem);
 
         return acc;
     }, []);
 
     const processedSorted = processed.sort((a, b) => b.dateValue - a.dateValue);
 
-    return processedSorted.slice(0, 24);
+    return processedSorted.slice(0, 12);
 }
 
 async function readOPML(filepath) {

@@ -11,7 +11,6 @@
             <outline type="rss" text="Node Weekly" title="Node Weekly" xmlUrl="http://nodeweekly.com/rss/1j9a0ll9" htmlUrl="https://nodeweekly.com/"/>
             <outline type="rss" text="Portfolio Cyd Stumpel" title="Portfolio Cyd Stumpel" xmlUrl="https://cydstumpel.nl/feed/" htmlUrl="https://cydstumpel.nl/"/>
             <outline type="rss" text="Blog" title="Blog" xmlUrl="https://villepreux.net/blog/rss.xml" htmlUrl="https://villepreux.net/blog/rss"/>
-            <outline type="rss" text="ECMAScript News Feed" title="ECMAScript News Feed" xmlUrl="http://feeds.feedburner.com/EsnextNews" htmlUrl="https://ecmascript.news/"/>
             <outline type="rss" text="AddyOsmani.com" title="AddyOsmani.com" xmlUrl="http://feeds.feedburner.com/addyosmani" htmlUrl="https://addyosmani.com"/>
             <outline type="rss" text="Stephan Meijer's Blog" title="Stephan Meijer's Blog" xmlUrl="https://meijer.works/rss.xml" htmlUrl="https://meijer.works"/>
             <outline type="rss" text="Snook.ca" title="Snook.ca" xmlUrl="http://feeds.feedburner.com/snookca" htmlUrl="https://snook.ca/"/>
@@ -33,7 +32,6 @@
             <outline type="rss" text="Mark's Dev Blog" title="Mark's Dev Blog" xmlUrl="http://blog.isquaredsoftware.com/index.xml" htmlUrl="https://blog.isquaredsoftware.com/index.xml"/>
             <outline type="rss" text="Dzhavat Ushev Blog" title="Dzhavat Ushev Blog" xmlUrl="https://dzhavat.github.io/feed.xml" htmlUrl="https://dzhavat.github.io/"/>
             <outline type="rss" text="WebKit" title="WebKit" xmlUrl="https://webkit.org/rss" htmlUrl="https://webkit.org"/>
-            <outline type="rss" text="remy sharp's b:log" title="remy sharp's b:log" xmlUrl="http://feeds.feedburner.com/remysharp" htmlUrl="https://remysharp.com"/>
             <outline type="rss" text="Total TypeScript" title="Total TypeScript" xmlUrl="https://www.totaltypescript.com/rss.xml" htmlUrl="https://www.totaltypescript.com"/>
             <outline type="rss" text="Bram.us" title="Bram.us" xmlUrl="http://www.bram.us/feed/" htmlUrl="https://www.bram.us"/>
             <outline type="rss" text="Salma Alam-Naylor's RSS Feed" title="Salma Alam-Naylor's RSS Feed" xmlUrl="https://whitep4nth3r.com/feed.xml" htmlUrl="https://whitep4nth3r.com"/>

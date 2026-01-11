@@ -102,18 +102,19 @@
     }
 
     .box {
+        column-width: 500px;
+        column-gap: 2rem;
         min-height: 200px;
-        padding: 2rem;
+        padding: 2rem  2rem 0.5rem;
         background-color: #c4fffb;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 1rem 2rem;
     }
 
     .item {
+        height: 50px;
         list-style: none;
         border-left: 8px solid #cb90ee;
-        padding-left: 10px;
+        padding-left: 12px;
+        margin-bottom: 1.5rem;
     }
 
     .item-link {

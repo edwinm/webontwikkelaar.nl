@@ -9,7 +9,7 @@ permalink: /index.html
 
 <ul class="box">
 {%- for post in feeds.posts -%}
-        <li class="item">
+        <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="item-link" href="{{ post.link }}">
                         <h4 class="item-feed-title">{{ post.feedTitle }}</h4>
                         <p class="item-title">{{ post.title }}</p>
@@ -22,4 +22,4 @@ permalink: /index.html
 
 <div class="box"></div>
 
-<p>Last updated: {{ feeds.lastUpdated }}</p>
+<p>Laatst bijgwerkt: {{ feeds.lastUpdated }}</p>
