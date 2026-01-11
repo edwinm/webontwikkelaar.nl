@@ -11,8 +11,6 @@ const parseXML = promisify(parseString);
 
 const parser = new Parser();
 
-// const blogs = ['https://www.w3.org/news/feed/', 'http://feeds.feedburner.com/EsnextNews']
-
 export default async function() {
     const fileData = await readJsonIfNew(CACHE_FILE_NAME, CACHE_FILE_EXP);
 
@@ -39,6 +37,7 @@ async function getBlogs() {
 
     const feeds = await Promise.allSettled(feedPromises);
 
+
     const processed = feeds.reduce((acc, feed)=>{
         if (feed.status === 'rejected' || feed.value.items.length === 0) {
             return acc;
@@ -47,11 +46,14 @@ async function getBlogs() {
         // assuming first item is most recent item
         const item = feed.value.items[0];
 
-        item.feedTitle = feed.title;
-        item.language = feed.language;
-        item.dateValue = Date.parse(item.pubDate);
+        const newItem = {
+            ...item,
+            feedTitle: feed.value.title,
+            language: feed.value.language,
+            dateValue: Date.parse(item.pubDate),
+        }
 
-        acc.push(item);
+        acc.push(newItem);
 
         return acc;
     }, []);

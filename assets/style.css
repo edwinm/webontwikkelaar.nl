@@ -64,7 +64,7 @@
         font-size: 1.5rem;
     }
 
-    h1, h2, h3, h4 {
+    h1, h2 {
         font-family: BigshotOne, sans-serif;
     }
 
@@ -107,17 +107,33 @@
         background-color: #c4fffb;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 0.5rem 2rem;
+        gap: 1rem 2rem;
     }
 
     .item {
+        list-style: none;
+        border-left: 8px solid #cb90ee;
+        padding-left: 10px;
+    }
+
+    .item-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .item-title {
+        margin: 0;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
 
-        & > a {
-            text-decoration: none;
-            color: inherit;
-        }
+    .item-feed-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 650;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
