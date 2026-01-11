@@ -110,16 +110,31 @@
     }
 
     .item {
-        height: 50px;
         list-style: none;
-        border-left: 8px solid #cb90ee;
-        padding-left: 12px;
-        margin-bottom: 1.5rem;
     }
 
     .item-link {
+        display: block;
+        height: 70px;
+        border-left: 8px solid #cb90ee;
+        padding: 10px 10px 10px 14px;
         text-decoration: none;
         color: inherit;
+        margin-bottom: 20px;
+    }
+
+    .item-link:visited {
+        color: #87a9ac;
+    }
+
+    .item-link:hover {
+        color: white;
+        background-color: #cb90ee;
+    }
+
+    .item-link:active {
+        color: inherit;
+        background-color: yellow;
     }
 
     .item-title {
