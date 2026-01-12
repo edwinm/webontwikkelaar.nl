@@ -152,4 +152,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
+
+    .item-feed-date {
+        color: #87a9ac;
+    }
+
+    .item-link:hover .item-feed-date {
+        color: white;
+    }
+
 }

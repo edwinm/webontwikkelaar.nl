@@ -2,6 +2,16 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("assets");
 
+    // Unix timestamp in ms to Dutch short date filter
+    eleventyConfig.addFilter("dutchShortDate", function(timestamp) {
+        const date = new Date(timestamp);
+
+        return date.toLocaleDateString('nl-NL', {
+            day: 'numeric',
+            month: 'short'
+        }).replace('.', '');
+    });
+
     return {
         dir: {
             input: ".",        // Input directory
@@ -18,3 +28,4 @@ export default function(eleventyConfig) {
         htmlTemplateEngine: "liquid"
     };
 }
+
