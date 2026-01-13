@@ -1,6 +1,7 @@
 export default function(eleventyConfig) {
 
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy({ "assets-root": "/" });
 
     // Unix timestamp in ms to Dutch short date filter
     eleventyConfig.addFilter("dutchShortDate", function(timestamp) {
