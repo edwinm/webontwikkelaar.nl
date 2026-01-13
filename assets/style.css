@@ -72,15 +72,16 @@
         display: grid;
         place-items: center;
         margin: 40px 0 0 40px;
-        padding-right: 8vw;
-        width: 80%;
-        height: 10vw;
+        padding-right: min(8vw, 80px);
+        width: min(80vw, 800px);
+        height: min(10vw, 100px);
         background-color: #f4f454;
-        box-shadow: 6vw 2vw 0 0 #ee90dc;
+        box-shadow: min(6vw, 60px) min(2vw, 20px) 0 0 #ee90dc;
+        transform: skewX(-10deg);
 
         & > h1 {
             margin: 0;
-            font-size: 8vw;
+            font-size: min(8vw, 80px);
         }
     }
 
@@ -94,7 +95,8 @@
         padding: 8px 50px 8px 30px;
         background-color: #00ffb0;
         box-shadow: 40px 12px 0 0 #cb90ee;
-        font-size: 3rem;
+        transform: skewX(-10deg);
+        font-size: clamp(2rem, 3vw, 3rem);
     }
 
     main {
