@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy && node health.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "youtube": "node --env-file=.env src/convert-youtube.js"
   },
   "keywords": [],
   "author": "Edwin Martin",

@@ -1,5 +1,5 @@
 import Parser from 'rss-parser';
-import {writeJson, readJsonIfNew} from './cache.js'
+import {writeJson, readJsonIfNew} from './file.js'
 import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
@@ -48,7 +48,7 @@ function getDutchDate() {
 }
 
 async function getBlogs() {
-    const opml = await readOPML('feeds.opml');
+    const opml = await readOPML('src/feeds.opml');
     const blogs = opml.opml.body[0].outline[0].outline.map(outline => outline.$.xmlUrl);
 
     const feedPromises = blogs.map(blog => parser.parseURL(blog))
