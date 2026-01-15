@@ -20,6 +20,7 @@ export default async function() {
     }
 
     const data = {
+        videos: await getVideos(),
         posts: await getBlogs(),
         lastUpdated: getDutchDate(),
     };
@@ -80,6 +81,52 @@ async function getBlogs() {
     const processedSorted = processed.sort((a, b) => b.dateValue - a.dateValue);
 
     return processedSorted.slice(0, 12);
+}
+
+async function getVideos() {
+    const response = await readFile("youtube-ids.json", 'utf-8');
+    const ids = JSON.parse(response);
+
+    console.log('ids', ids);
+
+    const videoPromises = ids.map(async (idData) => {
+        const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`);
+        const text = await response.text();
+        const result = await parseXML(text);
+        return result;
+    });
+
+    const videos = await Promise.allSettled(videoPromises);
+
+    console.log('videos', videos);
+
+    const allItems = videos.reduce((acc, video)=>{
+        if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
+            return acc;
+        }
+
+        const processed = video.value.feed.entry.map((entry) => {
+            return {
+                title: entry.title,
+                link: entry.link[0].$.href,
+                author: entry.author[0].name,
+                published: entry.published,
+                dateValue: Date.parse(entry.published),
+                thumbnail: entry["media:group"][0]["media:thumbnail"][0].$,
+                description: entry["media:group"][0]["media:description"][0],
+                starRating: entry["media:group"][0]["media:community"][0]["media:starRating"][0].$,
+                statistics: entry["media:group"][0]["media:community"][0]["media:statistics"][0].$,
+            }
+        })
+
+        return acc.concat(processed);
+    }, []);
+
+    const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
+
+    console.log('sorted', allItemsSorted.slice(0, 12));
+
+    return allItemsSorted.slice(0, 12);
 }
 
 async function readOPML(filepath) {
