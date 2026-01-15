@@ -172,7 +172,7 @@
     .video-box {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 0.5rem;
+        gap: 0.8rem 0.5rem;
     }
 
     .video {
@@ -190,10 +190,16 @@
         display: block;
         width: 100%;
         aspect-ratio: 4 / 3;
+        filter: saturate(30%) contrast(70%);
+        margin-bottom: 4px;
+    }
+
+    .video-link:hover .video-thumbnail {
+        filter: saturate(100%)  contrast(100%);
     }
 
     .video-title {
-        margin: 0;
+        margin: 4px 0 0 0;
         font-size: 1.2rem;
         font-weight: 450;
         display: -webkit-box;
