@@ -3,14 +3,14 @@ layout: page
 permalink: /index.html
 ---
 
-<p>Werk in uitvoering.</p>
+<p>Elke dag het laatste nieuws en .</p>
 
 <h2>blogs en nieuws</h2>
 
-<ul class="box">
+<ul class="box item-box">
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
-                <a class="item-link" href="{{ post.link }}">
+                <a class="link item-link" href="{{ post.link }}">
                         <h4 class="item-feed-title">{{ post.feedTitle }} <span class="item-feed-date">• {{ post.dateValue | dutchShortDate }}</span></h4>
                         <p class="item-title">{{ post.title }}</p>
                 </a>
@@ -18,8 +18,18 @@ permalink: /index.html
 {%- endfor -%}
 </ul>
 
-<h2>aliquam suscipit</h2>
+<h2>Videos</h2>
 
-<div class="box"></div>
+<ul class="box video-box">
+        {%- for video in feeds.videos -%}
+                <li class="video">
+                        <a class="link video-link" href="{{ video.link }}">
+                                <img class="video-thumbnail" src="{{ video.thumbnail.url }}">
+                                <h4 class="item-feed-title">{{ video.author }} <span class="item-feed-date">• {{ video.dateValue | dutchShortDate }}</span></h4>
+                                <p class="video-title">{{ video.title }}</p>
+                        </a>
+                </li>
+        {%- endfor -%}
+</ul>
 
 <p>Laatst bijgwerkt: {{ feeds.lastUpdated }}</p>
