@@ -4,7 +4,7 @@ import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
 
-const CACHE_FILE_NAME = 'fetched-data-cache.json';
+const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
 
 const parseXML = promisify(parseString);
@@ -19,17 +19,15 @@ export default async function() {
         return fileData;
     }
 
+    console.log('>> Fetching all urls');
+
     const data = {
         videos: await getVideos(),
         posts: await getBlogs(),
         lastUpdated: getDutchDate(),
     };
 
-    console.log('write cache');
-
     await writeJson(CACHE_FILE_NAME, data);
-
-    console.log('done write cache');
 
     return data;
 }
@@ -56,7 +54,6 @@ async function getBlogs() {
 
     const feeds = await Promise.allSettled(feedPromises);
 
-
     const processed = feeds.reduce((acc, feed)=>{
         if (feed.status === 'rejected' || feed.value.items.length === 0) {
             return acc;
@@ -65,29 +62,34 @@ async function getBlogs() {
         const items = feed.value.items;
 
         items.forEach((item) => {
-            item.dateValue = Date.parse(item.pubDate)
+            const pubDate = (item.pubDate || item.isoDate || item["dc:date"])?.trim();
+            item.dateValue = Date.parse(pubDate);
         });
 
         const newestItem = items.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
 
         newestItem.feedTitle = feed.value.title;
         newestItem.language = feed.value.language;
+        newestItem["content"] = "";
+        newestItem["contentSnippet"] = "";
+        newestItem["content:encoded"] = "";
+        newestItem["content:encodedSnippet"] = "";
 
         acc.push(newestItem);
 
         return acc;
     }, []);
 
-    const processedSorted = processed.sort((a, b) => b.dateValue - a.dateValue);
+    const processedSorted = processed.toSorted((a, b) => (b.dateValue || 0) - (a.dateValue || 0));
 
-    return processedSorted.slice(0, 12);
+    const sliced = processedSorted.slice(0, 12);
+
+    return sliced;
 }
 
 async function getVideos() {
     const response = await readFile("youtube-ids.json", 'utf-8');
     const ids = JSON.parse(response);
-
-    console.log('ids', ids);
 
     const videoPromises = ids.map(async (idData) => {
         const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`);
@@ -97,8 +99,6 @@ async function getVideos() {
     });
 
     const videos = await Promise.allSettled(videoPromises);
-
-    console.log('videos', videos);
 
     const allItems = videos.reduce((acc, video)=>{
         if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
@@ -123,8 +123,6 @@ async function getVideos() {
     }, []);
 
     const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
-
-    console.log('sorted', allItemsSorted.slice(0, 12));
 
     return allItemsSorted.slice(0, 12);
 }

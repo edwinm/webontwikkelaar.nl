@@ -1,5 +1,5 @@
 /node_modules/
 /dist/
 /backlog.md
-/fetched-data-cache.json
+/cache
 /.env
