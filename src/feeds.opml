@@ -6,6 +6,7 @@
     </head>
     <body>
         <outline text="webontwikkelaar.nl" title="webontwikkelaar.nl">
+            <outline type="rss" text="Adam Argyle" title="Adam Argyle" xmlUrl="https://nerdy.dev/rss.xml"/>
             <outline type="rss" text="Lessons of a CTO" title="Lessons of a CTO" xmlUrl="https://lessonsofacto.com/feed.atom"/>
             <outline type="rss" text="Steven Woodson" title="Steven Woodson" xmlUrl="https://stevenwoodson.com/feed/feed.xml" htmlUrl="https://stevenwoodson.com"/>
             <outline type="rss" text="Node Weekly" title="Node Weekly" xmlUrl="http://nodeweekly.com/rss/1j9a0ll9" htmlUrl="https://nodeweekly.com/"/>
@@ -134,7 +135,6 @@
             <outline type="rss" text="Stubbornella" title="Stubbornella" xmlUrl="http://www.stubbornella.org/content/feed/" htmlUrl="https://www.stubbornella.org"/>
             <outline type="rss" text="Storbeck Blog" title="Storbeck Blog" xmlUrl="https://www.storbeck.dev/feed.xml" htmlUrl="https://storbeck.dev/"/>
             <outline type="rss" text="Chi Señires" title="Chi Señires" xmlUrl="https://chisenires.design/feed.xml" htmlUrl="https://chisenires.design/"/>
-            <outline type="rss" text="CSS-Tricks" title="CSS-Tricks" xmlUrl="http://feeds.feedburner.com/CssTricks" htmlUrl="https://css-tricks.com"/>
             <outline type="rss" text="A List Apart" title="A List Apart" xmlUrl="http://www.alistapart.com/site/rss" htmlUrl="https://alistapart.com"/>
             <outline type="rss" text="Bryan Anthonio" title="Bryan Anthonio" xmlUrl="https://bryananthonio.com/rss.xml" htmlUrl="https://bryananthonio.com/"/>
             <outline type="rss" text="Ahmad Shadeed" title="Ahmad Shadeed" xmlUrl="http://ishadeed.com/feed.xml" htmlUrl="https://ishadeed.com/"/>
