@@ -17,4 +17,4 @@ const result = await Promise.all(urls.map(async (url)=>{
 
 console.log('result', result);
 
-await writeJson("./youtube-ids.json", result);
+await writeJson("cache/youtube-ids.json", result);
