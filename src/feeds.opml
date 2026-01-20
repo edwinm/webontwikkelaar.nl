@@ -6,6 +6,7 @@
     </head>
     <body>
         <outline text="webontwikkelaar.nl" title="webontwikkelaar.nl">
+            <outline type="rss" text="Cassidy Williams" title="Cassidy Williams" xmlUrl="https://cassidoo.co/rss.xml"/>
             <outline type="rss" text="Adam Argyle" title="Adam Argyle" xmlUrl="https://nerdy.dev/rss.xml"/>
             <outline type="rss" text="Lessons of a CTO" title="Lessons of a CTO" xmlUrl="https://lessonsofacto.com/feed.atom"/>
             <outline type="rss" text="Steven Woodson" title="Steven Woodson" xmlUrl="https://stevenwoodson.com/feed/feed.xml" htmlUrl="https://stevenwoodson.com"/>
