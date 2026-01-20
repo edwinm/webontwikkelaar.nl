@@ -120,7 +120,6 @@
             <outline type="rss" text="Abbey Perini's Digital Garden" title="Abbey Perini's Digital Garden" xmlUrl="https://abbeyperini.com/rss.xml" htmlUrl="https://abbeyperini.com"/>
             <outline type="rss" text="CSS Weekly" title="CSS Weekly" xmlUrl="http://feeds.feedburner.com/CSS-Weekly" htmlUrl="https://css-weekly.com"/>
             <outline type="rss" text="Web Development Notes" title="Web Development Notes" xmlUrl="https://muratcorlu.com/rss/" htmlUrl="https://muratcorlu.com/"/>
-            <outline type="rss" text="Smashing Magazine" title="Smashing Magazine" xmlUrl="http://feeds.feedburner.com/SmashingMagazine" htmlUrl="https://www.smashingmagazine.com/"/>
             <outline type="rss" text="Blog – Web Directions" title="Blog – Web Directions" xmlUrl="http://www.webdirections.org/category/blog/feed" htmlUrl="https://webdirections.org"/>
             <outline type="rss" text="giacomocavalieri.me posts feed" title="giacomocavalieri.me posts feed" xmlUrl="https://giacomocavalieri.me/feed.xml" htmlUrl="https://giacomocavalieri.me"/>
             <outline type="rss" text="Andy Carter" title="Andy Carter" xmlUrl="https://andycarter.dev/rss"/>
