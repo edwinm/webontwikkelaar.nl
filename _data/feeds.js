@@ -88,7 +88,7 @@ async function getBlogs() {
 }
 
 async function getVideos() {
-    const response = await readFile("youtube-ids.json", 'utf-8');
+    const response = await readFile("cache/youtube-ids.json", 'utf-8');
     const ids = JSON.parse(response);
 
     const videoPromises = ids.map(async (idData) => {
