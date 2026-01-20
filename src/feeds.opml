@@ -108,7 +108,6 @@
             <outline type="rss" text="Electric Magic Factory - Articles" title="Electric Magic Factory - Articles" xmlUrl="https://electricmagicfactory.com/feed.xml" htmlUrl="https://electricmagicfactory.com"/>
             <outline type="rss" text="Robb Owen Digital" title="Robb Owen Digital" xmlUrl="https://robbowen.digital/feed.xml" htmlUrl="http://robbowen.digital/"/>
             <outline type="rss" text="Stuff &amp; Nonsense • And All That Malarkey" title="Stuff &amp; Nonsense • And All That Malarkey" xmlUrl="https://stuffandnonsense.co.uk/blog/feed" htmlUrl="https://stuffandnonsense.co.uk/blog"/>
-            <outline type="rss" text="W3C - News" title="W3C - News" xmlUrl="http://www.w3.org/News/news.rss" htmlUrl="https://www.w3.org/news/"/>
             <outline type="rss" text="Node.js Blog" title="Node.js Blog" xmlUrl="http://blog.nodejs.org/feed/" htmlUrl="https://nodejs.org/en"/>
             <outline type="rss" text="Patrick Brosset" title="Patrick Brosset" xmlUrl="https://patrickbrosset.com/feed.xml" htmlUrl="https://patrickbrosset.com/"/>
             <outline type="rss" text="Perfection kills" title="Perfection kills" xmlUrl="http://feeds.feedburner.com/PerfectionKills" htmlUrl="http://perfectionkills.com/"/>

@@ -68,6 +68,10 @@ async function getBlogs() {
 
         const newestItem = items.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
 
+        if (newestItem.title.trim() === "") {
+            newestItem.pubDate = 0; // Demote items without title
+        }
+
         newestItem.feedTitle = feed.value.title;
         newestItem.language = feed.value.language;
         newestItem["content"] = "";
