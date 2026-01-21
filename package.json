@@ -18,7 +18,8 @@
     "url": "git@github.com:edwinm/webontwikkelaar.nl.git"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "@aws-sdk/client-s3": "^3.972.0"
   },
   "devDependencies": {
     "rss-parser": "^3.13.0",
