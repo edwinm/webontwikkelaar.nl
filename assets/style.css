@@ -75,9 +75,6 @@
         padding-right: min(8vw, 80px);
         width: min(80vw, 800px);
         height: min(10vw, 100px);
-        background-color: #f4f454;
-        box-shadow: min(6vw, 60px) min(2vw, 20px) 0 0 #ee90dc;
-        transform: skewX(-10deg);
 
         & > h1 {
             margin: 0;
@@ -92,10 +89,7 @@
     h2 {
         width: fit-content;
         margin: 2rem 0;
-        padding: 8px 50px 8px 30px;
-        background-color: #00ffb0;
-        box-shadow: 40px 12px 0 0 #cb90ee;
-        transform: skewX(-10deg);
+        padding: 8px 50px 8px;
         font-size: clamp(2rem, 3vw, 3rem);
     }
 
@@ -106,7 +100,7 @@
     .box {
         min-height: 200px;
         padding: 2rem  2rem 0.5rem;
-        background-color: #c4fffb;
+        background-color: #f3f3f3;
     }
 
     .item-box {
@@ -121,7 +115,7 @@
     .item-link {
         display: block;
         height: 70px;
-        border-left: 8px solid #cb90ee;
+        border-left: 8px solid #8f8f8f;
         padding: 10px 10px 10px 14px;
         margin-bottom: 20px;
     }
@@ -137,7 +131,7 @@
 
     .link:hover {
         color: white;
-        background-color: #cb90ee;
+        background-color: #494949;
     }
 
     .link:active {
