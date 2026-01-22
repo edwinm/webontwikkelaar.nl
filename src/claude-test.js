@@ -17,7 +17,7 @@ const ConferenceSchema = z.object({
 
     starting_date: z
         .string()
-        .describe("Event start date in ISO 8601 format (YYYY-MM-DD)"),
+        .describe("Start date of the event in ISO 8601 format (YYYY-MM-DD)"),
 
     end_date: z
         .string()
@@ -47,10 +47,7 @@ const client = new Anthropic({
     apiKey: process.env.AnthropicApiKey, // This is the default and can be omitted
 });
 
-const prompt = `Please provide me with a list of all web development conferences in the Netherlands and Belgium between January 2026 and July 2026.
-
-Topics to be covered: CSS, JavaScript, TypeScript, frontend frameworks, build tools, backend tools and frameworks, UI/UX, accessibility,
-anything related to web development.`;
+const prompt = `Visit https://reactsummit.com/ to fetch information`;
 
 const response = await client.beta.messages.parse({
     // model: "claude-sonnet-4-5",
@@ -59,7 +56,13 @@ const response = await client.beta.messages.parse({
     temperature: 0.1,
     betas: ["structured-outputs-2025-11-13"],
     messages: [{ role: 'user', content: prompt }],
-    output_format: betaZodOutputFormat(ConferencesSchema),
+    tools: [
+        {
+            type: "web_search_20250305",
+            name: "web_search",
+        },
+    ],
+    output_format: betaZodOutputFormat(ConferenceSchema),
 });
 
 console.log('output', response.parsed_output);
