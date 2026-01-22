@@ -8,6 +8,8 @@ import {
 
 // Run as: node --env-file=.env src/s3-test.js
 
+// Docs: https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-s3/
+
 const s3Client = new S3Client({
     region: process.env.S3Region,
     endpoint: process.env.S3Endpoint,
