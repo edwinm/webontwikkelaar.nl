@@ -41,7 +41,6 @@
             <outline type="rss" text="remy sharp's b:log" title="remy sharp's b:log" xmlUrl="https://remysharp.com/feed.xml" htmlUrl="https://remysharp.com"/>
             <outline type="rss" text="Chromium Blog" title="Chromium Blog" xmlUrl="http://blog.chromium.org/feeds/posts/default" htmlUrl="http://blog.chromium.org/"/>
             <outline type="rss" text="Raymond Camden" title="Raymond Camden" xmlUrl="https://www.raymondcamden.com/feed.xml" htmlUrl="https://www.raymondcamden.com/"/>
-            <outline type="rss" text="Tao Bojlén" title="Tao Bojlén" xmlUrl="https://btao.org/feed.xml" htmlUrl="https://btao.org/"/>
             <outline type="rss" text="Frontend Ramblings feed" title="Frontend Ramblings feed" xmlUrl="https://webpro.nl/blog/feed.xml" htmlUrl="https://webpro.nl"/>
             <outline type="rss" text="Lea Verou’s blog" title="Lea Verou’s blog" xmlUrl="http://leaverou.me/feed/" htmlUrl="https://lea.verou.me/"/>
             <outline type="rss" text="Frontend Focus" title="Frontend Focus" xmlUrl="http://html5weekly.com/rss" htmlUrl="https://frontendfoc.us/"/>
