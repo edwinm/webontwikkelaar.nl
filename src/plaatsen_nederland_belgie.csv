@@ -1,0 +1,900 @@
+name,province,country,country_code,latitude,longitude
+Amsterdam,Noord-Holland,Netherlands,NL,52.3676,4.9041
+Haarlem,Noord-Holland,Netherlands,NL,52.3874,4.6462
+Zaanstad,Noord-Holland,Netherlands,NL,52.4547,4.8139
+Haarlemmermeer,Noord-Holland,Netherlands,NL,52.3025,4.6917
+Almere,Flevoland,Netherlands,NL,52.3508,5.2647
+Alkmaar,Noord-Holland,Netherlands,NL,52.6324,4.7534
+Amstelveen,Noord-Holland,Netherlands,NL,52.3114,4.8546
+Hoorn,Noord-Holland,Netherlands,NL,52.6422,5.0597
+Purmerend,Noord-Holland,Netherlands,NL,52.505,4.9597
+Hilversum,Noord-Holland,Netherlands,NL,52.2292,5.1669
+Den Helder,Noord-Holland,Netherlands,NL,52.9563,4.76
+Heerhugowaard,Noord-Holland,Netherlands,NL,52.6656,4.8353
+Velsen,Noord-Holland,Netherlands,NL,52.4563,4.6183
+Beverwijk,Noord-Holland,Netherlands,NL,52.4825,4.6567
+Castricum,Noord-Holland,Netherlands,NL,52.5467,4.6581
+Heiloo,Noord-Holland,Netherlands,NL,52.6003,4.7011
+Langedijk,Noord-Holland,Netherlands,NL,52.6867,4.7967
+Bergen (NH),Noord-Holland,Netherlands,NL,52.6711,4.7003
+Uitgeest,Noord-Holland,Netherlands,NL,52.5306,4.7119
+Heemskerk,Noord-Holland,Netherlands,NL,52.5108,4.67
+Enkhuizen,Noord-Holland,Netherlands,NL,52.7042,5.2917
+Medemblik,Noord-Holland,Netherlands,NL,52.7717,5.1083
+Koggenland,Noord-Holland,Netherlands,NL,52.66,4.95
+Stede Broec,Noord-Holland,Netherlands,NL,52.6958,5.2272
+Drechterland,Noord-Holland,Netherlands,NL,52.6783,5.1656
+Opmeer,Noord-Holland,Netherlands,NL,52.71,4.95
+Schagen,Noord-Holland,Netherlands,NL,52.7867,4.7983
+Hollands Kroon,Noord-Holland,Netherlands,NL,52.85,4.9833
+Texel,Noord-Holland,Netherlands,NL,53.0833,4.8
+Den Burg,Noord-Holland,Netherlands,NL,53.0558,4.7961
+Edam-Volendam,Noord-Holland,Netherlands,NL,52.5117,5.0617
+Waterland,Noord-Holland,Netherlands,NL,52.4367,4.9933
+Oostzaan,Noord-Holland,Netherlands,NL,52.4389,4.8742
+Wormerland,Noord-Holland,Netherlands,NL,52.495,4.835
+Landsmeer,Noord-Holland,Netherlands,NL,52.4333,4.9167
+Beemster,Noord-Holland,Netherlands,NL,52.55,4.9
+Diemen,Noord-Holland,Netherlands,NL,52.3389,4.9592
+Ouder-Amstel,Noord-Holland,Netherlands,NL,52.295,4.9117
+Uithoorn,Noord-Holland,Netherlands,NL,52.235,4.8317
+Aalsmeer,Noord-Holland,Netherlands,NL,52.2594,4.7619
+Blaricum,Noord-Holland,Netherlands,NL,52.2733,5.245
+Eemnes,Utrecht,Netherlands,NL,52.2533,5.2617
+Laren,Noord-Holland,Netherlands,NL,52.255,5.2283
+Huizen,Noord-Holland,Netherlands,NL,52.2961,5.2417
+Bussum,Noord-Holland,Netherlands,NL,52.2792,5.1625
+Naarden,Noord-Holland,Netherlands,NL,52.2958,5.1625
+Muiden,Noord-Holland,Netherlands,NL,52.3308,5.0667
+Weesp,Noord-Holland,Netherlands,NL,52.3067,5.0417
+Wijdemeren,Noord-Holland,Netherlands,NL,52.2367,5.0833
+Gooise Meren,Noord-Holland,Netherlands,NL,52.29,5.15
+Rotterdam,Zuid-Holland,Netherlands,NL,51.9244,4.4777
+Den Haag,Zuid-Holland,Netherlands,NL,52.0705,4.3007
+Leiden,Zuid-Holland,Netherlands,NL,52.1601,4.497
+Dordrecht,Zuid-Holland,Netherlands,NL,51.8133,4.69
+Zoetermeer,Zuid-Holland,Netherlands,NL,52.0575,4.4931
+Delft,Zuid-Holland,Netherlands,NL,52.0116,4.3571
+Schiedam,Zuid-Holland,Netherlands,NL,51.9194,4.3889
+Vlaardingen,Zuid-Holland,Netherlands,NL,51.9128,4.3419
+Maassluis,Zuid-Holland,Netherlands,NL,51.9231,4.2489
+Spijkenisse,Zuid-Holland,Netherlands,NL,51.845,4.3294
+Westland,Zuid-Holland,Netherlands,NL,52.0333,4.2167
+Capelle aan den IJssel,Zuid-Holland,Netherlands,NL,51.9322,4.5789
+Alphen aan den Rijn,Zuid-Holland,Netherlands,NL,52.1294,4.6578
+Leidschendam-Voorburg,Zuid-Holland,Netherlands,NL,52.0833,4.4
+Pijnacker-Nootdorp,Zuid-Holland,Netherlands,NL,52.0167,4.4333
+Rijswijk,Zuid-Holland,Netherlands,NL,52.0361,4.3256
+Wassenaar,Zuid-Holland,Netherlands,NL,52.1453,4.4011
+Katwijk,Zuid-Holland,Netherlands,NL,52.2008,4.4072
+Noordwijk,Zuid-Holland,Netherlands,NL,52.235,4.4428
+Oegstgeest,Zuid-Holland,Netherlands,NL,52.1803,4.4667
+Voorschoten,Zuid-Holland,Netherlands,NL,52.1278,4.45
+Lisse,Zuid-Holland,Netherlands,NL,52.2575,4.5578
+Hillegom,Zuid-Holland,Netherlands,NL,52.2911,4.5808
+Teylingen,Zuid-Holland,Netherlands,NL,52.2167,4.5
+Nieuwkoop,Zuid-Holland,Netherlands,NL,52.15,4.8
+Kaag en Braassem,Zuid-Holland,Netherlands,NL,52.2,4.6333
+Bodegraven-Reeuwijk,Zuid-Holland,Netherlands,NL,52.0833,4.75
+Waddinxveen,Zuid-Holland,Netherlands,NL,52.0444,4.6517
+Gouda,Zuid-Holland,Netherlands,NL,52.0175,4.7056
+Zuidplas,Zuid-Holland,Netherlands,NL,51.9833,4.6167
+Krimpenerwaard,Zuid-Holland,Netherlands,NL,51.95,4.7833
+Krimpen aan den IJssel,Zuid-Holland,Netherlands,NL,51.9139,4.6025
+Ridderkerk,Zuid-Holland,Netherlands,NL,51.8672,4.6011
+Barendrecht,Zuid-Holland,Netherlands,NL,51.8569,4.5353
+Albrandswaard,Zuid-Holland,Netherlands,NL,51.8583,4.4167
+Lansingerland,Zuid-Holland,Netherlands,NL,51.9833,4.5167
+Nissewaard,Zuid-Holland,Netherlands,NL,51.85,4.3333
+Brielle,Zuid-Holland,Netherlands,NL,51.9017,4.1631
+Hellevoetsluis,Zuid-Holland,Netherlands,NL,51.8333,4.1333
+Westvoorne,Zuid-Holland,Netherlands,NL,51.8667,4.0833
+Goeree-Overflakkee,Zuid-Holland,Netherlands,NL,51.75,4.0833
+Hoeksche Waard,Zuid-Holland,Netherlands,NL,51.7667,4.4667
+Zwijndrecht,Zuid-Holland,Netherlands,NL,51.8153,4.6378
+Hendrik-Ido-Ambacht,Zuid-Holland,Netherlands,NL,51.8417,4.6333
+Papendrecht,Zuid-Holland,Netherlands,NL,51.835,4.6917
+Sliedrecht,Zuid-Holland,Netherlands,NL,51.82,4.77
+Hardinxveld-Giessendam,Zuid-Holland,Netherlands,NL,51.8333,4.85
+Gorinchem,Zuid-Holland,Netherlands,NL,51.835,4.9733
+Molenlanden,Zuid-Holland,Netherlands,NL,51.8833,4.8833
+Alblasserdam,Zuid-Holland,Netherlands,NL,51.8658,4.6608
+Leerdam,Zuid-Holland,Netherlands,NL,51.8933,5.0917
+Vijfheerenlanden,Zuid-Holland,Netherlands,NL,51.95,5.0833
+Eindhoven,Noord-Brabant,Netherlands,NL,51.4416,5.4697
+Tilburg,Noord-Brabant,Netherlands,NL,51.5555,5.0913
+Breda,Noord-Brabant,Netherlands,NL,51.5719,4.7683
+'s-Hertogenbosch,Noord-Brabant,Netherlands,NL,51.6978,5.3037
+Helmond,Noord-Brabant,Netherlands,NL,51.4792,5.6614
+Oss,Noord-Brabant,Netherlands,NL,51.765,5.5183
+Bergen op Zoom,Noord-Brabant,Netherlands,NL,51.495,4.2922
+Roosendaal,Noord-Brabant,Netherlands,NL,51.5308,4.4567
+Uden,Noord-Brabant,Netherlands,NL,51.66,5.6183
+Waalwijk,Noord-Brabant,Netherlands,NL,51.6886,5.0711
+Veghel,Noord-Brabant,Netherlands,NL,51.6167,5.5417
+Meierijstad,Noord-Brabant,Netherlands,NL,51.6333,5.55
+Veldhoven,Noord-Brabant,Netherlands,NL,51.4214,5.405
+Best,Noord-Brabant,Netherlands,NL,51.5097,5.39
+Oirschot,Noord-Brabant,Netherlands,NL,51.505,5.3117
+Son en Breugel,Noord-Brabant,Netherlands,NL,51.5183,5.5033
+Nuenen,Noord-Brabant,Netherlands,NL,51.47,5.5467
+Geldrop-Mierlo,Noord-Brabant,Netherlands,NL,51.4233,5.5617
+Heeze-Leende,Noord-Brabant,Netherlands,NL,51.3833,5.5667
+Waalre,Noord-Brabant,Netherlands,NL,51.39,5.4617
+Eersel,Noord-Brabant,Netherlands,NL,51.3583,5.3167
+Bergeijk,Noord-Brabant,Netherlands,NL,51.3183,5.3583
+Reusel-De Mierden,Noord-Brabant,Netherlands,NL,51.3617,5.1617
+Bladel,Noord-Brabant,Netherlands,NL,51.3717,5.22
+Cranendonck,Noord-Brabant,Netherlands,NL,51.3,5.5667
+Valkenswaard,Noord-Brabant,Netherlands,NL,51.3517,5.4617
+Asten,Noord-Brabant,Netherlands,NL,51.4033,5.7467
+Someren,Noord-Brabant,Netherlands,NL,51.3833,5.7167
+Deurne,Noord-Brabant,Netherlands,NL,51.4617,5.7933
+Gemert-Bakel,Noord-Brabant,Netherlands,NL,51.5567,5.7533
+Laarbeek,Noord-Brabant,Netherlands,NL,51.5167,5.6167
+Boekel,Noord-Brabant,Netherlands,NL,51.6017,5.6717
+Landerd,Noord-Brabant,Netherlands,NL,51.7,5.6833
+Bernheze,Noord-Brabant,Netherlands,NL,51.7,5.5
+Boxtel,Noord-Brabant,Netherlands,NL,51.59,5.3267
+Sint-Michielsgestel,Noord-Brabant,Netherlands,NL,51.64,5.3517
+Schijndel,Noord-Brabant,Netherlands,NL,51.6167,5.4333
+Vught,Noord-Brabant,Netherlands,NL,51.6567,5.2933
+Haaren,Noord-Brabant,Netherlands,NL,51.6017,5.2267
+Boxmeer,Noord-Brabant,Netherlands,NL,51.6433,5.95
+Cuijk,Noord-Brabant,Netherlands,NL,51.7283,5.88
+Mill en Sint Hubert,Noord-Brabant,Netherlands,NL,51.6933,5.775
+Grave,Noord-Brabant,Netherlands,NL,51.7583,5.7383
+Land van Cuijk,Noord-Brabant,Netherlands,NL,51.7,5.85
+Maashorst,Noord-Brabant,Netherlands,NL,51.7167,5.65
+Loon op Zand,Noord-Brabant,Netherlands,NL,51.63,5.08
+Heusden,Noord-Brabant,Netherlands,NL,51.7333,5.1333
+Dongen,Noord-Brabant,Netherlands,NL,51.6267,4.9383
+Gilze en Rijen,Noord-Brabant,Netherlands,NL,51.5417,4.9333
+Goirle,Noord-Brabant,Netherlands,NL,51.5217,5.0683
+Hilvarenbeek,Noord-Brabant,Netherlands,NL,51.4867,5.1367
+Oisterwijk,Noord-Brabant,Netherlands,NL,51.58,5.1917
+Alphen-Chaam,Noord-Brabant,Netherlands,NL,51.4833,4.8667
+Baarle-Nassau,Noord-Brabant,Netherlands,NL,51.445,4.9306
+Etten-Leur,Noord-Brabant,Netherlands,NL,51.5733,4.6383
+Zundert,Noord-Brabant,Netherlands,NL,51.4717,4.6583
+Rucphen,Noord-Brabant,Netherlands,NL,51.5283,4.5583
+Halderberge,Noord-Brabant,Netherlands,NL,51.5667,4.55
+Moerdijk,Noord-Brabant,Netherlands,NL,51.6417,4.6083
+Drimmelen,Noord-Brabant,Netherlands,NL,51.6917,4.8
+Geertruidenberg,Noord-Brabant,Netherlands,NL,51.7017,4.8583
+Oosterhout,Noord-Brabant,Netherlands,NL,51.645,4.8617
+Altena,Noord-Brabant,Netherlands,NL,51.7667,4.9667
+Steenbergen,Noord-Brabant,Netherlands,NL,51.5833,4.3167
+Woensdrecht,Noord-Brabant,Netherlands,NL,51.4317,4.29
+Arnhem,Gelderland,Netherlands,NL,51.9851,5.8987
+Nijmegen,Gelderland,Netherlands,NL,51.8425,5.8528
+Apeldoorn,Gelderland,Netherlands,NL,52.2112,5.9699
+Ede,Gelderland,Netherlands,NL,52.0383,5.665
+Doetinchem,Gelderland,Netherlands,NL,51.965,6.2883
+Harderwijk,Gelderland,Netherlands,NL,52.3417,5.62
+Barneveld,Gelderland,Netherlands,NL,52.1383,5.5883
+Wageningen,Gelderland,Netherlands,NL,51.9692,5.665
+Zevenaar,Gelderland,Netherlands,NL,51.9283,6.0717
+Zutphen,Gelderland,Netherlands,NL,52.1383,6.2
+Winterswijk,Gelderland,Netherlands,NL,51.9717,6.7183
+Tiel,Gelderland,Netherlands,NL,51.8833,5.4317
+Culemborg,Gelderland,Netherlands,NL,51.9567,5.2283
+Rheden,Gelderland,Netherlands,NL,52.0167,6.0333
+Renkum,Gelderland,Netherlands,NL,51.9833,5.8167
+Oosterbeek,Gelderland,Netherlands,NL,51.9867,5.84
+Wageningen,Gelderland,Netherlands,NL,51.9692,5.665
+Bennekom,Gelderland,Netherlands,NL,52.0017,5.6717
+Veenendaal,Gelderland,Netherlands,NL,52.0283,5.5583
+Rhenen,Gelderland,Netherlands,NL,51.96,5.5683
+Elburg,Gelderland,Netherlands,NL,52.45,5.8333
+Nunspeet,Gelderland,Netherlands,NL,52.3767,5.7867
+Ermelo,Gelderland,Netherlands,NL,52.2983,5.62
+Putten,Gelderland,Netherlands,NL,52.2583,5.6067
+Nijkerk,Gelderland,Netherlands,NL,52.2217,5.4867
+Scherpenzeel,Gelderland,Netherlands,NL,52.0833,5.4833
+Woudenberg,Gelderland,Netherlands,NL,52.08,5.4167
+Rozendaal,Gelderland,Netherlands,NL,52.005,5.9617
+Brummen,Gelderland,Netherlands,NL,52.0917,6.1567
+Voorst,Gelderland,Netherlands,NL,52.1667,6.1333
+Lochem,Gelderland,Netherlands,NL,52.16,6.415
+Zaltbommel,Gelderland,Netherlands,NL,51.81,5.2433
+Maasdriel,Gelderland,Netherlands,NL,51.7833,5.3
+Neder-Betuwe,Gelderland,Netherlands,NL,51.9167,5.5333
+Buren,Gelderland,Netherlands,NL,51.9167,5.3333
+West Betuwe,Gelderland,Netherlands,NL,51.8833,5.2
+Lingewaard,Gelderland,Netherlands,NL,51.9,5.9333
+Overbetuwe,Gelderland,Netherlands,NL,51.9167,5.8
+Berg en Dal,Gelderland,Netherlands,NL,51.8167,5.9333
+Heumen,Gelderland,Netherlands,NL,51.7833,5.85
+Wijchen,Gelderland,Netherlands,NL,51.8067,5.725
+Druten,Gelderland,Netherlands,NL,51.8833,5.6
+West Maas en Waal,Gelderland,Netherlands,NL,51.8667,5.55
+Montferland,Gelderland,Netherlands,NL,51.9333,6.2167
+Oude IJsselstreek,Gelderland,Netherlands,NL,51.9333,6.4833
+Bronckhorst,Gelderland,Netherlands,NL,52.05,6.3333
+Berkelland,Gelderland,Netherlands,NL,52.1,6.5833
+Oost Gelre,Gelderland,Netherlands,NL,52.0,6.5833
+Aalten,Gelderland,Netherlands,NL,51.9283,6.58
+Epe,Gelderland,Netherlands,NL,52.35,5.9833
+Heerde,Gelderland,Netherlands,NL,52.3883,6.0417
+Hattem,Gelderland,Netherlands,NL,52.475,6.0667
+Oldebroek,Gelderland,Netherlands,NL,52.45,5.9
+Utrecht,Utrecht,Netherlands,NL,52.0907,5.1214
+Amersfoort,Utrecht,Netherlands,NL,52.1561,5.3878
+Nieuwegein,Utrecht,Netherlands,NL,52.0333,5.0833
+Zeist,Utrecht,Netherlands,NL,52.09,5.2333
+Houten,Utrecht,Netherlands,NL,52.0283,5.1683
+Veenendaal,Utrecht,Netherlands,NL,52.0283,5.5583
+IJsselstein,Utrecht,Netherlands,NL,52.0233,5.0417
+Woerden,Utrecht,Netherlands,NL,52.085,4.8833
+De Bilt,Utrecht,Netherlands,NL,52.11,5.1783
+Soest,Utrecht,Netherlands,NL,52.175,5.2917
+Baarn,Utrecht,Netherlands,NL,52.2117,5.2883
+Bunnik,Utrecht,Netherlands,NL,52.0667,5.1917
+Bunschoten,Utrecht,Netherlands,NL,52.2417,5.3833
+Leusden,Utrecht,Netherlands,NL,52.1333,5.4333
+Wijk bij Duurstede,Utrecht,Netherlands,NL,51.975,5.3383
+Utrechtse Heuvelrug,Utrecht,Netherlands,NL,52.05,5.3833
+De Ronde Venen,Utrecht,Netherlands,NL,52.2167,4.9
+Stichtse Vecht,Utrecht,Netherlands,NL,52.1833,5.0333
+Montfoort,Utrecht,Netherlands,NL,52.045,4.9533
+Oudewater,Utrecht,Netherlands,NL,52.025,4.8667
+Lopik,Utrecht,Netherlands,NL,51.9733,4.95
+Vijfheerenlanden,Utrecht,Netherlands,NL,51.95,5.0833
+Zwolle,Overijssel,Netherlands,NL,52.5168,6.083
+Enschede,Overijssel,Netherlands,NL,52.2215,6.8937
+Deventer,Overijssel,Netherlands,NL,52.25,6.155
+Hengelo,Overijssel,Netherlands,NL,52.2661,6.7936
+Almelo,Overijssel,Netherlands,NL,52.3567,6.6625
+Kampen,Overijssel,Netherlands,NL,52.555,5.9117
+Borne,Overijssel,Netherlands,NL,52.3017,6.7483
+Oldenzaal,Overijssel,Netherlands,NL,52.3117,6.9267
+Rijssen-Holten,Overijssel,Netherlands,NL,52.3,6.5167
+Hellendoorn,Overijssel,Netherlands,NL,52.3917,6.4417
+Wierden,Overijssel,Netherlands,NL,52.3583,6.5917
+Twenterand,Overijssel,Netherlands,NL,52.4333,6.6
+Tubbergen,Overijssel,Netherlands,NL,52.4083,6.7833
+Dinkelland,Overijssel,Netherlands,NL,52.3667,6.9667
+Losser,Overijssel,Netherlands,NL,52.2617,7.0083
+Haaksbergen,Overijssel,Netherlands,NL,52.1567,6.7383
+Hof van Twente,Overijssel,Netherlands,NL,52.2333,6.55
+Dalfsen,Overijssel,Netherlands,NL,52.5083,6.2583
+Ommen,Overijssel,Netherlands,NL,52.525,6.4167
+Hardenberg,Overijssel,Netherlands,NL,52.575,6.6167
+Staphorst,Overijssel,Netherlands,NL,52.6417,6.2083
+Zwartewaterland,Overijssel,Netherlands,NL,52.5667,6.0667
+Steenwijkerland,Overijssel,Netherlands,NL,52.7833,6.0833
+Raalte,Overijssel,Netherlands,NL,52.3867,6.2733
+Olst-Wijhe,Overijssel,Netherlands,NL,52.3333,6.1
+Maastricht,Limburg,Netherlands,NL,50.8514,5.691
+Venlo,Limburg,Netherlands,NL,51.37,6.1719
+Sittard-Geleen,Limburg,Netherlands,NL,50.9833,5.8667
+Heerlen,Limburg,Netherlands,NL,50.8833,5.9833
+Roermond,Limburg,Netherlands,NL,51.1917,5.9875
+Weert,Limburg,Netherlands,NL,51.2517,5.7067
+Venray,Limburg,Netherlands,NL,51.525,5.975
+Kerkrade,Limburg,Netherlands,NL,50.865,6.0617
+Landgraaf,Limburg,Netherlands,NL,50.8917,6.0167
+Brunssum,Limburg,Netherlands,NL,50.9467,5.9717
+Stein,Limburg,Netherlands,NL,50.9667,5.7667
+Beek,Limburg,Netherlands,NL,50.9417,5.795
+Meerssen,Limburg,Netherlands,NL,50.89,5.75
+Valkenburg aan de Geul,Limburg,Netherlands,NL,50.8617,5.8283
+Gulpen-Wittem,Limburg,Netherlands,NL,50.8167,5.8833
+Vaals,Limburg,Netherlands,NL,50.77,6.0183
+Eijsden-Margraten,Limburg,Netherlands,NL,50.7833,5.7167
+Simpelveld,Limburg,Netherlands,NL,50.835,5.9833
+Nuth,Limburg,Netherlands,NL,50.9167,5.8833
+Schinnen,Limburg,Netherlands,NL,50.9417,5.8833
+Onderbanken,Limburg,Netherlands,NL,50.9667,5.95
+Peel en Maas,Limburg,Netherlands,NL,51.3333,6.0
+Beesel,Limburg,Netherlands,NL,51.2683,6.0417
+Leudal,Limburg,Netherlands,NL,51.25,5.9167
+Maasgouw,Limburg,Netherlands,NL,51.1667,5.8833
+Echt-Susteren,Limburg,Netherlands,NL,51.1,5.8667
+Gennep,Limburg,Netherlands,NL,51.7,5.975
+Bergen (L),Limburg,Netherlands,NL,51.6,6.0333
+Mook en Middelaar,Limburg,Netherlands,NL,51.75,5.8833
+Horst aan de Maas,Limburg,Netherlands,NL,51.45,6.05
+Groningen,Groningen,Netherlands,NL,53.2194,6.5665
+Veendam,Groningen,Netherlands,NL,53.1083,6.8783
+Hoogezand-Sappemeer,Groningen,Netherlands,NL,53.1617,6.7617
+Stadskanaal,Groningen,Netherlands,NL,52.9917,6.95
+Winschoten,Groningen,Netherlands,NL,53.145,7.035
+Delfzijl,Groningen,Netherlands,NL,53.3333,6.9167
+Appingedam,Groningen,Netherlands,NL,53.3217,6.8567
+Leek,Groningen,Netherlands,NL,53.1617,6.3767
+Zuidhorn,Groningen,Netherlands,NL,53.245,6.4083
+Marum,Groningen,Netherlands,NL,53.145,6.2617
+Grootegast,Groningen,Netherlands,NL,53.21,6.2717
+Haren,Groningen,Netherlands,NL,53.1717,6.6083
+Ten Boer,Groningen,Netherlands,NL,53.275,6.6917
+Slochteren,Groningen,Netherlands,NL,53.2167,6.8
+Loppersum,Groningen,Netherlands,NL,53.3333,6.75
+Bedum,Groningen,Netherlands,NL,53.3,6.6
+Winsum,Groningen,Netherlands,NL,53.33,6.52
+De Marne,Groningen,Netherlands,NL,53.4,6.4
+Eemsmond,Groningen,Netherlands,NL,53.4167,6.75
+Oldambt,Groningen,Netherlands,NL,53.15,7.0
+Pekela,Groningen,Netherlands,NL,53.0833,6.9667
+Bellingwedde,Groningen,Netherlands,NL,53.1167,7.1
+Vlagtwedde,Groningen,Netherlands,NL,53.05,7.1
+Het Hogeland,Groningen,Netherlands,NL,53.3667,6.5833
+Westerkwartier,Groningen,Netherlands,NL,53.1833,6.35
+Midden-Groningen,Groningen,Netherlands,NL,53.15,6.8
+Eemsdelta,Groningen,Netherlands,NL,53.35,6.8333
+Leeuwarden,Friesland,Netherlands,NL,53.2012,5.7999
+Drachten,Friesland,Netherlands,NL,53.1117,6.0933
+Sneek,Friesland,Netherlands,NL,53.0333,5.6617
+Heerenveen,Friesland,Netherlands,NL,52.96,5.9233
+Harlingen,Friesland,Netherlands,NL,53.175,5.4083
+Franeker,Friesland,Netherlands,NL,53.1867,5.5417
+Dokkum,Friesland,Netherlands,NL,53.3267,5.9983
+Bolsward,Friesland,Netherlands,NL,53.0617,5.5283
+Wolvega,Friesland,Netherlands,NL,52.8767,5.995
+Lemmer,Friesland,Netherlands,NL,52.845,5.7083
+Joure,Friesland,Netherlands,NL,52.9683,5.7917
+Burgum,Friesland,Netherlands,NL,53.1917,5.9917
+Grou,Friesland,Netherlands,NL,53.0933,5.8283
+Workum,Friesland,Netherlands,NL,52.98,5.4433
+Makkum,Friesland,Netherlands,NL,53.0567,5.4033
+Stavoren,Friesland,Netherlands,NL,52.8867,5.3583
+Hindeloopen,Friesland,Netherlands,NL,52.9433,5.4017
+Balk,Friesland,Netherlands,NL,52.9017,5.5817
+Sint Nicolaasga,Friesland,Netherlands,NL,52.92,5.735
+De Lemmer,Friesland,Netherlands,NL,52.845,5.7083
+Gorredijk,Friesland,Netherlands,NL,53.0083,6.0617
+Oosterwolde,Friesland,Netherlands,NL,52.9933,6.2867
+Kollum,Friesland,Netherlands,NL,53.2833,6.155
+Damwoude,Friesland,Netherlands,NL,53.2867,6.0367
+Wommels,Friesland,Netherlands,NL,53.11,5.5817
+Súdwest-Fryslân,Friesland,Netherlands,NL,53.0167,5.65
+De Fryske Marren,Friesland,Netherlands,NL,52.9167,5.75
+Waadhoeke,Friesland,Netherlands,NL,53.2,5.5
+Noardeast-Fryslân,Friesland,Netherlands,NL,53.3,6.05
+Tytsjerksteradiel,Friesland,Netherlands,NL,53.2333,5.95
+Smallingerland,Friesland,Netherlands,NL,53.1,6.1
+Opsterland,Friesland,Netherlands,NL,53.0167,6.1
+Weststellingwerf,Friesland,Netherlands,NL,52.9,6.05
+Ooststellingwerf,Friesland,Netherlands,NL,52.9833,6.2833
+Heerenveen,Friesland,Netherlands,NL,52.96,5.9233
+Achtkarspelen,Friesland,Netherlands,NL,53.2333,6.15
+Dantumadiel,Friesland,Netherlands,NL,53.2833,6.0
+Schiermonnikoog,Friesland,Netherlands,NL,53.4833,6.15
+Ameland,Friesland,Netherlands,NL,53.45,5.75
+Terschelling,Friesland,Netherlands,NL,53.4,5.35
+Vlieland,Friesland,Netherlands,NL,53.25,5.0
+Assen,Drenthe,Netherlands,NL,52.9925,6.5625
+Emmen,Drenthe,Netherlands,NL,52.7792,6.9
+Hoogeveen,Drenthe,Netherlands,NL,52.725,6.4767
+Meppel,Drenthe,Netherlands,NL,52.6958,6.1942
+Coevorden,Drenthe,Netherlands,NL,52.6617,6.7417
+Beilen,Drenthe,Netherlands,NL,52.8583,6.5117
+Roden,Drenthe,Netherlands,NL,53.1383,6.4267
+Zuidlaren,Drenthe,Netherlands,NL,53.0917,6.6833
+Borger,Drenthe,Netherlands,NL,52.9217,6.795
+Westerbork,Drenthe,Netherlands,NL,52.8517,6.6083
+Dwingeloo,Drenthe,Netherlands,NL,52.8383,6.37
+De Wolden,Drenthe,Netherlands,NL,52.7167,6.35
+Midden-Drenthe,Drenthe,Netherlands,NL,52.85,6.5333
+Tynaarlo,Drenthe,Netherlands,NL,53.0833,6.6167
+Aa en Hunze,Drenthe,Netherlands,NL,53.0,6.75
+Borger-Odoorn,Drenthe,Netherlands,NL,52.9167,6.8667
+Noordenveld,Drenthe,Netherlands,NL,53.1333,6.45
+Westerveld,Drenthe,Netherlands,NL,52.8333,6.2833
+Middelburg,Zeeland,Netherlands,NL,51.4988,3.6136
+Vlissingen,Zeeland,Netherlands,NL,51.4417,3.5708
+Goes,Zeeland,Netherlands,NL,51.5042,3.8889
+Terneuzen,Zeeland,Netherlands,NL,51.335,3.8283
+Hulst,Zeeland,Netherlands,NL,51.28,4.0517
+Sluis,Zeeland,Netherlands,NL,51.3083,3.385
+Zierikzee,Zeeland,Netherlands,NL,51.65,3.9167
+Tholen,Zeeland,Netherlands,NL,51.5333,4.2167
+Veere,Zeeland,Netherlands,NL,51.55,3.6667
+Schouwen-Duiveland,Zeeland,Netherlands,NL,51.6833,3.8167
+Noord-Beveland,Zeeland,Netherlands,NL,51.5667,3.75
+Borsele,Zeeland,Netherlands,NL,51.4333,3.8
+Kapelle,Zeeland,Netherlands,NL,51.4833,3.95
+Reimerswaal,Zeeland,Netherlands,NL,51.4333,4.1
+Almere,Flevoland,Netherlands,NL,52.3508,5.2647
+Lelystad,Flevoland,Netherlands,NL,52.5185,5.4714
+Dronten,Flevoland,Netherlands,NL,52.525,5.7167
+Zeewolde,Flevoland,Netherlands,NL,52.3333,5.5333
+Urk,Flevoland,Netherlands,NL,52.6617,5.6
+Noordoostpolder,Flevoland,Netherlands,NL,52.7167,5.75
+Emmeloord,Flevoland,Netherlands,NL,52.71,5.7483
+Brussel / Bruxelles,Brussels-Capital,Belgium,BE,50.8503,4.3517
+Anderlecht,Brussels-Capital,Belgium,BE,50.8333,4.3167
+Schaarbeek / Schaerbeek,Brussels-Capital,Belgium,BE,50.8667,4.3833
+Etterbeek,Brussels-Capital,Belgium,BE,50.8333,4.3833
+Elsene / Ixelles,Brussels-Capital,Belgium,BE,50.8333,4.3667
+Vorst / Forest,Brussels-Capital,Belgium,BE,50.8167,4.3167
+Sint-Jans-Molenbeek / Molenbeek-Saint-Jean,Brussels-Capital,Belgium,BE,50.85,4.3333
+Sint-Gillis / Saint-Gilles,Brussels-Capital,Belgium,BE,50.8333,4.35
+Ukkel / Uccle,Brussels-Capital,Belgium,BE,50.8,4.3333
+Jette,Brussels-Capital,Belgium,BE,50.8833,4.3333
+Koekelberg,Brussels-Capital,Belgium,BE,50.8667,4.3333
+Sint-Agatha-Berchem / Berchem-Sainte-Agathe,Brussels-Capital,Belgium,BE,50.8667,4.2833
+Ganshoren,Brussels-Capital,Belgium,BE,50.8833,4.3
+Evere,Brussels-Capital,Belgium,BE,50.8667,4.4
+Sint-Lambrechts-Woluwe / Woluwe-Saint-Lambert,Brussels-Capital,Belgium,BE,50.85,4.4333
+Sint-Pieters-Woluwe / Woluwe-Saint-Pierre,Brussels-Capital,Belgium,BE,50.8333,4.4333
+Oudergem / Auderghem,Brussels-Capital,Belgium,BE,50.8167,4.4333
+Watermaal-Bosvoorde / Watermael-Boitsfort,Brussels-Capital,Belgium,BE,50.8,4.4167
+Sint-Joost-ten-Node / Saint-Josse-ten-Noode,Brussels-Capital,Belgium,BE,50.85,4.3667
+Antwerpen,Antwerpen,Belgium,BE,51.2194,4.4025
+Mechelen,Antwerpen,Belgium,BE,51.0259,4.4776
+Turnhout,Antwerpen,Belgium,BE,51.3222,4.9481
+Lier,Antwerpen,Belgium,BE,51.1311,4.57
+Herentals,Antwerpen,Belgium,BE,51.1767,4.8333
+Geel,Antwerpen,Belgium,BE,51.1667,4.9833
+Mol,Antwerpen,Belgium,BE,51.19,5.1183
+Mortsel,Antwerpen,Belgium,BE,51.1667,4.45
+Brasschaat,Antwerpen,Belgium,BE,51.2917,4.4917
+Schoten,Antwerpen,Belgium,BE,51.25,4.5
+Kapellen,Antwerpen,Belgium,BE,51.3167,4.4333
+Boom,Antwerpen,Belgium,BE,51.0833,4.3667
+Willebroek,Antwerpen,Belgium,BE,51.0667,4.3667
+Aartselaar,Antwerpen,Belgium,BE,51.1333,4.3833
+Edegem,Antwerpen,Belgium,BE,51.15,4.45
+Kontich,Antwerpen,Belgium,BE,51.1333,4.45
+Lint,Antwerpen,Belgium,BE,51.1167,4.5
+Hove,Antwerpen,Belgium,BE,51.15,4.4667
+Boechout,Antwerpen,Belgium,BE,51.15,4.5
+Wommelgem,Antwerpen,Belgium,BE,51.2,4.5167
+Wijnegem,Antwerpen,Belgium,BE,51.2333,4.5167
+Borsbeek,Antwerpen,Belgium,BE,51.1833,4.4833
+Ranst,Antwerpen,Belgium,BE,51.2,4.5667
+Zandhoven,Antwerpen,Belgium,BE,51.2167,4.6667
+Zoersel,Antwerpen,Belgium,BE,51.2667,4.7
+Malle,Antwerpen,Belgium,BE,51.2833,4.7
+Wuustwezel,Antwerpen,Belgium,BE,51.3833,4.6
+Kalmthout,Antwerpen,Belgium,BE,51.3833,4.5
+Essen,Antwerpen,Belgium,BE,51.4667,4.4667
+Stabroek,Antwerpen,Belgium,BE,51.3333,4.3667
+Beveren,Antwerpen,Belgium,BE,51.2167,4.25
+Zwijndrecht,Antwerpen,Belgium,BE,51.2167,4.3333
+Kruibeke,Antwerpen,Belgium,BE,51.1667,4.3167
+Temse,Antwerpen,Belgium,BE,51.1333,4.2167
+Bornem,Antwerpen,Belgium,BE,51.1,4.2333
+Puurs-Sint-Amands,Antwerpen,Belgium,BE,51.0667,4.2833
+Niel,Antwerpen,Belgium,BE,51.1,4.3333
+Schelle,Antwerpen,Belgium,BE,51.1167,4.35
+Hemiksem,Antwerpen,Belgium,BE,51.15,4.3333
+Rumst,Antwerpen,Belgium,BE,51.0833,4.4333
+Bonheiden,Antwerpen,Belgium,BE,51.0333,4.5333
+Duffel,Antwerpen,Belgium,BE,51.1,4.5
+Sint-Katelijne-Waver,Antwerpen,Belgium,BE,51.0667,4.5167
+Berlaar,Antwerpen,Belgium,BE,51.1167,4.65
+Nijlen,Antwerpen,Belgium,BE,51.1667,4.6667
+Heist-op-den-Berg,Antwerpen,Belgium,BE,51.0833,4.7167
+Hulshout,Antwerpen,Belgium,BE,51.0833,4.7833
+Putte,Antwerpen,Belgium,BE,51.05,4.6333
+Herselt,Antwerpen,Belgium,BE,51.05,4.8833
+Westerlo,Antwerpen,Belgium,BE,51.0833,4.9167
+Olen,Antwerpen,Belgium,BE,51.15,4.8667
+Grobbendonk,Antwerpen,Belgium,BE,51.1833,4.7333
+Vorselaar,Antwerpen,Belgium,BE,51.2,4.7667
+Lille,Antwerpen,Belgium,BE,51.2333,4.8167
+Kasterlee,Antwerpen,Belgium,BE,51.2333,4.9667
+Retie,Antwerpen,Belgium,BE,51.2667,5.0833
+Dessel,Antwerpen,Belgium,BE,51.2333,5.1167
+Balen,Antwerpen,Belgium,BE,51.1667,5.1667
+Laakdal,Antwerpen,Belgium,BE,51.0833,5.0
+Meerhout,Antwerpen,Belgium,BE,51.1333,5.0833
+Beerse,Antwerpen,Belgium,BE,51.3167,4.85
+Vosselaar,Antwerpen,Belgium,BE,51.3167,4.9
+Oud-Turnhout,Antwerpen,Belgium,BE,51.3167,5.0167
+Arendonk,Antwerpen,Belgium,BE,51.3167,5.0833
+Ravels,Antwerpen,Belgium,BE,51.3667,5.0167
+Hoogstraten,Antwerpen,Belgium,BE,51.4,4.7667
+Rijkevorsel,Antwerpen,Belgium,BE,51.35,4.75
+Merksplas,Antwerpen,Belgium,BE,51.35,4.8667
+Baarle-Hertog,Antwerpen,Belgium,BE,51.4333,4.9333
+Hasselt,Limburg,Belgium,BE,50.9311,5.3378
+Genk,Limburg,Belgium,BE,50.9667,5.5
+Sint-Truiden,Limburg,Belgium,BE,50.8167,5.1833
+Beringen,Limburg,Belgium,BE,51.05,5.2167
+Tongeren,Limburg,Belgium,BE,50.7833,5.4667
+Lommel,Limburg,Belgium,BE,51.2333,5.3167
+Maasmechelen,Limburg,Belgium,BE,50.9667,5.6833
+Maaseik,Limburg,Belgium,BE,51.1,5.7833
+Dilsen-Stokkem,Limburg,Belgium,BE,51.0333,5.7333
+Lanaken,Limburg,Belgium,BE,50.8833,5.65
+Bilzen,Limburg,Belgium,BE,50.8667,5.5167
+Riemst,Limburg,Belgium,BE,50.8167,5.6
+Hoeselt,Limburg,Belgium,BE,50.85,5.5
+Borgloon,Limburg,Belgium,BE,50.8,5.35
+Heers,Limburg,Belgium,BE,50.7667,5.3
+Gingelom,Limburg,Belgium,BE,50.75,5.1333
+Nieuwerkerken,Limburg,Belgium,BE,50.8,5.15
+Diepenbeek,Limburg,Belgium,BE,50.9167,5.4167
+Alken,Limburg,Belgium,BE,50.8833,5.3
+Kortessem,Limburg,Belgium,BE,50.8667,5.4
+Wellen,Limburg,Belgium,BE,50.85,5.3333
+Zonhoven,Limburg,Belgium,BE,50.9833,5.3667
+Houthalen-Helchteren,Limburg,Belgium,BE,51.0333,5.3833
+Heusden-Zolder,Limburg,Belgium,BE,51.0333,5.2833
+Lummen,Limburg,Belgium,BE,50.9833,5.2167
+Tessenderlo,Limburg,Belgium,BE,51.0667,5.0833
+Ham,Limburg,Belgium,BE,51.1,5.1667
+Leopoldsburg,Limburg,Belgium,BE,51.1167,5.25
+Peer,Limburg,Belgium,BE,51.1333,5.4667
+Bree,Limburg,Belgium,BE,51.1333,5.5833
+Bocholt,Limburg,Belgium,BE,51.1667,5.6
+Hamont-Achel,Limburg,Belgium,BE,51.25,5.5333
+Pelt,Limburg,Belgium,BE,51.2167,5.4333
+Hechtel-Eksel,Limburg,Belgium,BE,51.1167,5.3667
+Zutendaal,Limburg,Belgium,BE,50.9333,5.5667
+As,Limburg,Belgium,BE,51.0,5.5833
+Oudsbergen,Limburg,Belgium,BE,51.05,5.55
+Kinrooi,Limburg,Belgium,BE,51.15,5.75
+Voeren,Limburg,Belgium,BE,50.75,5.8167
+Herstappe,Limburg,Belgium,BE,50.7667,5.4333
+Gent,Oost-Vlaanderen,Belgium,BE,51.0543,3.7174
+Aalst,Oost-Vlaanderen,Belgium,BE,50.9378,4.04
+Sint-Niklaas,Oost-Vlaanderen,Belgium,BE,51.1667,4.1333
+Dendermonde,Oost-Vlaanderen,Belgium,BE,51.0333,4.1
+Ronse,Oost-Vlaanderen,Belgium,BE,50.75,3.6
+Lokeren,Oost-Vlaanderen,Belgium,BE,51.1,3.9833
+Zele,Oost-Vlaanderen,Belgium,BE,51.0667,4.05
+Wetteren,Oost-Vlaanderen,Belgium,BE,51.0,3.8833
+Zottegem,Oost-Vlaanderen,Belgium,BE,50.8667,3.8167
+Geraardsbergen,Oost-Vlaanderen,Belgium,BE,50.7667,3.8833
+Ninove,Oost-Vlaanderen,Belgium,BE,50.8333,4.0333
+Eeklo,Oost-Vlaanderen,Belgium,BE,51.1833,3.5667
+Deinze,Oost-Vlaanderen,Belgium,BE,50.9833,3.5333
+Oudenaarde,Oost-Vlaanderen,Belgium,BE,50.85,3.6
+Hamme,Oost-Vlaanderen,Belgium,BE,51.1,4.1333
+Waasmunster,Oost-Vlaanderen,Belgium,BE,51.1167,4.0833
+Stekene,Oost-Vlaanderen,Belgium,BE,51.2,4.0333
+Moerbeke,Oost-Vlaanderen,Belgium,BE,51.1833,3.95
+Wachtebeke,Oost-Vlaanderen,Belgium,BE,51.15,3.8833
+Zelzate,Oost-Vlaanderen,Belgium,BE,51.2,3.8
+Evergem,Oost-Vlaanderen,Belgium,BE,51.1167,3.7
+Lochristi,Oost-Vlaanderen,Belgium,BE,51.1,3.8333
+Destelbergen,Oost-Vlaanderen,Belgium,BE,51.0667,3.8
+Melle,Oost-Vlaanderen,Belgium,BE,51.0,3.8
+Merelbeke,Oost-Vlaanderen,Belgium,BE,51.0,3.75
+De Pinte,Oost-Vlaanderen,Belgium,BE,51.0,3.65
+Nazareth,Oost-Vlaanderen,Belgium,BE,50.9667,3.6
+Gavere,Oost-Vlaanderen,Belgium,BE,50.9333,3.6667
+Oosterzele,Oost-Vlaanderen,Belgium,BE,50.95,3.8
+Laarne,Oost-Vlaanderen,Belgium,BE,51.0333,3.85
+Wichelen,Oost-Vlaanderen,Belgium,BE,51.0,3.9667
+Lede,Oost-Vlaanderen,Belgium,BE,50.9667,3.9833
+Erpe-Mere,Oost-Vlaanderen,Belgium,BE,50.9333,3.95
+Haaltert,Oost-Vlaanderen,Belgium,BE,50.9,4.0
+Denderleeuw,Oost-Vlaanderen,Belgium,BE,50.8833,4.0667
+Herzele,Oost-Vlaanderen,Belgium,BE,50.8833,3.9
+Sint-Lievens-Houtem,Oost-Vlaanderen,Belgium,BE,50.9167,3.8667
+Lierde,Oost-Vlaanderen,Belgium,BE,50.8167,3.85
+Brakel,Oost-Vlaanderen,Belgium,BE,50.8,3.75
+Kluisbergen,Oost-Vlaanderen,Belgium,BE,50.7833,3.5333
+Wortegem-Petegem,Oost-Vlaanderen,Belgium,BE,50.85,3.55
+Kruisem,Oost-Vlaanderen,Belgium,BE,50.9,3.5333
+Zwalm,Oost-Vlaanderen,Belgium,BE,50.8667,3.7167
+Horebeke,Oost-Vlaanderen,Belgium,BE,50.8333,3.6833
+Maarkedal,Oost-Vlaanderen,Belgium,BE,50.8,3.6333
+Assenede,Oost-Vlaanderen,Belgium,BE,51.2333,3.75
+Kaprijke,Oost-Vlaanderen,Belgium,BE,51.2167,3.6167
+Aalter,Oost-Vlaanderen,Belgium,BE,51.0833,3.45
+Lievegem,Oost-Vlaanderen,Belgium,BE,51.1167,3.55
+Zulte,Oost-Vlaanderen,Belgium,BE,50.9333,3.45
+Maldegem,Oost-Vlaanderen,Belgium,BE,51.2,3.45
+Brugge,West-Vlaanderen,Belgium,BE,51.2093,3.2247
+Kortrijk,West-Vlaanderen,Belgium,BE,50.8283,3.2644
+Oostende,West-Vlaanderen,Belgium,BE,51.2194,2.9264
+Roeselare,West-Vlaanderen,Belgium,BE,50.95,3.1333
+Ieper,West-Vlaanderen,Belgium,BE,50.85,2.8833
+Knokke-Heist,West-Vlaanderen,Belgium,BE,51.35,3.2833
+Waregem,West-Vlaanderen,Belgium,BE,50.8833,3.4333
+Blankenberge,West-Vlaanderen,Belgium,BE,51.3167,3.1333
+De Panne,West-Vlaanderen,Belgium,BE,51.1,2.5833
+Koksijde,West-Vlaanderen,Belgium,BE,51.1167,2.65
+Nieuwpoort,West-Vlaanderen,Belgium,BE,51.1333,2.75
+Veurne,West-Vlaanderen,Belgium,BE,51.0667,2.6667
+Diksmuide,West-Vlaanderen,Belgium,BE,51.0333,2.8667
+Torhout,West-Vlaanderen,Belgium,BE,51.0667,3.1
+Tielt,West-Vlaanderen,Belgium,BE,51.0,3.3333
+Izegem,West-Vlaanderen,Belgium,BE,50.9167,3.2167
+Harelbeke,West-Vlaanderen,Belgium,BE,50.8667,3.3
+Wevelgem,West-Vlaanderen,Belgium,BE,50.8167,3.1833
+Menen,West-Vlaanderen,Belgium,BE,50.8,3.1167
+Wervik,West-Vlaanderen,Belgium,BE,50.7833,3.0333
+Poperinge,West-Vlaanderen,Belgium,BE,50.85,2.7167
+Zonnebeke,West-Vlaanderen,Belgium,BE,50.8667,2.9833
+Langemark-Poelkapelle,West-Vlaanderen,Belgium,BE,50.9167,2.9167
+Hooglede,West-Vlaanderen,Belgium,BE,50.9833,3.0833
+Lichtervelde,West-Vlaanderen,Belgium,BE,51.0333,3.15
+Ardooie,West-Vlaanderen,Belgium,BE,50.9667,3.2
+Pittem,West-Vlaanderen,Belgium,BE,51.0,3.2667
+Ruiselede,West-Vlaanderen,Belgium,BE,51.05,3.3833
+Wingene,West-Vlaanderen,Belgium,BE,51.0667,3.2833
+Dentergem,West-Vlaanderen,Belgium,BE,50.9667,3.4167
+Wielsbeke,West-Vlaanderen,Belgium,BE,50.9,3.3833
+Oostrozebeke,West-Vlaanderen,Belgium,BE,50.9333,3.35
+Meulebeke,West-Vlaanderen,Belgium,BE,50.95,3.2833
+Ingelmunster,West-Vlaanderen,Belgium,BE,50.9167,3.2667
+Lendelede,West-Vlaanderen,Belgium,BE,50.8833,3.2333
+Kuurne,West-Vlaanderen,Belgium,BE,50.85,3.2833
+Deerlijk,West-Vlaanderen,Belgium,BE,50.85,3.35
+Anzegem,West-Vlaanderen,Belgium,BE,50.8333,3.4667
+Avelgem,West-Vlaanderen,Belgium,BE,50.7667,3.45
+Spiere-Helkijn,West-Vlaanderen,Belgium,BE,50.7167,3.35
+Zwevegem,West-Vlaanderen,Belgium,BE,50.8,3.3333
+Bredene,West-Vlaanderen,Belgium,BE,51.2333,2.9667
+Middelkerke,West-Vlaanderen,Belgium,BE,51.1833,2.8167
+Gistel,West-Vlaanderen,Belgium,BE,51.15,2.9667
+Oudenburg,West-Vlaanderen,Belgium,BE,51.1833,3.0
+Ichtegem,West-Vlaanderen,Belgium,BE,51.1,3.0167
+Jabbeke,West-Vlaanderen,Belgium,BE,51.1833,3.1
+Zedelgem,West-Vlaanderen,Belgium,BE,51.1333,3.15
+Oostkamp,West-Vlaanderen,Belgium,BE,51.15,3.2333
+Beernem,West-Vlaanderen,Belgium,BE,51.1333,3.3333
+Damme,West-Vlaanderen,Belgium,BE,51.25,3.2833
+Zuienkerke,West-Vlaanderen,Belgium,BE,51.2667,3.15
+De Haan,West-Vlaanderen,Belgium,BE,51.2667,3.0333
+Koekelare,West-Vlaanderen,Belgium,BE,51.0833,2.9667
+Kortemark,West-Vlaanderen,Belgium,BE,51.0333,3.0333
+Lo-Reninge,West-Vlaanderen,Belgium,BE,50.9833,2.75
+Alveringem,West-Vlaanderen,Belgium,BE,51.0167,2.7
+Houthulst,West-Vlaanderen,Belgium,BE,50.9667,2.95
+Staden,West-Vlaanderen,Belgium,BE,50.9833,3.0167
+Moorslede,West-Vlaanderen,Belgium,BE,50.8833,3.0667
+Ledegem,West-Vlaanderen,Belgium,BE,50.8667,3.1167
+Heuvelland,West-Vlaanderen,Belgium,BE,50.7833,2.8
+Mesen,West-Vlaanderen,Belgium,BE,50.7667,2.9
+Vleteren,West-Vlaanderen,Belgium,BE,50.9167,2.7333
+Leuven,Vlaams-Brabant,Belgium,BE,50.8798,4.7005
+Vilvoorde,Vlaams-Brabant,Belgium,BE,50.9333,4.4333
+Halle,Vlaams-Brabant,Belgium,BE,50.7333,4.2333
+Aarschot,Vlaams-Brabant,Belgium,BE,50.9833,4.8333
+Tienen,Vlaams-Brabant,Belgium,BE,50.8,4.9333
+Diest,Vlaams-Brabant,Belgium,BE,50.9833,5.05
+Zaventem,Vlaams-Brabant,Belgium,BE,50.8833,4.4667
+Dilbeek,Vlaams-Brabant,Belgium,BE,50.85,4.25
+Grimbergen,Vlaams-Brabant,Belgium,BE,50.9333,4.3667
+Machelen,Vlaams-Brabant,Belgium,BE,50.9167,4.4333
+Meise,Vlaams-Brabant,Belgium,BE,50.9333,4.3333
+Kampenhout,Vlaams-Brabant,Belgium,BE,50.95,4.55
+Steenokkerzeel,Vlaams-Brabant,Belgium,BE,50.9167,4.5167
+Kraainem,Vlaams-Brabant,Belgium,BE,50.8667,4.4667
+Wezembeek-Oppem,Vlaams-Brabant,Belgium,BE,50.85,4.5
+Tervuren,Vlaams-Brabant,Belgium,BE,50.8167,4.5167
+Overijse,Vlaams-Brabant,Belgium,BE,50.7833,4.5333
+Hoeilaart,Vlaams-Brabant,Belgium,BE,50.7667,4.4667
+Sint-Genesius-Rode,Vlaams-Brabant,Belgium,BE,50.75,4.35
+Linkebeek,Vlaams-Brabant,Belgium,BE,50.7667,4.3333
+Drogenbos,Vlaams-Brabant,Belgium,BE,50.7833,4.3167
+Beersel,Vlaams-Brabant,Belgium,BE,50.7667,4.3
+Sint-Pieters-Leeuw,Vlaams-Brabant,Belgium,BE,50.7833,4.25
+Lennik,Vlaams-Brabant,Belgium,BE,50.8,4.15
+Pepingen,Vlaams-Brabant,Belgium,BE,50.7667,4.15
+Gooik,Vlaams-Brabant,Belgium,BE,50.8,4.0833
+Galmaarden,Vlaams-Brabant,Belgium,BE,50.75,4.05
+Herne,Vlaams-Brabant,Belgium,BE,50.7333,4.0333
+Bever,Vlaams-Brabant,Belgium,BE,50.75,3.95
+Opwijk,Vlaams-Brabant,Belgium,BE,50.9667,4.1833
+Merchtem,Vlaams-Brabant,Belgium,BE,50.95,4.2333
+Asse,Vlaams-Brabant,Belgium,BE,50.9167,4.2
+Affligem,Vlaams-Brabant,Belgium,BE,50.9167,4.1
+Liedekerke,Vlaams-Brabant,Belgium,BE,50.8667,4.0833
+Ternat,Vlaams-Brabant,Belgium,BE,50.8667,4.1667
+Roosdaal,Vlaams-Brabant,Belgium,BE,50.8333,4.0667
+Wemmel,Vlaams-Brabant,Belgium,BE,50.9,4.3
+Kapelle-op-den-Bos,Vlaams-Brabant,Belgium,BE,51.0,4.3667
+Londerzeel,Vlaams-Brabant,Belgium,BE,51.0,4.3
+Boortmeerbeek,Vlaams-Brabant,Belgium,BE,50.9833,4.5667
+Haacht,Vlaams-Brabant,Belgium,BE,50.9833,4.6333
+Keerbergen,Vlaams-Brabant,Belgium,BE,51.0,4.6333
+Tremelo,Vlaams-Brabant,Belgium,BE,51.0,4.7
+Rotselaar,Vlaams-Brabant,Belgium,BE,50.9667,4.7167
+Begijnendijk,Vlaams-Brabant,Belgium,BE,51.0167,4.7833
+Holsbeek,Vlaams-Brabant,Belgium,BE,50.9167,4.75
+Lubbeek,Vlaams-Brabant,Belgium,BE,50.8833,4.8333
+Boutersem,Vlaams-Brabant,Belgium,BE,50.8333,4.8333
+Bierbeek,Vlaams-Brabant,Belgium,BE,50.8333,4.7667
+Oud-Heverlee,Vlaams-Brabant,Belgium,BE,50.8333,4.6667
+Huldenberg,Vlaams-Brabant,Belgium,BE,50.7833,4.6
+Bertem,Vlaams-Brabant,Belgium,BE,50.8667,4.6333
+Herent,Vlaams-Brabant,Belgium,BE,50.9,4.6833
+Kortenberg,Vlaams-Brabant,Belgium,BE,50.8833,4.5333
+Tielt-Winge,Vlaams-Brabant,Belgium,BE,50.9167,4.8833
+Bekkevoort,Vlaams-Brabant,Belgium,BE,50.95,4.9667
+Scherpenheuvel-Zichem,Vlaams-Brabant,Belgium,BE,51.0,5.0
+Linter,Vlaams-Brabant,Belgium,BE,50.8333,5.05
+Zoutleeuw,Vlaams-Brabant,Belgium,BE,50.8333,5.1
+Geetbets,Vlaams-Brabant,Belgium,BE,50.9,5.1
+Kortenaken,Vlaams-Brabant,Belgium,BE,50.9333,5.0833
+Glabbeek,Vlaams-Brabant,Belgium,BE,50.8833,4.9667
+Hoegaarden,Vlaams-Brabant,Belgium,BE,50.7833,4.8833
+Landen,Vlaams-Brabant,Belgium,BE,50.75,5.0833
+Wavre,Brabant wallon,Belgium,BE,50.7167,4.6167
+Ottignies-Louvain-la-Neuve,Brabant wallon,Belgium,BE,50.6667,4.5667
+Braine-l'Alleud,Brabant wallon,Belgium,BE,50.6833,4.3667
+Nivelles,Brabant wallon,Belgium,BE,50.5833,4.3167
+Tubize,Brabant wallon,Belgium,BE,50.6833,4.2
+Waterloo,Brabant wallon,Belgium,BE,50.7167,4.4
+Rixensart,Brabant wallon,Belgium,BE,50.7167,4.5333
+La Hulpe,Brabant wallon,Belgium,BE,50.7333,4.4833
+Lasne,Brabant wallon,Belgium,BE,50.7,4.5
+Court-Saint-Étienne,Brabant wallon,Belgium,BE,50.6333,4.5667
+Mont-Saint-Guibert,Brabant wallon,Belgium,BE,50.6333,4.6167
+Walhain,Brabant wallon,Belgium,BE,50.6167,4.7
+Chastre,Brabant wallon,Belgium,BE,50.6,4.6333
+Genappe,Brabant wallon,Belgium,BE,50.6,4.45
+Villers-la-Ville,Brabant wallon,Belgium,BE,50.5833,4.5333
+Braine-le-Château,Brabant wallon,Belgium,BE,50.6833,4.2667
+Ittre,Brabant wallon,Belgium,BE,50.65,4.2667
+Rebecq,Brabant wallon,Belgium,BE,50.6667,4.1333
+Chaumont-Gistoux,Brabant wallon,Belgium,BE,50.6833,4.7
+Jodoigne,Brabant wallon,Belgium,BE,50.7167,4.8667
+Perwez,Brabant wallon,Belgium,BE,50.6333,4.8167
+Ramillies,Brabant wallon,Belgium,BE,50.6333,4.9
+Incourt,Brabant wallon,Belgium,BE,50.7,4.8
+Hélécine,Brabant wallon,Belgium,BE,50.7333,5.0833
+Orp-Jauche,Brabant wallon,Belgium,BE,50.7,4.9833
+Beauvechain,Brabant wallon,Belgium,BE,50.7833,4.7667
+Grez-Doiceau,Brabant wallon,Belgium,BE,50.7333,4.7
+Charleroi,Hainaut,Belgium,BE,50.4108,4.4446
+Mons,Hainaut,Belgium,BE,50.4542,3.9563
+La Louvière,Hainaut,Belgium,BE,50.4667,4.1833
+Tournai,Hainaut,Belgium,BE,50.6056,3.3889
+Mouscron,Hainaut,Belgium,BE,50.7333,3.2167
+Binche,Hainaut,Belgium,BE,50.4167,4.1667
+Soignies,Hainaut,Belgium,BE,50.5833,4.0667
+Braine-le-Comte,Hainaut,Belgium,BE,50.6167,4.1333
+Manage,Hainaut,Belgium,BE,50.5,4.2333
+Seneffe,Hainaut,Belgium,BE,50.5333,4.2667
+Châtelet,Hainaut,Belgium,BE,50.4,4.5167
+Fleurus,Hainaut,Belgium,BE,50.4833,4.55
+Fontaine-l'Évêque,Hainaut,Belgium,BE,50.4167,4.3333
+Courcelles,Hainaut,Belgium,BE,50.45,4.3833
+Chapelle-lez-Herlaimont,Hainaut,Belgium,BE,50.4667,4.2833
+Pont-à-Celles,Hainaut,Belgium,BE,50.5,4.35
+Les Bons Villers,Hainaut,Belgium,BE,50.5167,4.4167
+Farciennes,Hainaut,Belgium,BE,50.4333,4.55
+Aiseau-Presles,Hainaut,Belgium,BE,50.4,4.5667
+Sambreville,Hainaut,Belgium,BE,50.4333,4.6167
+Gerpinnes,Hainaut,Belgium,BE,50.3333,4.5333
+Ham-sur-Heure-Nalinnes,Hainaut,Belgium,BE,50.3167,4.4
+Thuin,Hainaut,Belgium,BE,50.3333,4.2833
+Montigny-le-Tilleul,Hainaut,Belgium,BE,50.3833,4.3667
+Anderlues,Hainaut,Belgium,BE,50.4,4.2667
+Erquelinnes,Hainaut,Belgium,BE,50.3,4.1167
+Merbes-le-Château,Hainaut,Belgium,BE,50.3167,4.1667
+Lobbes,Hainaut,Belgium,BE,50.35,4.2667
+Estinnes,Hainaut,Belgium,BE,50.4,4.1
+Morlanwelz,Hainaut,Belgium,BE,50.45,4.2333
+Écaussinnes,Hainaut,Belgium,BE,50.5667,4.1667
+Enghien,Hainaut,Belgium,BE,50.6833,4.0333
+Silly,Hainaut,Belgium,BE,50.65,3.9167
+Lens,Hainaut,Belgium,BE,50.55,3.9333
+Jurbise,Hainaut,Belgium,BE,50.5333,3.9167
+Quaregnon,Hainaut,Belgium,BE,50.4333,3.8667
+Saint-Ghislain,Hainaut,Belgium,BE,50.45,3.8167
+Boussu,Hainaut,Belgium,BE,50.4333,3.8
+Colfontaine,Hainaut,Belgium,BE,50.4,3.85
+Frameries,Hainaut,Belgium,BE,50.4,3.9
+Quiévrain,Hainaut,Belgium,BE,50.4,3.6833
+Honnelles,Hainaut,Belgium,BE,50.3333,3.7
+Dour,Hainaut,Belgium,BE,50.4,3.75
+Hensies,Hainaut,Belgium,BE,50.4333,3.6833
+Quévy,Hainaut,Belgium,BE,50.3667,3.9333
+Ath,Hainaut,Belgium,BE,50.6333,3.7833
+Leuze-en-Hainaut,Hainaut,Belgium,BE,50.6,3.6167
+Beloeil,Hainaut,Belgium,BE,50.55,3.7333
+Bernissart,Hainaut,Belgium,BE,50.4833,3.65
+Péruwelz,Hainaut,Belgium,BE,50.5167,3.5833
+Rumes,Hainaut,Belgium,BE,50.5333,3.3167
+Brunehaut,Hainaut,Belgium,BE,50.5,3.4
+Antoing,Hainaut,Belgium,BE,50.5667,3.45
+Pecq,Hainaut,Belgium,BE,50.6833,3.35
+Celles,Hainaut,Belgium,BE,50.7167,3.45
+Mont-de-l'Enclus,Hainaut,Belgium,BE,50.75,3.5
+Estaimpuis,Hainaut,Belgium,BE,50.7,3.2833
+Comines-Warneton,Hainaut,Belgium,BE,50.7667,3.0
+Momignies,Hainaut,Belgium,BE,50.0333,4.1667
+Chimay,Hainaut,Belgium,BE,50.05,4.3167
+Sivry-Rance,Hainaut,Belgium,BE,50.1333,4.2167
+Froidchapelle,Hainaut,Belgium,BE,50.15,4.3333
+Beaumont,Hainaut,Belgium,BE,50.2333,4.2333
+Liège,Liège,Belgium,BE,50.6326,5.5797
+Seraing,Liège,Belgium,BE,50.5833,5.5
+Verviers,Liège,Belgium,BE,50.5833,5.8667
+Herstal,Liège,Belgium,BE,50.6667,5.6333
+Ans,Liège,Belgium,BE,50.6667,5.5167
+Saint-Nicolas,Liège,Belgium,BE,50.6333,5.5333
+Flémalle,Liège,Belgium,BE,50.6,5.45
+Grâce-Hollogne,Liège,Belgium,BE,50.6333,5.5
+Beyne-Heusay,Liège,Belgium,BE,50.6167,5.6667
+Fléron,Liège,Belgium,BE,50.6167,5.6833
+Chaudfontaine,Liège,Belgium,BE,50.5833,5.65
+Soumagne,Liège,Belgium,BE,50.6167,5.75
+Visé,Liège,Belgium,BE,50.7333,5.7
+Blegny,Liège,Belgium,BE,50.6667,5.7333
+Oupeye,Liège,Belgium,BE,50.7167,5.65
+Bassenge,Liège,Belgium,BE,50.75,5.6
+Dalhem,Liège,Belgium,BE,50.7,5.7333
+Juprelle,Liège,Belgium,BE,50.7,5.5333
+Awans,Liège,Belgium,BE,50.6667,5.45
+Waremme,Liège,Belgium,BE,50.7,5.25
+Hannut,Liège,Belgium,BE,50.6667,5.0833
+Eupen,Liège,Belgium,BE,50.6333,6.0333
+Spa,Liège,Belgium,BE,50.4833,5.8667
+Stavelot,Liège,Belgium,BE,50.3833,5.9333
+Malmedy,Liège,Belgium,BE,50.4167,6.0333
+Durbuy,Liège,Belgium,BE,50.35,5.45
+Huy,Liège,Belgium,BE,50.5167,5.2333
+Arlon,Luxembourg,Belgium,BE,49.6833,5.8167
+Bastogne,Luxembourg,Belgium,BE,50.0,5.7167
+Marche-en-Famenne,Luxembourg,Belgium,BE,50.2167,5.35
+Virton,Luxembourg,Belgium,BE,49.5667,5.5333
+Libramont-Chevigny,Luxembourg,Belgium,BE,49.9333,5.3833
+Bouillon,Luxembourg,Belgium,BE,49.7833,5.0667
+Neufchâteau,Luxembourg,Belgium,BE,49.85,5.4333
+Saint-Hubert,Luxembourg,Belgium,BE,50.0333,5.3667
+La Roche-en-Ardenne,Luxembourg,Belgium,BE,50.1833,5.5667
+Houffalize,Luxembourg,Belgium,BE,50.1333,5.7833
+Vielsalm,Luxembourg,Belgium,BE,50.2833,5.9167
+Durbuy,Luxembourg,Belgium,BE,50.35,5.45
+Erezée,Luxembourg,Belgium,BE,50.2833,5.55
+Hotton,Luxembourg,Belgium,BE,50.25,5.45
+Rendeux,Luxembourg,Belgium,BE,50.2333,5.5
+Tenneville,Luxembourg,Belgium,BE,50.1,5.5333
+Bertogne,Luxembourg,Belgium,BE,50.0833,5.6667
+Vaux-sur-Sûre,Luxembourg,Belgium,BE,49.9333,5.6
+Fauvillers,Luxembourg,Belgium,BE,49.85,5.65
+Léglise,Luxembourg,Belgium,BE,49.8,5.5333
+Habay,Luxembourg,Belgium,BE,49.7167,5.6333
+Étalle,Luxembourg,Belgium,BE,49.6667,5.6
+Tintigny,Luxembourg,Belgium,BE,49.6833,5.5167
+Florenville,Luxembourg,Belgium,BE,49.7,5.3167
+Chiny,Luxembourg,Belgium,BE,49.7333,5.3333
+Herbeumont,Luxembourg,Belgium,BE,49.7667,5.2333
+Bertrix,Luxembourg,Belgium,BE,49.85,5.25
+Paliseul,Luxembourg,Belgium,BE,49.9,5.1333
+Wellin,Luxembourg,Belgium,BE,50.0833,5.1167
+Tellin,Luxembourg,Belgium,BE,50.0833,5.2167
+Libin,Luxembourg,Belgium,BE,50.0,5.25
+Saint-Hubert,Luxembourg,Belgium,BE,50.0333,5.3667
+Nassogne,Luxembourg,Belgium,BE,50.1333,5.3333
+Sainte-Ode,Luxembourg,Belgium,BE,50.0167,5.5167
+Namur,Namur,Belgium,BE,50.4667,4.8667
+Dinant,Namur,Belgium,BE,50.2667,4.9167
+Sambreville,Namur,Belgium,BE,50.4333,4.6167
+Gembloux,Namur,Belgium,BE,50.5667,4.7
+Andenne,Namur,Belgium,BE,50.4833,5.1
+Ciney,Namur,Belgium,BE,50.3,5.1
+Rochefort,Namur,Belgium,BE,50.1667,5.2167
+Couvin,Namur,Belgium,BE,50.05,4.5
+Philippeville,Namur,Belgium,BE,50.2,4.55
+Florennes,Namur,Belgium,BE,50.25,4.6
+Mettet,Namur,Belgium,BE,50.3167,4.6667
+Fosses-la-Ville,Namur,Belgium,BE,50.4,4.7
+Jemeppe-sur-Sambre,Namur,Belgium,BE,50.4333,4.6833
+Floreffe,Namur,Belgium,BE,50.4333,4.75
+Profondeville,Namur,Belgium,BE,50.3667,4.8667
+Yvoir,Namur,Belgium,BE,50.3333,4.8833
+Hastière,Namur,Belgium,BE,50.2167,4.8333
+Onhaye,Namur,Belgium,BE,50.2333,4.85
+Anhée,Namur,Belgium,BE,50.3167,4.8667
+Beauraing,Namur,Belgium,BE,50.1167,5.0667
+Gedinne,Namur,Belgium,BE,50.0,4.9333
+Vresse-sur-Semois,Namur,Belgium,BE,49.8667,4.9333
+Bièvre,Namur,Belgium,BE,49.95,5.0167
+Cerfontaine,Namur,Belgium,BE,50.1667,4.4
+Viroinval,Namur,Belgium,BE,50.0667,4.6
+Doische,Namur,Belgium,BE,50.1167,4.75
+Houyet,Namur,Belgium,BE,50.1833,5.0167
+Hamois,Namur,Belgium,BE,50.3333,5.1667
+Havelange,Namur,Belgium,BE,50.3833,5.2333
+Somme-Leuze,Namur,Belgium,BE,50.3,5.3
+Ohey,Namur,Belgium,BE,50.4333,5.1167
+Gesves,Namur,Belgium,BE,50.4,5.0833
+Assesse,Namur,Belgium,BE,50.3667,5.0167
+Éghezée,Namur,Belgium,BE,50.5833,4.9167
+Fernelmont,Namur,Belgium,BE,50.55,4.9833
+La Bruyère,Namur,Belgium,BE,50.5167,4.7833
+Sombreffe,Namur,Belgium,BE,50.5333,4.6
