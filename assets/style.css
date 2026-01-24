@@ -232,4 +232,8 @@
         -webkit-line-clamp: 2;
         line-clamp: 2;
     }
+
+    .updated {
+        font-size: 1.2rem;
+    }
 }

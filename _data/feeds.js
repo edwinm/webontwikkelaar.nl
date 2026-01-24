@@ -24,7 +24,7 @@ export default async function() {
     const data = {
         videos: await getVideos(),
         posts: await getBlogs(),
-        lastUpdated: getDutchDate(),
+        lastUpdated: new Date(),
     };
 
     await writeJson(CACHE_FILE_NAME, data);
@@ -32,19 +32,19 @@ export default async function() {
     return data;
 }
 
-function getDutchDate() {
-    const date = new Date();
-
-    return date.toLocaleString('nl-NL', {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false
-    });
-}
+// function getDutchDate() {
+//     const date = new Date();
+//
+//     return date.toLocaleString('nl-NL', {
+//         weekday: 'long',
+//         day: 'numeric',
+//         month: 'long',
+//         year: 'numeric',
+//         hour: '2-digit',
+//         minute: '2-digit',
+//         hour12: false
+//     });
+// }
 
 async function getBlogs() {
     const opml = await readOPML('src/feeds.opml');

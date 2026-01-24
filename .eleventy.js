@@ -13,6 +13,21 @@ export default function(eleventyConfig) {
         }).replace('.', '');
     });
 
+    // Unix timestamp in ms to Dutch long date filter
+    eleventyConfig.addFilter("dutchLongDate", function(timestamp) {
+        const date = new Date(timestamp);
+
+        return date.toLocaleString('nl-NL', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+        });
+    });
+
     return {
         dir: {
             input: ".",        // Input directory
