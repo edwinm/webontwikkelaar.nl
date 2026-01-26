@@ -116,6 +116,10 @@
     .item-box {
         column-width: 500px;
         column-gap: 2rem;
+
+        & > * {
+            break-inside: avoid;
+        }
     }
 
     .item {
@@ -140,26 +144,28 @@
     .link {
         text-decoration: none;
         color: inherit;
-    }
 
-    .link:visited {
-        color: #87a9ac;
-    }
+        &:visited {
+            color: #87a9ac;
+        }
 
-    .link:hover {
-        color: white;
-        background-color: #494949;
-    }
+        &:hover {
+            color: white;
+            background-color: #494949;
+        }
 
-    .link:active {
-        color: inherit;
-        background-color: yellow;
+        &:active {
+            color: inherit;
+            background-color: yellow;
+        }
     }
 
     .item-title {
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
+        font-size: 1.5rem;
+        font-weight: initial;
         text-overflow: ellipsis;
     }
 

@@ -28,6 +28,14 @@ export default function(eleventyConfig) {
         });
     });
 
+    eleventyConfig.addFilter("ymdDate", function(str) {
+        return new Intl.DateTimeFormat('sv-SE').format(new Date());
+    });
+
+    eleventyConfig.addFilter("stringify", function(str) {
+        return JSON.stringify(str, null, 2);
+    });
+
     return {
         dir: {
             input: ".",        // Input directory

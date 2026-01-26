@@ -19,7 +19,7 @@ const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonK
 const { data, error } = await supabase
     .from('conferences_with_location')
     .select()
-    .gte('start_date', today)
+    .gte('end_date', today)
     .order('start_date', { ascending: true });
 
 console.log('error', error);

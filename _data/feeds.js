@@ -3,6 +3,8 @@ import {writeJson, readJsonIfNew} from './file.js'
 import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
+import { createClient } from '@supabase/supabase-js';
+import 'dotenv/config';
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
@@ -24,6 +26,7 @@ export default async function() {
     const data = {
         videos: await getVideos(),
         posts: await getBlogs(),
+        conferences: await getConferences(),
         lastUpdated: new Date(),
     };
 
@@ -31,20 +34,6 @@ export default async function() {
 
     return data;
 }
-
-// function getDutchDate() {
-//     const date = new Date();
-//
-//     return date.toLocaleString('nl-NL', {
-//         weekday: 'long',
-//         day: 'numeric',
-//         month: 'long',
-//         year: 'numeric',
-//         hour: '2-digit',
-//         minute: '2-digit',
-//         hour12: false
-//     });
-// }
 
 async function getBlogs() {
     const opml = await readOPML('src/feeds.opml');
@@ -129,6 +118,21 @@ async function getVideos() {
     const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
 
     return allItemsSorted.slice(0, 12);
+}
+
+async function getConferences() {
+    const today = new Intl.DateTimeFormat('sv-SE').format(new Date());
+
+    const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey);
+
+    const { data, error } = await supabase
+        .from('conferences_with_location')
+        .select()
+        .gte('end_date', today)
+        .order('start_date', { ascending: true })
+        .limit(12);
+
+    return data;
 }
 
 async function readOPML(filepath) {
