@@ -149,7 +149,7 @@
             color: #87a9ac;
         }
 
-        &:hover {
+        &:hover, &:focus {
             color: white;
             background-color: #494949;
         }
@@ -239,5 +239,38 @@
 
     .updated {
         font-size: 1.2rem;
+    }
+
+    .conf-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0.5rem 0.5rem;
+    }
+
+    .conf-link {
+        color: inherit;
+        text-decoration: none;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+    }
+
+    .conf-row {
+        position: relative;
+
+        & td {
+            background: #f3f3f3;
+            padding: 0.5rem 1rem;
+        }
+
+        &:hover > td, &:focus-within td {
+            color: white;
+            background: #494949;
+            cursor: pointer;
+        }
     }
 }
