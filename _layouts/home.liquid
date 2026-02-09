@@ -3,6 +3,8 @@ layout: page
 permalink: /index.html
 ---
 
+
+{% if feeds.conferences.length > 0 %}
 <h2>conferenties</h2>
 
 <table class="conf-table">
@@ -14,7 +16,9 @@ permalink: /index.html
     </tr>
     {%- endfor -%}
 </table>
+{% endif %}
 
+{% if feeds.posts.length > 0 %}
 <h2>blogs en nieuws</h2>
 
 <ul class="box item-box">
@@ -27,7 +31,9 @@ permalink: /index.html
         </li>
 {%- endfor -%}
 </ul>
+{% endif %}
 
+{% if feeds.videos.length > 0 %}
 <h2>video’s</h2>
 
 <ul class="box video-box">
@@ -41,5 +47,6 @@ permalink: /index.html
                 </li>
         {%- endfor -%}
 </ul>
+{% endif %}
 
 <p class="updated">Laatst bijgwerkt: {{ feeds.lastUpdated | dutchLongDate }}</p>
