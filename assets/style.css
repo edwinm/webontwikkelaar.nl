@@ -246,7 +246,6 @@
         align-items: stretch;
         gap: 0.5rem;
         padding: 0.5rem;
-        overflow: auto;
     }
 
     .map {
@@ -262,15 +261,16 @@
         }
     }
 
-    @media (max-width: 1410px) {
+    @media (max-width: 1210px) {
         .map {
             display: none;
         }
     }
 
     .conf-table {
-        flex: 1 1 0%;
-        width: 100%;
+        flex: 1 1 0;
+        width: 0;
+        min-width: 0;
         border-collapse: separate;
         border-spacing: 0.5rem 0.5rem;
         margin: -0.5rem;
@@ -295,6 +295,13 @@
             white-space: nowrap;
             padding: 0 1rem;
             background: #f3f3f3;
+        }
+
+        & td:nth-child(3) {
+            width: 100%;
+            max-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         &:hover > td, &:focus-within td {
