@@ -9,7 +9,8 @@ export default function(eleventyConfig) {
 
         return date.toLocaleDateString('nl-NL', {
             day: 'numeric',
-            month: 'short'
+            month: 'short',
+            timeZone: 'Europe/Amsterdam'
         }).replace('.', '');
     });
 
@@ -24,7 +25,8 @@ export default function(eleventyConfig) {
             year: 'numeric',
             hour: '2-digit',
             minute: '2-digit',
-            hour12: false
+            hour12: false,
+            timeZone: 'Europe/Amsterdam'
         });
     });
 
