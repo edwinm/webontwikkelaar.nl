@@ -7,15 +7,20 @@ permalink: /index.html
 {% if feeds.conferences.length > 0 %}
 <h2>conferenties</h2>
 
-<table class="conf-table">
-    {%- for conference in feeds.conferences -%}
-    <tr class="conf-row">
-        <td><a class="conf-link" href="{{ conference.url }}"><time itemprop="datePublished" datetime="{{ conference.start_date }}">{{ conference.start_date | dutchShortDate }}</time>{% if conference.start_date != conference.end_date %} - <time itemprop="datePublished" datetime="{{ conference.end_date }}">{{ conference.end_date | dutchShortDate }}</time>{% endif %}</a></td>
-        <td>{{ conference.city }}</td>
-        <td>{{ conference.title }}</td>
-    </tr>
-    {%- endfor -%}
-</table>
+<section class="conferences">
+    <table class="conf-table">
+        {%- for conference in feeds.conferences -%}
+        <tr class="conf-row">
+            <td><a class="conf-link" href="{{ conference.url }}"><time itemprop="datePublished" datetime="{{ conference.start_date }}">{{ conference.start_date | dutchShortDate }}</time>{% if conference.start_date != conference.end_date %} - <time itemprop="datePublished" datetime="{{ conference.end_date }}">{{ conference.end_date | dutchShortDate }}</time>{% endif %}</a></td>
+            <td>{{ conference.city }}</td>
+            <td>{{ conference.title }}</td>
+        </tr>
+        {%- endfor -%}
+    </table>
+    <div class="map">
+        <img src="ne-be.svg" alt="Kaart van Nederland en Vlaanderen"/>
+    </div>
+</section>
 {% endif %}
 
 {% if feeds.posts.length > 0 %}

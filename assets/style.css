@@ -241,10 +241,33 @@
         font-size: 1.2rem;
     }
 
+    .conferences {
+        display: flex;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        overflow: auto;
+    }
+
+    .map {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: stretch;
+        height: 500px;
+
+        & img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+    }
+
     .conf-table {
+        flex: 1 1 0%;
         width: 100%;
         border-collapse: separate;
         border-spacing: 0.5rem 0.5rem;
+        margin: -0.5rem;
     }
 
     .conf-link {
@@ -263,8 +286,9 @@
         position: relative;
 
         & td {
+            white-space: nowrap;
+            padding: 0 1rem;
             background: #f3f3f3;
-            padding: 0.5rem 1rem;
         }
 
         &:hover > td, &:focus-within td {

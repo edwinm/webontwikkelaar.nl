@@ -130,7 +130,7 @@ async function getConferences() {
         .select()
         .gte('end_date', today)
         .order('start_date', { ascending: true })
-        .limit(8);
+        .limit(10);
 
     return data;
 }
