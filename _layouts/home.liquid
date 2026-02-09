@@ -11,7 +11,7 @@ permalink: /index.html
     <table class="conf-table">
         {%- for conference in feeds.conferences -%}
         <tr class="conf-row">
-            <td><a class="conf-link" href="{{ conference.url }}"><time itemprop="datePublished" datetime="{{ conference.start_date }}">{{ conference.start_date | dutchShortDate }}</time>{% if conference.start_date != conference.end_date %} - <time itemprop="datePublished" datetime="{{ conference.end_date }}">{{ conference.end_date | dutchShortDate }}</time>{% endif %}</a></td>
+            <td><a class="conf-link" href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a></td>
             <td>{{ conference.city }}</td>
             <td>{{ conference.title }}</td>
         </tr>

@@ -30,6 +30,22 @@ export default function(eleventyConfig) {
         });
     });
 
+    eleventyConfig.addFilter("dateRange", function(timestamp1, timestamp2) {
+        const date1 = new Date(timestamp1);
+        const date2 = new Date(timestamp2);
+
+        const month1 = date1.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
+        const month2 = date2.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
+        const day1 = date1.toLocaleDateString('nl-NL', { day: 'numeric', timeZone: 'Europe/Amsterdam' });
+        const day2 = date2.toLocaleDateString('nl-NL', { day: 'numeric', timeZone: 'Europe/Amsterdam' });
+
+        if (month1 === month2) {
+            return `${day1} &ndash; ${day2} ${month1}`;
+        } else {
+            return `${day1} ${month1} &ndash; ${day2} ${month2}`;
+        }
+    });
+
     eleventyConfig.addFilter("ymdDate", function(str) {
         return new Intl.DateTimeFormat('sv-SE').format(new Date());
     });
