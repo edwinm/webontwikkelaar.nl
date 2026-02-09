@@ -262,6 +262,12 @@
         }
     }
 
+    @media (max-width: 1410px) {
+        .map {
+            display: none;
+        }
+    }
+
     .conf-table {
         flex: 1 1 0%;
         width: 100%;
