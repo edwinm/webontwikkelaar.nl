@@ -23,10 +23,15 @@ export default async function() {
 
     console.log('>> Fetching all urls');
 
+    const conferences = await getConferences();
+
+    const cities = getCities(conferences);
+
     const data = {
         videos: await getVideos(),
         posts: await getBlogs(),
-        conferences: await getConferences(),
+        conferences,
+        cities,
         lastUpdated: new Date(),
     };
 
@@ -135,6 +140,21 @@ async function getConferences() {
         .limit(10);
 
     return data;
+}
+
+function getCities(conferences) {
+    const cities = [...new Set(conferences.map((c) => c.city))];
+
+    const citiesLoc = cities.map((city) => {
+        const conference = conferences.find((conf) => conf.city === city);
+        return ({
+            city,
+            latitude: conference.latitude,
+            longitude: conference.longitude,
+        });
+    });
+
+    return citiesLoc;
 }
 
 async function readOPML(filepath) {

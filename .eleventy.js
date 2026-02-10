@@ -54,6 +54,10 @@ export default function(eleventyConfig) {
         return JSON.stringify(str, null, 2);
     });
 
+    eleventyConfig.addFilter("json", function(data) {
+        return JSON.stringify(data);
+    });
+
     return {
         dir: {
             input: ".",        // Input directory
