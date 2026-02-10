@@ -98,21 +98,23 @@ async function getVideos() {
             return acc;
         }
 
-        const processed = video.value.feed.entry.map((entry) => {
-            return {
-                title: entry.title,
-                link: entry.link[0].$.href,
-                author: entry.author[0].name,
-                published: entry.published,
-                dateValue: Date.parse(entry.published),
-                thumbnail: entry["media:group"][0]["media:thumbnail"][0].$,
-                description: entry["media:group"][0]["media:description"][0],
-                starRating: entry["media:group"][0]["media:community"][0]["media:starRating"][0].$,
-                statistics: entry["media:group"][0]["media:community"][0]["media:statistics"][0].$,
-            }
+        video.value.feed.entry.forEach((entry) => {
+            entry.dateValue = Date.parse(entry.published);
         })
 
-        return acc.concat(processed);
+        const newestVideo = video.value.feed.entry.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
+
+        const normalizedVideo = {
+            ...newestVideo,
+            link: newestVideo.link[0].$.href,
+            author: newestVideo.author[0].name,
+            thumbnail: newestVideo["media:group"][0]["media:thumbnail"][0].$,
+            description: newestVideo["media:group"][0]["media:description"][0],
+            starRating: newestVideo["media:group"][0]["media:community"][0]["media:starRating"][0].$,
+            statistics: newestVideo["media:group"][0]["media:community"][0]["media:statistics"][0].$,
+        };
+
+        return [...acc, normalizedVideo];
     }, []);
 
     const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
