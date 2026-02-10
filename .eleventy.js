@@ -40,7 +40,11 @@ export default function(eleventyConfig) {
         const day2 = date2.toLocaleDateString('nl-NL', { day: 'numeric', timeZone: 'Europe/Amsterdam' });
 
         if (month1 === month2) {
-            return `${day1}&ndash;${day2} ${month1}`;
+            if (day1 === day2) {
+                return `${day1} ${month1}`;
+            } else {
+                return `${day1}&ndash;${day2} ${month1}`;
+            }
         } else {
             return `${day1} ${month1}&ndash;${day2} ${month2}`;
         }
