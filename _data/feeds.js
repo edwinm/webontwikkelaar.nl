@@ -136,7 +136,12 @@ async function getConferences() {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10_000);
 
-    const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey);
+    const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey, {
+        auth: {
+            persistSession: false,
+            autoRefreshToken: false,
+        }
+    });
 
     const { data, error } = await supabase
         .from('conferences_with_location')
@@ -145,6 +150,8 @@ async function getConferences() {
         .order('start_date', { ascending: true })
         .limit(10)
         .abortSignal(controller.signal);
+
+    clearTimeout(timeout);
 
     return data;
 }
