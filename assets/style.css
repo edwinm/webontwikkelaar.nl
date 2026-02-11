@@ -270,12 +270,19 @@
 
     .city {
         position: absolute;
-        left: calc(-235.36px + 104.98px * var(--lon) - 4px);
-        top: calc(8951.90px - 166.80px * var(--lat) - 4px);
-        width: 8px;
-        height: 8px;
+        left: calc(-235.36px + 104.98px * var(--lon) - 5px);
+        top: calc(8951.90px - 166.80px * var(--lat) - 5px);
+        width: 10px;
+        height: 10px;
         border-radius: 50%;
         background-color: red;
+        outline: rgba(100% 0 0 / 0.6) solid;
+        outline-offset: -1px;
+        transition: outline-offset 250ms ease;
+
+        &:hover {
+            outline-offset: 10px;
+        }
     }
 
     .conf-table {
