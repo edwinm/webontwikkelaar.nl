@@ -11,7 +11,9 @@ const CACHE_FILE_EXP = 60 * 60; // 1 hour
 
 const parseXML = promisify(parseString);
 
-const parser = new Parser();
+const parser = new Parser({
+    timeout: 10_000,
+});
 
 export default async function() {
     const fileData = await readJsonIfNew(CACHE_FILE_NAME, CACHE_FILE_EXP);
@@ -90,7 +92,8 @@ async function getVideos() {
     const ids = JSON.parse(response);
 
     const videoPromises = ids.map(async (idData) => {
-        const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`);
+        const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
+            {signal: AbortSignal.timeout(10_000)});
         const text = await response.text();
         const result = await parseXML(text);
         return result;
@@ -130,6 +133,9 @@ async function getVideos() {
 async function getConferences() {
     const today = new Intl.DateTimeFormat('sv-SE').format(new Date());
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10_000);
+
     const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey);
 
     const { data, error } = await supabase
@@ -137,7 +143,8 @@ async function getConferences() {
         .select()
         .gte('end_date', today)
         .order('start_date', { ascending: true })
-        .limit(10);
+        .limit(10)
+        .abortSignal(controller.signal);
 
     return data;
 }
