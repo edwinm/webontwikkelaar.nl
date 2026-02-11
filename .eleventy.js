@@ -1,4 +1,8 @@
 export default function(eleventyConfig) {
+    eleventyConfig.on('eleventy.after', async () => {
+        process.exit(0); // horse remedy against hanging 11ty
+    });
+
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy({ "assets-root": "/" });
 
