@@ -1,11 +1,10 @@
 import { getGlobalDispatcher } from 'undici';
 
-eleventyConfig.on('eleventy.after', async () => {
-  await getGlobalDispatcher().close();
-  // process.exit(0); // horse remedy
-});
-
 export default function(eleventyConfig) {
+    eleventyConfig.on('eleventy.after', async () => {
+      await getGlobalDispatcher().close();
+      // process.exit(0); // horse remedy
+    });
 
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy({ "assets-root": "/" });
