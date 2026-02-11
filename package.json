@@ -21,7 +21,6 @@
     "@11ty/eleventy": "^3.1.2",
     "@supabase/supabase-js": "^2.91.1",
     "rss-parser": "^3.13.0",
-    "undici": "^7.21.0",
     "xml2js": "^0.6.2"
   },
   "dependencies": {
