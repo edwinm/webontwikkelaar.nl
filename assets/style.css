@@ -261,7 +261,7 @@
         }
     }
 
-    @media (max-width: 1210px) {
+    @media (max-width: 1175px) {
         .map {
             display: none;
         }
