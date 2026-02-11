@@ -8,9 +8,6 @@ permalink: /index.html
 <h2>conferenties</h2>
 
 <section class="conferences">
-    <!--
-    {{ feeds.cities | json }}
-    -->
     <table class="conf-table">
         {%- for conference in feeds.conferences -%}
         <tr class="conf-row">
@@ -21,6 +18,9 @@ permalink: /index.html
         {%- endfor -%}
     </table>
     <div class="map">
+        {%- for city in feeds.cities -%}
+            <div class="city ${city.city}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
+        {%- endfor -%}
         <img src="/assets/ne-be.svg" alt="Kaart van Nederland en Vlaanderen"/>
     </div>
 </section>

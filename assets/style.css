@@ -249,6 +249,7 @@
     }
 
     .map {
+        position: relative;
         flex: 0 0 auto;
         display: flex;
         align-items: stretch;
@@ -265,6 +266,16 @@
         .map {
             display: none;
         }
+    }
+
+    .city {
+        position: absolute;
+        left: calc(-235.36px + 104.98px * var(--lon) - 4px);
+        top: calc(8951.90px - 166.80px * var(--lat) - 4px);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: red;
     }
 
     .conf-table {
