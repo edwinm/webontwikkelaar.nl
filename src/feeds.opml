@@ -144,6 +144,7 @@
             <outline type="rss" text="1 Thing A Week" title="1 Thing A Week" xmlUrl="https://www.1thingaweek.com/feeds/main/xml" htmlUrl="https://www.1thingaweek.com/"/>
             <outline type="rss" text="Adventures in Nodeland" title="Adventures in Nodeland" xmlUrl="https://adventures.nodeland.dev/rss.xml" htmlUrl="https://adventures.nodeland.dev/"/>
             <outline type="rss" text="Frontend Masters" title="Frontend Masters" xmlUrl="https://frontendmasters.com/blog/feed/" htmlUrl="https://frontendmasters.com/blog/"/>
+            <outline type="rss" text="web.dev: Blog" title="web.dev: Blog" xmlUrl="https://web.dev/static/blog/feed.xml" htmlUrl="https://web.dev/blog"/>
         </outline>
     </body>
 </opml>
