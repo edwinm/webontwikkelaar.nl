@@ -278,6 +278,7 @@
         background-color: red;
         outline: rgba(100% 0 0 / 0.6) solid;
         outline-offset: -1px;
+        outline-width: 2px;
         transition: outline-offset 250ms ease;
 
         &:hover {

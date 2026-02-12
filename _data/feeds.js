@@ -93,7 +93,7 @@ async function getVideos() {
 
     const videoPromises = ids.map(async (idData) => {
         const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
-            {signal: AbortSignal.timeout(10_000)});
+            {signal: AbortSignal.timeout(20_000)});
         const text = await response.text();
         const result = await parseXML(text);
         return result;
@@ -143,7 +143,7 @@ async function getConferences() {
         }
     });
 
-    const { data, error } = await supabase
+    const { data: conferences, error } = await supabase
         .from('conferences_with_location')
         .select()
         .gte('end_date', today)
@@ -153,7 +153,10 @@ async function getConferences() {
 
     clearTimeout(timeout);
 
-    return data;
+    const conferencesWithSlug = conferences.map((conference) =>
+        ({...conference, slug: toSlug(conference.city)}))
+
+    return conferencesWithSlug;
 }
 
 function getCities(conferences) {
@@ -161,14 +164,25 @@ function getCities(conferences) {
 
     const citiesLoc = cities.map((city) => {
         const conference = conferences.find((conf) => conf.city === city);
+        const slug = toSlug(city);
         return ({
             city,
+            slug,
             latitude: conference.latitude,
             longitude: conference.longitude,
         });
     });
 
     return citiesLoc;
+}
+
+function toSlug(str) {
+    return str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '') // strip diacritics
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')    // non-alphanumeric → single hyphen
+        .replace(/^-|-$/g, '');          // trim leading/trailing hyphens
 }
 
 async function readOPML(filepath) {

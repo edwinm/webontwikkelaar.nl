@@ -5,12 +5,25 @@ permalink: /index.html
 
 
 {% if feeds.conferences.length > 0 %}
-<h2>conferenties</h2>
+
+    <style>
+    {%- for city in feeds.cities -%}
+        .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }}>td {
+            color: white;
+            background: #494949;
+        }
+        .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
+            outline-offset: 10px;
+        }
+    {%- endfor -%}
+    </style>
+
+    <h2>conferenties</h2>
 
 <section class="conferences">
     <table class="conf-table">
         {%- for conference in feeds.conferences -%}
-        <tr class="conf-row">
+        <tr class="conf-row city-{{ conference.slug }}">
             <td><a class="conf-link" href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a></td>
             <td>{{ conference.city }}</td>
             <td>{{ conference.title }}</td>
@@ -19,7 +32,7 @@ permalink: /index.html
     </table>
     <div class="map">
         {%- for city in feeds.cities -%}
-            <div class="city ${city.city}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
+            <div class="city city-{{ city.slug }}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
         {%- endfor -%}
         <img src="/assets/ne-be.svg" alt="Kaart van Nederland en Vlaanderen"/>
     </div>
