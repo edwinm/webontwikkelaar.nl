@@ -201,6 +201,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 0.8rem 0.5rem;
+        align-items: stretch;
     }
 
     .video {
@@ -208,7 +209,9 @@
     }
 
     .video-link {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         padding: 6px;
         text-decoration: none;
         color: inherit;
