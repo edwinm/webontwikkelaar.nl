@@ -319,11 +319,14 @@
             background: #f3f3f3;
         }
 
-        & td:nth-child(3) {
-            width: 100%;
+        & td:not(:first-child) {
+            width: 30%;
             max-width: 0;
             overflow: hidden;
             text-overflow: ellipsis;
+        }
+        & td:nth-child(3) {
+            width: 70%;
         }
 
         &:hover > td, &:focus-within td {
