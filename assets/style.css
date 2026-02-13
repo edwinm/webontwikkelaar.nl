@@ -240,8 +240,20 @@
         line-clamp: 2;
     }
 
-    .updated {
+    .small {
         font-size: 1.2rem;
+    }
+
+    .podcast-thumbnail {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        filter: saturate(30%) contrast(70%);
+        margin-bottom: 4px;
+    }
+
+    .video-link:hover .podcast-thumbnail {
+        filter: saturate(100%)  contrast(100%);
     }
 
     .conferences {

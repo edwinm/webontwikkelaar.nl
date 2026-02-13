@@ -8,6 +8,7 @@ permalink: /index.html
 
     <style>
     {%- for city in feeds.cities -%}
+
         .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }}>td {
             color: white;
             background: #494949;
@@ -15,6 +16,7 @@ permalink: /index.html
         .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
             outline-offset: 10px;
         }
+
     {%- endfor -%}
     </style>
 
@@ -31,8 +33,10 @@ permalink: /index.html
         {%- endfor -%}
     </table>
     <div class="map">
+
         {%- for city in feeds.cities -%}
             <div class="city city-{{ city.slug }}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
+
         {%- endfor -%}
         <img src="/assets/nl-vl.svg" alt="Kaart van Nederland en Vlaanderen"/>
     </div>
@@ -46,7 +50,7 @@ permalink: /index.html
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
-                        <h4 class="item-feed-title">{{ post.feedTitle }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ conference.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></h4>
+                        <h4 class="item-feed-title">{{ post.feedTitle }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></h4>
                         <h3 class="item-title">{{ post.title }}</h3>
                 </a>
         </li>
@@ -61,8 +65,8 @@ permalink: /index.html
         {%- for video in feeds.videos -%}
                 <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
-                                <img class="video-thumbnail" src="{{ video.thumbnail.url }}">
-                                <h4 class="item-feed-title">{{ video.author }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ conference.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></h4>
+                                <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
+                                <h4 class="item-feed-title">{{ video.author }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></h4>
                                 <h3 class="video-title">{{ video.title }}</h3>
                         </a>
                 </li>
@@ -70,4 +74,23 @@ permalink: /index.html
 </ul>
 {% endif %}
 
-<p class="updated">Laatst bijgwerkt: {{ feeds.lastUpdated | dutchLongDate }}</p>
+
+{% if feeds.podcasts.items.length > 0 %}
+    <h2>podcasts</h2>
+
+    <ul class="box video-box">
+        {%- for podcast in feeds.podcasts.items -%}
+            <li class="video">
+                <a class="link video-link" href="{{ podcast.link }}">
+                    <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
+                    <h4 class="item-feed-title">{{ podcast.creator }} • {{ podcast.duration | duration }} • <span class="item-feed-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span></h4>
+                    <h3 class="video-title">{{ podcast.title }}</h3>
+                </a>
+            </li>
+        {%- endfor -%}
+    </ul>
+{% endif %}
+
+<p class="small"><a href="https://podcastindex.org/" rel="nofollow">Podcast Index</a> is used to gather podcast data</p>
+
+<p class="small">Laatst bijgwerkt: {{ feeds.lastUpdated | dutchLongDate }}</p>

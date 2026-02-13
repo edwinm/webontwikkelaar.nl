@@ -55,16 +55,29 @@ export default function(eleventyConfig) {
         }
     });
 
-    eleventyConfig.addFilter("ymdDate", function(str) {
-        return new Intl.DateTimeFormat('sv-SE').format(new Date());
+    eleventyConfig.addFilter("ymdDate", function(timestamp) {
+        console.log(timestamp);
+        if(!timestamp) return "-";
+        return new Intl.DateTimeFormat('sv-SE').format(new Date(timestamp));
     });
 
-    eleventyConfig.addFilter("stringify", function(str) {
-        return JSON.stringify(str, null, 2);
+    eleventyConfig.addFilter("duration", (seconds) => {
+      const s = parseInt(seconds, 10);
+      if (isNaN(s)) return "";
+
+      const h = Math.floor(s / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const sec = s % 60;
+
+      const pad = (n) => String(n).padStart(2, "0");
+
+      return h > 0
+        ? `${h}:${pad(m)}:${pad(sec)}`
+        : `${m}:${pad(sec)}`;
     });
 
     eleventyConfig.addFilter("json", function(data) {
-        return JSON.stringify(data);
+        return JSON.stringify(data, null, 2);
     });
 
     return {

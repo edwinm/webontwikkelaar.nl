@@ -4,6 +4,7 @@ import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
 import { createClient } from '@supabase/supabase-js';
+import crypto from "node:crypto";
 import 'dotenv/config';
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
@@ -25,16 +26,35 @@ export default async function() {
 
     console.log('>> Fetching all urls');
 
+    const podcastList = {
+        "Syntax": 522889,
+        "PodRocket": 1329334,
+        "Frontend coffee break" :5592508,
+        "Front-end fire": 6545102,
+        "Shoptalk": 165630,
+        "Modern web": 174866,
+        "JS Party": 403674,
+        "Off the main thread": 6698247,
+    }
+
     const conferences = await getConferences();
 
     const cities = getCities(conferences);
 
+    const videos = await getVideos();
+    const posts = await getBlogs();
+
+    const podcasts = await getPodcasts(podcastList);
+
+    const lastUpdated = new Date();
+
     const data = {
-        videos: await getVideos(),
-        posts: await getBlogs(),
         conferences,
         cities,
-        lastUpdated: new Date(),
+        videos,
+        posts,
+        podcasts,
+        lastUpdated,
     };
 
     await writeJson(CACHE_FILE_NAME, data);
@@ -190,4 +210,38 @@ async function readOPML(filepath) {
     const result = await parseXML(opmlText);
 
     return result;
+}
+
+async function getPodcasts(podcastList) {
+    const apiKey = process.env.PodcastApiKey;
+    const apiSecret = process.env.PodcastApiSecret;
+    const apiHeaderTime = Math.floor(Date.now() / 1000);
+
+    const hash = crypto
+        .createHash("sha1")
+        .update(apiKey + apiSecret + apiHeaderTime)
+        .digest("hex");
+
+    const podcastIds = Object.values(podcastList).join();
+
+    const response = await fetch(
+        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`,
+        {
+            headers: {
+                "User-Agent": "webontwikkelaar.nl/1.0",
+                "X-Auth-Key": apiKey,
+                "X-Auth-Date": String(apiHeaderTime),
+                Authorization: hash,
+            },
+        }
+    );
+
+    const podcastData = await response.json();
+
+    podcastData.items.forEach((podcast) => {
+       podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
+       podcast.dateValue = podcast.datePublished * 1000;
+    });
+
+    return podcastData;
 }
