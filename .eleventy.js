@@ -56,8 +56,6 @@ export default function(eleventyConfig) {
     });
 
     eleventyConfig.addFilter("ymdDate", function(timestamp) {
-        console.log(timestamp);
-        if(!timestamp) return "-";
         return new Intl.DateTimeFormat('sv-SE').format(new Date(timestamp));
     });
 
