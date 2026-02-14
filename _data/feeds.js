@@ -35,6 +35,9 @@ export default async function() {
         "Modern web": 174866,
         "JS Party": 403674,
         "Off the main thread": 6698247,
+        "Changelog News": 6299937,
+        "DejaVue": 6849531,
+        "TypeScript.fm": 7184981,
     }
 
     const conferences = await getConferences();
@@ -163,7 +166,7 @@ async function getConferences() {
         }
     });
 
-    const { data: conferences, error } = await supabase
+    const { data: conferences } = await supabase
         .from('conferences_with_location')
         .select()
         .gte('end_date', today)
