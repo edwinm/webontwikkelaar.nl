@@ -228,7 +228,7 @@ async function getPodcasts(podcastList) {
     const podcastIds = Object.values(podcastList).join();
 
     const response = await fetch(
-        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`,
+        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=6`,
         {
             headers: {
                 "User-Agent": "webontwikkelaar.nl/1.0",
