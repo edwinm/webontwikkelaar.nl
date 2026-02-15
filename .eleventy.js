@@ -63,17 +63,16 @@ export default function(eleventyConfig) {
 
     eleventyConfig.addFilter("duration", (seconds) => {
       const s = parseInt(seconds, 10);
-      if (isNaN(s)) return "";
+      if (isNaN(s)) {
+        return "";
+      }
 
       const h = Math.floor(s / 3600);
-      const m = Math.floor((s % 3600) / 60);
-      const sec = s % 60;
-
-      const pad = (n) => String(n).padStart(2, "0");
+      const m = Math.round((s % 3600) / 60);
 
       return h > 0
-        ? `${h}:${pad(m)}:${pad(sec)}`
-        : `${m}:${pad(sec)}`;
+        ? `${h}:${String(m).padStart(2, "0")}m`
+        : `${m}m`;
     });
 
     eleventyConfig.addFilter("json", function(data) {
