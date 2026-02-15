@@ -1,8 +1,10 @@
 export default function(eleventyConfig) {
     eleventyConfig.on('eleventy.after', async () => {
-        setTimeout(() => {
-            process.exit(0); // horse remedy against hanging 11ty
-        }, 60_000)
+        if (process.env.NODE_ENV !== 'development') {
+            setTimeout(() => {
+                process.exit(0); // horse remedy against hanging 11ty
+            }, 60_000)
+        }
     });
 
     eleventyConfig.addPassthroughCopy("assets");
