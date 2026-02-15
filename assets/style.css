@@ -88,7 +88,7 @@
         width: fit-content;
         margin: 2rem 0;
         padding: 8px 50px 8px;
-        font-size: clamp(2rem, 3vw, 3rem);
+        font-size: clamp(2rem, 3vw, 4rem);
     }
 
     main {
@@ -241,7 +241,8 @@
         line-clamp: 2;
     }
 
-    .small {
+    .update {
+        margin: 2rem 0 0;
         font-size: 1.2rem;
     }
 
@@ -265,6 +266,10 @@
     }
 
     .podcast-box {
+        padding-bottom: 1rem;
+    }
+
+    .podcast-list {
         column-width: 500px;
         column-gap: 2rem;
         padding: 0;
@@ -277,6 +282,7 @@
 
     .podcast {
         list-style: none;
+        margin-bottom: 0.45rem;
     }
 
     .podcast-creator {
@@ -303,7 +309,12 @@
     }
 
     .podcast-date {
-        margin-left: 0.25rem;
+        margin: 0 0.25rem;
+    }
+
+    .podcast-duration {
+        margin: 0 0.25rem;
+        color: #87a9ac;
     }
 
     .podcast-logo {
@@ -347,11 +358,12 @@
 
     .podcast-attribution {
         display: block;
-        margin-top: 1rem;
+        margin-top: 0.2rem;
         color: inherit;
         font-size: 1rem;
         text-decoration: none;
         text-align: right;
+        opacity: 0.5;
     }
 
     .conferences {
