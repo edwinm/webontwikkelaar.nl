@@ -81,40 +81,44 @@ permalink: /index.html
 {% if feeds.podcasts.items.length > 0 %}
     <h2>podcasts</h2>
 
-    <ul class="box podcast-box">
-        {%- for podcast in feeds.podcasts.items -%}
-            <li class="podcast">
-                <div class="podcast-item" href="{{ podcast.link }}">
+    <div class="box">
+        <ul class="podcast-box">
+            {%- for podcast in feeds.podcasts.items -%}
+                <li class="podcast">
+                    <div class="podcast-item" href="{{ podcast.link }}">
 
-                    <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
+                        <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
 
-                    <div class="podcast-content">
-                        <h4 class="item-feed-title podcast-creator">
-                            {{ podcast.creator }}
-                            • {{ podcast.duration | duration }}
-                            • <span class="item-feed-date podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
-                            <div class="podcast-icons">
-                            {% if podcast.link != "" %}
-                                <a class="podcast-link" href="{{ podcast.link }}"><img class="podcast-logo podcast-link-logo" src="/assets/link.svg" alt="Link naar podcastpagina"/></a>
-                            {% endif %}
-                            {% if podcast.feedItunesId %}
-                                <a class="podcast-apple" href="https://podcasts.apple.com/nl/podcast/id{{ podcast.feedItunesId }}"><img class="podcast-logo podcast-apple-logo" src="/assets/apple.svg" alt="Link naar Apple Podcasts"/></a>
-                            {% endif %}
+                        <div class="podcast-content">
+                            <h4 class="item-feed-title podcast-creator">
+                                {{ podcast.creator }}
+                                • {{ podcast.duration | duration }}
+                                • <span class="item-feed-date podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
+                                <div class="podcast-icons">
+                                {% if podcast.link != "" %}
+                                    <a class="podcast-link" href="{{ podcast.link }}"><img class="podcast-logo podcast-link-logo" src="/assets/link.svg" alt="Link naar podcastpagina"/></a>
+                                {% endif %}
+                                {% if podcast.feedItunesId %}
+                                    <a class="podcast-apple" href="https://podcasts.apple.com/nl/podcast/id{{ podcast.feedItunesId }}"><img class="podcast-logo podcast-apple-logo" src="/assets/apple.svg" alt="Link naar Apple Podcasts"/></a>
+                                {% endif %}
+                                </div>
+
+
+                            </h4>
+                            <h3 class="podcast-title">{{ podcast.title }}</h3>
+                            <div class="podcast-controls">
+                                <audio class="podcast-audio" controls preload="none" src="{{ podcast.enclosureUrl }}"></audio>
                             </div>
-
-
-                        </h4>
-                        <h3 class="podcast-title">{{ podcast.title }}</h3>
-                        <div class="podcast-controls">
-                            <audio class="podcast-audio" controls preload="none" src="{{ podcast.enclosureUrl }}"></audio>
                         </div>
                     </div>
-                </div>
-            </li>
-        {%- endfor -%}
-    </ul>
+                </li>
+            {%- endfor -%}
+        </ul>
+        <a class="podcast-attribution" href="https://podcastindex.org" target="_blank" rel="nofollow, noopener">
+            Podcastgegevens geleverd door Podcast Index
+        </a>
+    </div>
 {% endif %}
 
-<p class="small"><a href="https://podcastindex.org/" rel="nofollow">Podcast Index</a> is used to gather podcast data</p>
 
 <p class="small">Laatst bijgwerkt: {{ feeds.lastUpdated | dutchLongDate }}</p>

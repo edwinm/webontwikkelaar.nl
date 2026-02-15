@@ -102,7 +102,6 @@
     }
 
     .box {
-        min-height: 200px;
         padding: 2rem;
         background-color: #f3f3f3;
     }
@@ -268,6 +267,8 @@
     .podcast-box {
         column-width: 500px;
         column-gap: 2rem;
+        padding: 0;
+        margin: 0;
 
         & > * {
             break-inside: avoid;
@@ -342,6 +343,15 @@
 
     audio::-webkit-media-controls-panel {
         background: #e7e7e7;
+    }
+
+    .podcast-attribution {
+        display: block;
+        margin-top: 1rem;
+        color: inherit;
+        font-size: 1rem;
+        text-decoration: none;
+        text-align: right;
     }
 
     .conferences {
