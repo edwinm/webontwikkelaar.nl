@@ -116,7 +116,7 @@ async function getVideos() {
 
     const videoPromises = ids.map(async (idData) => {
         const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
-            {signal: AbortSignal.timeout(20_000)});
+            {signal: AbortSignal.timeout(40_000)});
         const text = await response.text();
         const result = await parseXML(text);
         return result;
@@ -228,7 +228,7 @@ async function getPodcasts(podcastList) {
     const podcastIds = Object.values(podcastList).join();
 
     const response = await fetch(
-        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=6`,
+        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`,
         {
             headers: {
                 "User-Agent": "webontwikkelaar.nl/1.0",

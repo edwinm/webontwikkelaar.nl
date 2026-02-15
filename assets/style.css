@@ -103,7 +103,7 @@
 
     .box {
         min-height: 200px;
-        padding: 2rem 2rem 0.5rem;
+        padding: 2rem;
         background-color: #f3f3f3;
     }
 
@@ -116,6 +116,8 @@
     .item-box {
         column-width: 500px;
         column-gap: 2rem;
+        padding-bottom: 0.5rem;
+
 
         & > * {
             break-inside: avoid;
@@ -259,23 +261,87 @@
         margin-bottom: 4px;
     }
 
+    .podcast-item:hover .podcast-thumbnail {
+        filter: saturate(100%)  contrast(100%);
+    }
+
     .podcast-box {
-        gap: 0.8rem 0.5rem;
+        column-width: 500px;
+        column-gap: 2rem;
+
+        & > * {
+            break-inside: avoid;
+        }
     }
 
     .podcast {
         list-style: none;
     }
 
+    .podcast-creator {
+        display: flex;
+    }
+
+    .podcast-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     .podcast-title {
+        margin: 0;
         font-size: 1.2rem;
         font-weight: 450;
+        text-wrap: auto;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+    }
+
+    .podcast-date {
+        margin-left: 0.25rem;
+    }
+
+    .podcast-logo {
+        opacity: 0.3;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .podcast-icons {
+        display: flex;
+        gap: 0.5rem;
+        margin-left: auto;
+        padding-right: 2px;
+    }
+
+    .podcast-apple-logo {
+        width: 1rem;
+        height: 1.23rem;
+    }
+
+    .podcast-link-logo {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 
     .podcast-controls {
         display: flex;
         gap: 0.8rem;
         align-items: center;
+    }
+
+    .podcast-audio {
+        flex: 1;
+    }
+
+    audio::-webkit-media-controls-panel {
+        background: #e7e7e7;
     }
 
     .conferences {
