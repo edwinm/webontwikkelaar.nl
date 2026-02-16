@@ -28,7 +28,12 @@ permalink: /index.html
         <tr class="conf-row city-{{ conference.slug }}">
             <td><a class="conf-link" href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a></td>
             <td>{{ conference.city }}</td>
-            <td>{{ conference.title }}</td>
+            <td>
+                <a class="conf-link" href="{{ conference.url }}">
+                    <h4 class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }} • {{ conference.city }}</h4>
+                    {{ conference.title }}
+                </a>
+            </td>
         </tr>
         {%- endfor -%}
     </table>

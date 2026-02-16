@@ -466,4 +466,23 @@
             cursor: pointer;
         }
     }
+
+    .conf-meta {
+        display: none;
+    }
+
+    @media (width < 768px) {
+        .conf-row {
+            & td {
+                padding: 0.5rem;
+            }
+            & td:not(:nth-child(3)) {
+                display: none;
+            }
+        }
+
+        .conf-meta {
+            display: block;
+        }
+    }
 }
