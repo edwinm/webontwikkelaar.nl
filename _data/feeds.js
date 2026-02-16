@@ -9,11 +9,13 @@ import 'dotenv/config';
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
+const USER_AGENT = 'webontwikkelaar.nlAd/1.0';
 
 const parseXML = promisify(parseString);
 
 const parser = new Parser({
     timeout: 10_000,
+    headers: {'User-Agent': USER_AGENT},
 });
 
 export default async function() {
@@ -116,7 +118,11 @@ async function getVideos() {
 
     const videoPromises = ids.map(async (idData) => {
         const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
-            {signal: AbortSignal.timeout(40_000)});
+            {signal: AbortSignal.timeout(40_000),
+                headers: {
+                    'User-Agent': USER_AGENT,
+                },
+            });
         const text = await response.text();
         const result = await parseXML(text);
         return result;
@@ -231,7 +237,7 @@ async function getPodcasts(podcastList) {
         `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`,
         {
             headers: {
-                "User-Agent": "webontwikkelaar.nl/1.0",
+                'User-Agent': USER_AGENT,
                 "X-Auth-Key": apiKey,
                 "X-Auth-Date": String(apiHeaderTime),
                 Authorization: hash,
