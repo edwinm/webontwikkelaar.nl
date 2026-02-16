@@ -389,7 +389,7 @@
         }
     }
 
-    @media (max-width: 1175px) {
+    @media (max-width: 1400px) {
         .map {
             display: none;
         }
