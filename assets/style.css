@@ -261,7 +261,7 @@
         margin-bottom: 4px;
     }
 
-    @media (width < 400px) {
+    @media (width < 410px) {
         .podcast-thumbnail {
             width: 100px;
             height: 100px;
