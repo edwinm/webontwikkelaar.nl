@@ -184,7 +184,7 @@
     .item-feed-title {
         margin: 0;
         font-size: 1rem;
-        font-weight: 650;
+        font-weight: 600;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -396,7 +396,7 @@
         }
     }
 
-    @media (width < 1400px) {
+    @media (width < 1160px) {
         .map {
             display: none;
         }
@@ -471,7 +471,7 @@
         display: none;
     }
 
-    @media (width < 768px) {
+    @media (width < 768px) or (pointer: coarse) {
         .conf-row {
             & td {
                 padding: 0.5rem;
