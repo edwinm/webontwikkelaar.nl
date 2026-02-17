@@ -118,7 +118,7 @@ async function getVideos() {
 
     const videoPromises = ids.map(async (idData) => {
         const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
-            {signal: AbortSignal.timeout(60_000),
+            {signal: AbortSignal.timeout(120_000),
                 headers: {
                     'User-Agent': USER_AGENT,
                 },
@@ -132,7 +132,7 @@ async function getVideos() {
 
     const allItems = videos.reduce((acc, video)=>{
         if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
-            console.log('Failed fetching video', video.value?.feed?.title);
+            console.log('Failed fetching video', video.reason);
             return acc;
         }
 
