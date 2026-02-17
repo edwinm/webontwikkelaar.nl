@@ -432,8 +432,10 @@
     .conf-link {
         color: inherit;
         text-decoration: none;
+    }
 
-        &::after {
+    @media not (pointer: coarse) {
+        .conf-link::after {
             content: '';
             position: absolute;
             inset: 0;
