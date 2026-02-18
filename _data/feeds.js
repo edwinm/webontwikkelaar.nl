@@ -124,15 +124,20 @@ async function getVideos() {
                 },
             });
         const text = await response.text();
-        const result = await parseXML(text);
-        return result;
+        try {
+            const result = await parseXML(text);
+            return result;
+        } catch (error) {
+            console.error("Failed XML", text);
+            throw new Error(`Failed to parse XML input`, { cause: error });
+        }
     });
 
     const videos = await Promise.allSettled(videoPromises);
 
     const allItems = videos.reduce((acc, video)=>{
         if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
-            console.log('Failed fetching video', video.reason);
+            console.error('Failed fetching video', video.reason);
             return acc;
         }
 
