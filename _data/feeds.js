@@ -9,7 +9,8 @@ import 'dotenv/config';
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
-const USER_AGENT = 'webontwikkelaar.nlAd/1.0';
+// const USER_AGENT = 'webontwikkelaar.nl/1.0';
+const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0';
 
 const parseXML = promisify(parseString);
 
