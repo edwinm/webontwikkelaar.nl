@@ -72,45 +72,57 @@ async function getBlogs() {
     const opml = await readOPML('src/feeds.opml');
     const blogs = opml.opml.body[0].outline[0].outline.map(outline => outline.$.xmlUrl);
 
-    const feedPromises = blogs.map(blog => parser.parseURL(blog))
+    const feedPromises = blogs.map(blog => {
+        try {
+            return parser.parseURL(blog)
+        } catch (error) {
+            console.error("Blog failed", blog);
+            throw new Error(`Failed to parse`, { cause: error });
+        }
+    });
 
-    const feeds = await Promise.allSettled(feedPromises);
+    try {
+        const feeds = await Promise.allSettled(feedPromises);
 
-    const processed = feeds.reduce((acc, feed)=>{
-        if (feed.status === 'rejected' || feed.value.items.length === 0) {
+        const processed = feeds.reduce((acc, feed) => {
+            if (feed.status === 'rejected' || feed.value.items.length === 0) {
+                return acc;
+            }
+
+            const items = feed.value.items;
+
+            items.forEach((item) => {
+                const pubDate = (item.pubDate || item.isoDate || item["dc:date"])?.trim();
+                item.dateValue = Date.parse(pubDate);
+            });
+
+            const newestItem = items.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
+
+            if (newestItem.title.trim() === "") {
+                return acc; // Skip items without title
+            }
+
+            newestItem.feedTitle = feed.value.title;
+            newestItem.language = feed.value.language;
+            newestItem["content"] = "";
+            newestItem["contentSnippet"] = "";
+            newestItem["content:encoded"] = "";
+            newestItem["content:encodedSnippet"] = "";
+
+            acc.push(newestItem);
+
             return acc;
-        }
+        }, []);
 
-        const items = feed.value.items;
+        const processedSorted = processed.toSorted((a, b) => (b.dateValue || 0) - (a.dateValue || 0));
 
-        items.forEach((item) => {
-            const pubDate = (item.pubDate || item.isoDate || item["dc:date"])?.trim();
-            item.dateValue = Date.parse(pubDate);
-        });
+        const sliced = processedSorted.slice(0, 12);
 
-        const newestItem = items.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
-
-        if (newestItem.title.trim() === "") {
-            return acc; // Skip items without title
-        }
-
-        newestItem.feedTitle = feed.value.title;
-        newestItem.language = feed.value.language;
-        newestItem["content"] = "";
-        newestItem["contentSnippet"] = "";
-        newestItem["content:encoded"] = "";
-        newestItem["content:encodedSnippet"] = "";
-
-        acc.push(newestItem);
-
-        return acc;
-    }, []);
-
-    const processedSorted = processed.toSorted((a, b) => (b.dateValue || 0) - (a.dateValue || 0));
-
-    const sliced = processedSorted.slice(0, 12);
-
-    return sliced;
+        return sliced;
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
 }
 
 async function getVideos() {
@@ -118,7 +130,8 @@ async function getVideos() {
     const ids = JSON.parse(response);
 
     const videoPromises = ids.map(async (idData) => {
-        const response = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`,
+        const videoUrl =`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`;
+        const response = await fetch(videoUrl,
             {signal: AbortSignal.timeout(120_000),
                 headers: {
                     'User-Agent': USER_AGENT,
@@ -129,41 +142,46 @@ async function getVideos() {
             const result = await parseXML(text);
             return result;
         } catch (error) {
-            console.error("Failed XML", text);
+            console.error("Failed video url", videoUrl);
             throw new Error(`Failed to parse XML input`, { cause: error });
         }
     });
 
-    const videos = await Promise.allSettled(videoPromises);
+    try {
+        const videos = await Promise.allSettled(videoPromises);
 
-    const allItems = videos.reduce((acc, video)=>{
-        if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
-            console.error('Failed fetching video', video.reason);
-            return acc;
-        }
+        const allItems = videos.reduce((acc, video) => {
+            if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
+                console.error('Failed fetching video', video.reason);
+                return acc;
+            }
 
-        video.value.feed.entry.forEach((entry) => {
-            entry.dateValue = Date.parse(entry.published);
-        })
+            video.value.feed.entry.forEach((entry) => {
+                entry.dateValue = Date.parse(entry.published);
+            })
 
-        const newestVideo = video.value.feed.entry.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
+            const newestVideo = video.value.feed.entry.reduce((newest, item) => item.dateValue > newest.dateValue ? item : newest);
 
-        const normalizedVideo = {
-            ...newestVideo,
-            link: newestVideo.link[0].$.href,
-            author: newestVideo.author[0].name,
-            thumbnail: newestVideo["media:group"][0]["media:thumbnail"][0].$,
-            description: newestVideo["media:group"][0]["media:description"][0],
-            starRating: newestVideo["media:group"][0]["media:community"][0]["media:starRating"][0].$,
-            statistics: newestVideo["media:group"][0]["media:community"][0]["media:statistics"][0].$,
-        };
+            const normalizedVideo = {
+                ...newestVideo,
+                link: newestVideo.link[0].$.href,
+                author: newestVideo.author[0].name,
+                thumbnail: newestVideo["media:group"][0]["media:thumbnail"][0].$,
+                description: newestVideo["media:group"][0]["media:description"][0],
+                starRating: newestVideo["media:group"][0]["media:community"][0]["media:starRating"][0].$,
+                statistics: newestVideo["media:group"][0]["media:community"][0]["media:statistics"][0].$,
+            };
 
-        return [...acc, normalizedVideo];
-    }, []);
+            return [...acc, normalizedVideo];
+        }, []);
 
-    const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
+        const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
 
-    return allItemsSorted.slice(0, 12);
+        return allItemsSorted.slice(0, 12);
+    } catch (error) {
+        console.error(error);
+        return [];
+    }
 }
 
 async function getConferences() {
@@ -240,24 +258,32 @@ async function getPodcasts(podcastList) {
 
     const podcastIds = Object.values(podcastList).join();
 
-    const response = await fetch(
-        `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`,
-        {
-            headers: {
-                'User-Agent': USER_AGENT,
-                "X-Auth-Key": apiKey,
-                "X-Auth-Date": String(apiHeaderTime),
-                Authorization: hash,
-            },
-        }
-    );
+    const podcastUrl = `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`;
 
-    const podcastData = await response.json();
+    try {
+        const response = await fetch(
+            podcastUrl,
+            {
+                headers: {
+                    'User-Agent': USER_AGENT,
+                    "X-Auth-Key": apiKey,
+                    "X-Auth-Date": String(apiHeaderTime),
+                    Authorization: hash,
+                },
+            }
+        );
 
-    podcastData.items.forEach((podcast) => {
-       podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
-       podcast.dateValue = podcast.datePublished * 1000;
-    });
+        const podcastData = await response.json();
 
-    return podcastData;
+        podcastData.items.forEach((podcast) => {
+            podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
+            podcast.dateValue = podcast.datePublished * 1000;
+        });
+
+        return podcastData;
+    } catch (error) {
+        console.error("Failed podcast url", podcastUrl);
+        console.error(error);
+        return [];
+    }
 }
