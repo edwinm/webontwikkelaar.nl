@@ -273,14 +273,20 @@ async function getPodcasts(podcastList) {
             }
         );
 
-        const podcastData = await response.json();
+        try {
+            const podcastData = await response.json();
 
-        podcastData.items.forEach((podcast) => {
-            podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
-            podcast.dateValue = podcast.datePublished * 1000;
-        });
+            podcastData.items.forEach((podcast) => {
+                podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
+                podcast.dateValue = podcast.datePublished * 1000;
+            });
 
-        return podcastData;
+            return podcastData;
+        } catch (error) {
+            console.error(error);
+            console.error("Invalid podcast", await response.text());
+            throw new Error(`Failed to parse`, { cause: error });
+        }
     } catch (error) {
         console.error("Failed podcast url", podcastUrl);
         console.error(error);
