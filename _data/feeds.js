@@ -260,8 +260,10 @@ async function getPodcasts(podcastList) {
             }
         );
 
+        let podcastText = "";
         try {
-            const podcastData = await response.json();
+            const podcastText = await response.text();
+            const podcastData = JSON.parse(podcastText);
 
             podcastData.items.forEach((podcast) => {
                 podcast.creator =  Object.keys(podcastList).find((key) => podcastList[key] === podcast.feedId);
@@ -271,7 +273,7 @@ async function getPodcasts(podcastList) {
             return podcastData;
         } catch (error) {
             console.error(error);
-            console.error("Invalid podcast", await response.text());
+            console.error("Invalid podcast", podcastText);
             throw new Error(`Failed to parse`, { cause: error });
         }
     } catch (error) {
