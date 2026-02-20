@@ -4,17 +4,6 @@ const apiKey = process.env.PodcastApiKey;
 const apiSecret = process.env.PodcastApiSecret;
 const apiHeaderTime = Math.floor(Date.now() / 1000);
 
-
-// Syntax 522889
-// PodRocket 1329334
-// Frontend coffee break 5592508
-// Front-end fire 6545102
-// Shoptalk 165630
-// Modern web 174866
-// Frontend happy hour x
-// JS Party 403674
-// Off the main thread 6698247
-
 const hash = crypto
     .createHash("sha1")
     .update(apiKey + apiSecret + apiHeaderTime)
@@ -32,5 +21,5 @@ const response = await fetch(
     }
 );
 
-const data = await response.json();
+const data = await response.text();  // or .json()
 console.log(data);

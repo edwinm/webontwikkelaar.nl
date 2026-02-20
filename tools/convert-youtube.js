@@ -1,6 +1,6 @@
 import {readJson, writeJson} from "../_data/file.js";
 
-const urls = await readJson('src/youtube.json');
+const urls = await readJson('datasrc/youtube.json');
 
 const result = await Promise.all(urls.map(async (url)=>{
     const channel = url.match(/@([a-z0-9_\-]+)/i)[1];

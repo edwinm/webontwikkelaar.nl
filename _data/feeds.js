@@ -6,6 +6,7 @@ import { readFile } from 'fs/promises';
 import { createClient } from '@supabase/supabase-js';
 import crypto from "node:crypto";
 import 'dotenv/config';
+import {podcastList} from "../datasrc/podcasts.js";
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60; // 1 hour
@@ -28,20 +29,6 @@ export default async function() {
     }
 
     console.log('>> Fetching all urls');
-
-    const podcastList = {
-        "Syntax": 522889,
-        "PodRocket": 1329334,
-        "Frontend coffee break" :5592508,
-        "Front-end fire": 6545102,
-        "Shoptalk": 165630,
-        "Modern web": 174866,
-        "JS Party": 403674,
-        "Off the main thread": 6698247,
-        "Changelog News": 6299937,
-        "DejaVue": 6849531,
-        "TypeScript.fm": 7184981,
-    }
 
     const conferences = await getConferences();
 
@@ -69,7 +56,7 @@ export default async function() {
 }
 
 async function getBlogs() {
-    const opml = await readOPML('src/feeds.opml');
+    const opml = await readOPML('datasrc/feeds.opml');
     const blogs = opml.opml.body[0].outline[0].outline.map(outline => outline.$.xmlUrl);
 
     const feedPromises = blogs.map(blog => {
