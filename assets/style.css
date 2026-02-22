@@ -98,7 +98,7 @@
     }
 
     main {
-        padding: 2rem;
+        padding: 1rem 2rem 2rem 2rem;
     }
 
     @media (width < 768px) {
@@ -420,8 +420,8 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: red;
-        outline: rgba(100% 0 0 / 0.6) solid;
+        background-color: #bb5656;
+        outline: rgba(187 86 86 / 0.6) solid;
         outline-offset: -4px;
         outline-width: 4px;
         transition: outline-offset 250ms ease;
