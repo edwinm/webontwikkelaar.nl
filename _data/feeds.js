@@ -273,7 +273,7 @@ async function getPodcasts(podcastList) {
             return podcastData;
         } catch (error) {
             console.error(error);
-            console.error("Invalid podcast", podcastText);
+            console.error("> Invalid podcast", podcastText);
             throw new Error(`Failed to parse`, { cause: error });
         }
     } catch (error) {
