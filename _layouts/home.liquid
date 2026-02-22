@@ -3,6 +3,7 @@ layout: page
 permalink: /index.html
 ---
 
+<h2 class="update">{{ feeds.lastUpdated | dutchLongDate }}</h2>
 
 {% if feeds.conferences.length > 0 %}
 
@@ -120,6 +121,3 @@ permalink: /index.html
         </a>
     </div>
 {% endif %}
-
-
-<p class="update">Laatst bijgwerkt: {{ feeds.lastUpdated | dutchLongDate }}</p>
