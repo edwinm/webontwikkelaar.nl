@@ -262,7 +262,7 @@ async function getPodcasts(podcastList) {
 
         let podcastText = "";
         try {
-            const podcastText = await response.text();
+            podcastText = await response.text();
             const podcastData = JSON.parse(podcastText);
 
             podcastData.items.forEach((podcast) => {
