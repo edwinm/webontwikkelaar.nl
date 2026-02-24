@@ -110,11 +110,14 @@
     .box {
         padding: 2rem;
         background-color: #f3f3f3;
+        border-radius: 10px;
+        corner-shape: squircle;
     }
 
     @media (width < 768px) {
         .box {
             padding: 1rem 0;
+            border-radius: 0;
         }
     }
 
@@ -232,6 +235,8 @@
         aspect-ratio: 4 / 3;
         filter: saturate(30%) contrast(70%);
         margin-bottom: 4px;
+        border-radius: 10px;
+        corner-shape: squircle;
     }
 
     .video-link:hover .video-thumbnail {
@@ -267,6 +272,8 @@
         height: 140px;
         filter: saturate(30%) contrast(70%);
         margin-bottom: 4px;
+        border-radius: 10px;
+        corner-shape: squircle;
     }
 
     @media (width < 410px) {
@@ -391,6 +398,16 @@
         display: flex;
         align-items: stretch;
         gap: 0.5rem;
+        border-radius: 10px;
+        corner-shape: squircle;
+        overflow: hidden;
+    }
+
+    @media (width < 768px) {
+        .conferences {
+            border-radius: 0;
+            overflow: initial;
+        }
     }
 
     .map {
