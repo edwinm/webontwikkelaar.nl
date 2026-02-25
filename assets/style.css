@@ -157,7 +157,7 @@
         color: inherit;
 
         &:visited {
-            color: #87a9ac;
+            color: #949696;
         }
 
         &:hover, &:focus {
@@ -201,7 +201,7 @@
     }
 
     .item-feed-date {
-        color: #87a9ac;
+        color: #949696;
     }
 
     .link:hover .item-feed-date {
@@ -340,7 +340,7 @@
 
     .podcast-duration {
         margin: 0 0.25rem;
-        color: #87a9ac;
+        color: #949696;
     }
 
     .podcast-logo {
