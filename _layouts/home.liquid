@@ -87,7 +87,7 @@ permalink: /index.html
         <ul class="podcast-list">
             {%- for podcast in feeds.podcasts.items -%}
                 <li class="podcast">
-                    <div class="podcast-item" href="{{ podcast.link }}">
+                    <div class="podcast-item">
 
                         <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
 
