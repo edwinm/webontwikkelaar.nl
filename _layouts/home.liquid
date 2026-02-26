@@ -80,12 +80,12 @@ permalink: /index.html
 </ul>
 {% endif %}
 
-{% if feeds.podcasts.items.length > 0 %}
+{% if feeds.podcasts.length > 0 %}
     <h2>podcasts</h2>
 
     <div class="box podcast-box">
         <ul class="podcast-list">
-            {%- for podcast in feeds.podcasts.items -%}
+            {%- for podcast in feeds.podcasts -%}
                 <li class="podcast">
                     <div class="podcast-item">
 

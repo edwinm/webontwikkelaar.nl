@@ -1,5 +1,5 @@
 import Parser from 'rss-parser';
-import {writeJson, readJsonIfNew} from './file.js'
+import {writeJson, readJsonIfNew, readJson} from './file.js'
 import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
@@ -21,7 +21,7 @@ const parser = new Parser({
 });
 
 export default async function() {
-    const fileData = await readJsonIfNew(CACHE_FILE_NAME, CACHE_FILE_EXP);
+    const fileData = await readJson(CACHE_FILE_NAME);
 
     if (fileData) {
         console.log('>> Using data from cache');
@@ -32,12 +32,21 @@ export default async function() {
 
     const conferences = await getConferences();
 
+    console.log(`${conferences.length} conferences`);
+
     const cities = getCities(conferences);
 
     const videos = await getVideos();
+
+    console.log(`${videos.length} videos`);
+
     const posts = await getBlogs();
 
+    console.log(`${posts.length} posts`);
+
     const podcasts = await getPodcasts(podcastList);
+
+    console.log(`${podcasts.length} podcasts`);
 
     const lastUpdated = new Date();
 
@@ -270,7 +279,7 @@ async function getPodcasts(podcastList) {
                 podcast.dateValue = podcast.datePublished * 1000;
             });
 
-            return podcastData;
+            return podcastData.items;
         } catch (error) {
             console.error(error);
             console.error("> Invalid podcast", podcastText);
