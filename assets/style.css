@@ -104,13 +104,6 @@
         padding: 4rem 2rem;
         pointer-events: none;
         z-index: 20;
-
-        & > h1 {
-            padding: 0 2rem;
-            margin: 0 0 -0.5rem;
-            font-size: min(8vw, 100px);
-            font-weight: 900;
-        }
     }
 
     .circle {
@@ -125,6 +118,19 @@
         transition: all 250ms ease;
         transform: scale(1.01);
         opacity: 0.9;
+    }
+
+    .title {
+        padding: 0 2rem;
+        margin: 0 0 -0.5rem;
+        font-size: min(8vw, 100px);
+        font-weight: 900;
+    }
+
+    .update {
+        margin: 0;
+        padding-left: 2rem;
+        font-size: 1.4rem;
     }
 
     .container {
@@ -395,12 +401,6 @@
         overflow: hidden;
         -webkit-line-clamp: 2;
         line-clamp: 2;
-    }
-
-    .update {
-        margin: 0;
-        padding-left: 2rem;
-        font-size: 1.4rem;
     }
 
     .podcast-item {
