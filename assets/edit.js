@@ -145,15 +145,16 @@ function render(settings) {
 
         const pow = 3; // V = (4/3)πr³
         const r = Math.pow(prng.rand(Math.pow(settings.minsize, 1/pow), Math.pow(settings.maxsize, 1/pow)), pow);
-        const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize)
+        const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
+        const cx = prng.rand(0, width);
         const cy= height/2 + (height/2 - r) * prng.rand(-cyv, cyv);
 
         // const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)} / ${settings.alpha / 100})`;
         const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)})`;
 
         Object.entries({
-            cx: prng.rand(0, width),
-            cy: cy,
+            cx,
+            cy,
             r,
             fill: 'none',
             stroke: color,

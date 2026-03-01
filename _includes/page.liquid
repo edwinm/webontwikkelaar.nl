@@ -1,3 +1,13 @@
+---
+settings:
+    num: 12
+    minsize: 5
+    maxsize: 30
+    border: 3
+    lightness: 73
+    chroma: 24
+---
+
 <!doctype html>
 <html lang="nl">
 <head>
@@ -23,11 +33,12 @@
         //     script.src = '/assets/edit.js';
         //     document.head.appendChild(script);
         // });
+        const settings = {{ settings | json }};
     </script>
 </head>
 <body>
 
-{% circles 'header-background', 12000, 320 %}
+{% circles 'header-background', 1200, 320, 2, settings %}
 
 {{ content }}
 
