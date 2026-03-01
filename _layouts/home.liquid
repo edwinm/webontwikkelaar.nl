@@ -3,7 +3,12 @@ layout: page
 permalink: /index.html
 ---
 
-<h2 class="update">{{ feeds.lastUpdated | dutchLongDate }}</h2>
+<header>
+    <h1 translate="no">webontwikkelaar.nl</h1>
+    <h2 class="update">{{ feeds.lastUpdated | dutchLongDate }}</h2>
+</header>
+
+<main>
 
 {% if feeds.conferences.length > 0 %}
 
@@ -23,7 +28,7 @@ permalink: /index.html
 
     <h2>conferenties en bijeenkomsten</h2>
 
-<section class="conferences">
+<section class="container conferences">
     <table class="conf-table">
         {%- for conference in feeds.conferences -%}
         <tr class="conf-row city-{{ conference.slug }}">
@@ -52,7 +57,7 @@ permalink: /index.html
 {% if feeds.posts.length > 0 %}
 <h2>blogs en nieuws</h2>
 
-<ul class="box item-box">
+<ul class="container box item-box">
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
@@ -67,7 +72,7 @@ permalink: /index.html
 {% if feeds.videos.length > 0 %}
 <h2>video’s</h2>
 
-<ul class="box video-box">
+<ul class="container box video-box">
         {%- for video in feeds.videos -%}
                 <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
@@ -83,7 +88,7 @@ permalink: /index.html
 {% if feeds.podcasts.length > 0 %}
     <h2>podcasts</h2>
 
-    <div class="box podcast-box">
+    <div class="container box podcast-box">
         <ul class="podcast-list">
             {%- for podcast in feeds.podcasts -%}
                 <li class="podcast">
@@ -121,3 +126,5 @@ permalink: /index.html
         </a>
     </div>
 {% endif %}
+
+</main>

@@ -10,16 +10,36 @@
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <script defer data-domain="webontwikkelaar.nl" src="https://data.bitstorm.org/js/script.js"></script>
+    <script>
+        document.addEventListener("keypress", function ({charCode, ctrlKey, shiftKey}) {
+            if (charCode === 5 && ctrlKey && shiftKey) {
+                var script = document.createElement('script');
+                script.src = '/assets/edit.js';
+                document.head.appendChild(script);
+            }
+        })
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var script = document.createElement('script');
+        //     script.src = '/assets/edit.js';
+        //     document.head.appendChild(script);
+        // });
+    </script>
 </head>
 <body>
 
-<header>
-    <h1 translate="no">webontwikkelaar.nl</h1>
-</header>
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 100"
+        width="11400"
+        height="320"
+        preserveAspectRatio="xMinYMid meet"
+        class="header-background"
+>
+</svg>
 
-<main>
+
 {{ content }}
-</main>
+
 
 
 </body>
