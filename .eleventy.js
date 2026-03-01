@@ -1,6 +1,16 @@
 import {Prng} from "pringle";
 
+function getSeed(date = new Date()) {
+    const d = date.getDate();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const y = date.getFullYear();
+    return Number(`${d}${m}${y}`);
+}
+
 export default function(eleventyConfig) {
+    const seed = getSeed();
+    eleventyConfig.addGlobalData("seed", seed);
+
     eleventyConfig.on('eleventy.after', async () => {
         if (process.env.NODE_ENV !== 'development') {
             setTimeout(() => {
@@ -74,7 +84,7 @@ export default function(eleventyConfig) {
         : `${m}m`;
     });
 
-    function circles(className, width, height, seed, settings) {
+    function circles(className, width, height, settings) {
         const prng = new Prng(seed);
 
         let circles = "";
@@ -103,7 +113,6 @@ export default function(eleventyConfig) {
         >
         ${circles}
         </svg>
-<!--        [${JSON.stringify(settings)}]-->
         `;
     }
 

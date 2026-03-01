@@ -28,17 +28,13 @@ settings:
                 document.head.appendChild(script);
             }
         })
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     var script = document.createElement('script');
-        //     script.src = '/assets/edit.js';
-        //     document.head.appendChild(script);
-        // });
+        let seed = {{ seed }};
         const settings = {{ settings | json }};
     </script>
 </head>
 <body>
 
-{% circles 'header-background', 1200, 320, 2, settings %}
+{% circles 'header-background', 1600, 320, settings %}
 
 {{ content }}
 

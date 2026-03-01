@@ -1,7 +1,5 @@
 console.log('edit');
 
-let seed = 0;
-
 // const config = {
 //     num: 17,
 //     minsize: 5,
@@ -136,9 +134,8 @@ function render(settings) {
     const prng = new Prng(seed);
 
     const svg = document.querySelector('svg.header-background');
-    // const { width: w, height: h } = svg.getBoundingClientRect();
     const height = 100;
-    const width = 437; // 100 * w / h;
+    const width = 500; // 100 * w / h;
     svg.replaceChildren();
     for (let j = 0; j < settings.num; j++) {
         const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
