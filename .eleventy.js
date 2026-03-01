@@ -72,9 +72,25 @@ export default function(eleventyConfig) {
         : `${m}m`;
     });
 
+    function circles(className, width, height) {
+        return `
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 100 100"
+            width="${width}"
+            height="${height}"
+            preserveAspectRatio="xMinYMid meet"
+            class="${className}"
+        >
+        </svg>
+        `;
+    }
+
     eleventyConfig.addFilter("json", function(data) {
         return JSON.stringify(data, null, 2);
     });
+
+    eleventyConfig.addShortcode('circles', circles);
 
     return {
         dir: {
