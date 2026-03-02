@@ -61,7 +61,7 @@
         color: #2c2c3d;
         background-color: #fdfdfc;
         font-family: Moderustic, sans-serif;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     h1, h2 {
@@ -325,7 +325,7 @@
         margin: 0;
         white-space: nowrap;
         overflow: hidden;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: initial;
         text-overflow: ellipsis;
     }
