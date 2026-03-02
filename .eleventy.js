@@ -97,9 +97,9 @@ export default function(eleventyConfig) {
             const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
             const cx = prng.rand(0, cWidth);
             const cy= cHeight/2 + (cHeight/2 - r) * prng.rand(-cyv, cyv);
-            const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)})`;
+            const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360).toFixed(1)})`;
 
-            circles += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="${settings.border}" class="circle"></circle>\n`;
+            circles += `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}" fill="none" stroke="${color}" stroke-width="${settings.border}" class="circle"></circle>\n`;
         }
 
         return `
