@@ -64,6 +64,20 @@ export default async function() {
     return data;
 }
 
+const fetchWithRetry = async (url, options, retries = 3, delay = 1000) => {
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response;
+        } catch (error) {
+            if (attempt === retries) throw error;
+            console.warn(`Attempt ${attempt} failed for ${url}, retrying in ${delay}ms...`, error.message);
+            await new Promise(resolve => setTimeout(resolve, delay * attempt)); // exponential-ish backoff
+        }
+    }
+};
+
 async function getBlogs() {
     const opml = await readOPML('datasrc/feeds.opml');
     const blogs = opml.opml.body[0].outline[0].outline.map(outline => outline.$.xmlUrl);
@@ -127,7 +141,7 @@ async function getVideos() {
 
     const videoPromises = ids.map(async (idData) => {
         const videoUrl =`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`;
-        const response = await fetch(videoUrl,
+        const response = await fetchWithRetry(videoUrl,
             {signal: AbortSignal.timeout(120_000),
                 headers: {
                     'User-Agent': USER_AGENT_BROWSER,
@@ -257,7 +271,7 @@ async function getPodcasts(podcastList) {
     const podcastUrl = `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`;
 
     try {
-        const response = await fetch(
+        const response = await fetchWithRetry(
             podcastUrl,
             {
                 headers: {
