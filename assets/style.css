@@ -40,14 +40,6 @@
 
 @layer fonts {
     @font-face {
-        font-family: BigshotOne;
-        src: url("/assets/fonts/Bigshot_One/BigshotOne-Regular.woff2") format("woff2-variations");
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-    }
-
-    @font-face {
         font-family: Moderustic;
         src: url("/assets/fonts/Moderustic/Moderustic-VariableFont_wght.woff2") format("woff2-variations");
         font-weight: 100 900;
@@ -65,7 +57,6 @@
     }
 
     h1, h2 {
-        /*font-family: BigshotOne, sans-serif;*/
         font-family: Moderustic, sans-serif;
     }
 
