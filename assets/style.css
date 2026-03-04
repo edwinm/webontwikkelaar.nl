@@ -308,7 +308,7 @@
 
         &:active {
             color: inherit;
-            background-color: yellow;
+            background-color: oklch(0.796 0.079 69.46);
         }
     }
 
