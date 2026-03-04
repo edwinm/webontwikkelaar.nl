@@ -11,7 +11,6 @@ import {podcastList} from "../datasrc/podcasts.js";
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60 * 24; // 24 hours
 const USER_AGENT = 'webontwikkelaar.nl/1.0';
-const USER_AGENT_BROWSER = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:147.0) Gecko/20100101 Firefox/147.0';
 
 const parseXML = promisify(parseString);
 
@@ -144,7 +143,7 @@ async function getVideos() {
         const response = await fetchWithRetry(videoUrl,
             {signal: AbortSignal.timeout(120_000),
                 headers: {
-                    'User-Agent': USER_AGENT_BROWSER,
+                    'User-Agent': USER_AGENT,
                 },
             });
         const text = await response.text();
