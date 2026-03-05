@@ -7,6 +7,13 @@ import { createClient } from '@supabase/supabase-js';
 import crypto from "node:crypto";
 import 'dotenv/config';
 import {podcastList} from "../datasrc/podcasts.js";
+import {
+    S3Client,
+    PutObjectCommand,
+    CreateBucketCommand,
+    HeadBucketCommand,
+    GetObjectCommand,
+} from "@aws-sdk/client-s3";
 
 const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
 const CACHE_FILE_EXP = 60 * 60 * 24; // 24 hours
@@ -18,6 +25,30 @@ const parser = new Parser({
     timeout: 10_000,
     headers: {'User-Agent': USER_AGENT},
 });
+
+// Docs: https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/Package/-aws-sdk-client-s3/
+const s3Client = new S3Client({
+    region: process.env.S3Region,
+    endpoint: process.env.S3Endpoint,
+    credentials: {
+        accessKeyId: process.env.S3AccessKeyId,
+        secretAccessKey: process.env.S3SecretAccessKey,
+    },
+    forcePathStyle: true,
+});
+
+const bucketName = "webontwikkelaar";
+const bucketKey = "feeds";
+
+try {
+    await s3Client.send(new HeadBucketCommand({ Bucket: bucketName }));
+} catch (error) {
+    if (error.name === "NotFound" || error.$metadata?.httpStatusCode === 404) {
+        await s3Client.send(new CreateBucketCommand({ Bucket: bucketName }));
+    } else {
+        throw error;
+    }
+}
 
 export default async function() {
     const fileData = await readJson(CACHE_FILE_NAME);
@@ -59,6 +90,18 @@ export default async function() {
     };
 
     await writeJson(CACHE_FILE_NAME, data);
+
+    try {
+        await s3Client.send(
+            new PutObjectCommand({
+                Bucket: bucketName,
+                Key: bucketKey,
+                Body: JSON.stringify(data),
+            }),
+        );
+    } catch (error) {
+        console.error("Writing to S3 bucket failed", error);
+    }
 
     return data;
 }
@@ -137,6 +180,7 @@ async function getBlogs() {
 async function getVideos() {
     const response = await readFile("cache/youtube-ids.json", 'utf-8');
     const ids = JSON.parse(response);
+    const num = 12;
 
     const videoPromises = ids.map(async (idData) => {
         const videoUrl =`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`;
@@ -159,7 +203,7 @@ async function getVideos() {
     try {
         const videos = await Promise.allSettled(videoPromises);
 
-        const allItems = videos.reduce((acc, video) => {
+        let allItems = videos.reduce((acc, video) => {
             if (video.status === 'rejected' || video.value.feed.entry.length === 0) {
                 console.error('Failed fetching video', video.reason);
                 return acc;
@@ -184,9 +228,30 @@ async function getVideos() {
             return [...acc, normalizedVideo];
         }, []);
 
+        if (allItems.length < num) {
+            console.error(`Received ${allItems.length} videos. Filling up with videos from bucket.`);
+            // Now, for videos only, make more generic when needed
+            const { Body } = await s3Client.send(
+                new GetObjectCommand({
+                    Bucket: bucketName,
+                    Key: bucketKey,
+                }),
+            );
+
+            const feedsStr = await Body.transformToString();
+
+            const oldFeeds  = JSON.parse(feedsStr);
+
+            const latestOldFeed = oldFeeds[0].dateValue;
+
+            const newerFeeds = allItems.filter((item) => item.dateValue > latestOldFeed.dateValue);
+
+            allItems = oldFeeds.concat(newerFeeds);
+        }
+
         const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
 
-        return allItemsSorted.slice(0, 12);
+        return allItemsSorted.slice(0, num);
     } catch (error) {
         console.error(error);
         return [];
