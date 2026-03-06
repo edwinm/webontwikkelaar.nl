@@ -50,6 +50,9 @@
 
 @layer style {
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         color: #2c2c3d;
         background-color: #fdfdfc;
         font-family: Moderustic, sans-serif;
@@ -73,6 +76,7 @@
     }
 
     main {
+        flex: 1;
         padding: 1rem 2rem 2rem 2rem;
     }
 
@@ -80,6 +84,19 @@
         main {
             padding: 1rem 0;
         }
+    }
+
+    footer {
+        display: flex;
+        height: 8rem;
+        background-color: oklch(73% 24% 277.4);
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .subpage p, .subpage h3 {
+        margin-left: 2rem;
     }
 
     .header-background {
