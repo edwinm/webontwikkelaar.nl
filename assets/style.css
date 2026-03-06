@@ -88,11 +88,11 @@
 
     footer {
         display: flex;
-        height: 8rem;
+        height: 6rem;
         background-color: oklch(73% 24% 277.4);
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 1rem;
     }
 
     .subpage p, .subpage h3 {
