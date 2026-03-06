@@ -14,7 +14,11 @@ settings:
     <meta charset="UTF-8">
     <title>webontwikkelaar.nl</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Verzameld nieuws voor webontwikkelaars">
+    <meta name="description" content="Blijf elke dag scherp als webontwikkelaar">
+    <meta property="og:image" content="https://webontwikkelaar.nl/assets/share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="theme-color" content="#A9CEEB">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
@@ -22,7 +26,7 @@ settings:
     <script defer data-domain="webontwikkelaar.nl" src="https://data.bitstorm.org/js/script.js"></script>
     <script>
         document.addEventListener("keypress", function ({charCode, ctrlKey, shiftKey}) {
-            if (charCode === 5 && ctrlKey && shiftKey) {
+            if (charCode === 5 && ctrlKey && shiftKey) { // CTRL-SHIFT-E
                 var script = document.createElement('script');
                 script.src = '/assets/edit.js';
                 document.head.appendChild(script);

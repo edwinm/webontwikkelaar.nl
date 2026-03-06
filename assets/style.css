@@ -99,6 +99,19 @@
         margin-left: 2rem;
     }
 
+    footer a {
+        color: black;
+        text-decoration: none;
+
+        &:visited {
+            color: black;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .header-background {
         position: absolute;
         width: 100%;
