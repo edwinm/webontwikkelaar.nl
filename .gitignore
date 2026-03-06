@@ -1,6 +1,6 @@
 /node_modules/
 /dist/
 /backlog.md
-/conferenties.txt
+/datasrc/conferenties.txt
 /cache/fetched-data-cache.json
 /.env
