@@ -1,5 +1,4 @@
 import Parser from 'rss-parser';
-import {writeJson, readJsonIfNew, readJson} from './file.js'
 import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
@@ -15,8 +14,6 @@ import {
     GetObjectCommand,
 } from "@aws-sdk/client-s3";
 
-const CACHE_FILE_NAME = 'cache/fetched-data-cache.json';
-const CACHE_FILE_EXP = 60 * 60 * 24; // 24 hours
 const USER_AGENT = 'webontwikkelaar.nl/1.0';
 
 const parseXML = promisify(parseString);
@@ -51,12 +48,6 @@ try {
 }
 
 export default async function() {
-    const fileData = await readJson(CACHE_FILE_NAME);
-
-    if (fileData) {
-        console.log('>> Using data from cache');
-        return fileData;
-    }
 
     console.log('>> Fetching all urls');
 
@@ -88,8 +79,6 @@ export default async function() {
         podcasts,
         lastUpdated,
     };
-
-    await writeJson(CACHE_FILE_NAME, data);
 
     try {
         await s3Client.send(
