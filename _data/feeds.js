@@ -48,6 +48,20 @@ try {
 }
 
 export default async function() {
+    if (process.env.NODE_ENV === 'development') {
+        console.log('>> Getting feeds from bucket');
+
+        const { Body } = await s3Client.send(
+            new GetObjectCommand({
+                Bucket: bucketName,
+                Key: bucketKey,
+            }),
+        );
+
+        const feedsStr = await Body.transformToString();
+
+        return JSON.parse(feedsStr);
+    }
 
     console.log('>> Fetching all urls');
 
@@ -80,16 +94,18 @@ export default async function() {
         lastUpdated,
     };
 
-    try {
-        await s3Client.send(
-            new PutObjectCommand({
-                Bucket: bucketName,
-                Key: bucketKey,
-                Body: JSON.stringify(data),
-            }),
-        );
-    } catch (error) {
-        console.error("Writing to S3 bucket failed", error);
+    if (process.env.NODE_ENV !== 'development') {
+        try {
+            await s3Client.send(
+                new PutObjectCommand({
+                    Bucket: bucketName,
+                    Key: bucketKey,
+                    Body: JSON.stringify(data),
+                }),
+            );
+        } catch (error) {
+            console.error("Writing to S3 bucket failed", error);
+        }
     }
 
     return data;
