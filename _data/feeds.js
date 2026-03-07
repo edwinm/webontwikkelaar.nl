@@ -247,7 +247,9 @@ async function getVideos() {
 
             const oldFeeds  = JSON.parse(feedsStr);
 
-            const latestOldFeed = oldFeeds[0].dateValue;
+            console.error(`${oldFeeds.length} feeds from bucket`);
+
+            const latestOldFeed = oldFeeds.length > 0 ? oldFeeds[0].dateValue : 0;
 
             const newerFeeds = allItems.filter((item) => item.dateValue > latestOldFeed.dateValue);
 
