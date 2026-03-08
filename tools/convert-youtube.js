@@ -1,4 +1,4 @@
-import {readJson, writeJson} from "../_data/file.js";
+import {readJson, writeJson} from "./file.js";
 
 const urls = await readJson('datasrc/youtube.json');
 
