@@ -12,13 +12,21 @@ settings:
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    {% if title %}
+    <title>{{ title }} - webontwikkelaar.nl</title>
+    {% else %}
     <title>webontwikkelaar.nl</title>
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Blijf elke dag scherp als webontwikkelaar">
     <meta property="og:image" content="https://webontwikkelaar.nl/assets/share.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="theme-color" content="#A9CEEB">
+    {% if title %}
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:site_name" content="webontwikkelaar.nl">
+    {% endif %}
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
@@ -43,7 +51,7 @@ settings:
 {{ content }}
 
 <footer>
-    <a href="/privacy.html">privacy verklaring</a>
+    <a href="/privacy.html">privacyverklaring</a>
     •
     <a href="/over.html">over deze site</a>
 </footer>
