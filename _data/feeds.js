@@ -245,15 +245,19 @@ async function getVideos() {
 
             const feedsStr = await Body.transformToString();
 
+            console.error(feedsStr);
+
             const oldFeeds  = JSON.parse(feedsStr);
 
-            console.error(`${oldFeeds.length} feeds from bucket`);
+            const oldVideos = oldFeeds.videos;
 
-            const latestOldFeed = oldFeeds.length > 0 ? oldFeeds[0].dateValue : 0;
+            console.error(`${oldVideos.length} video's from bucket`);
+
+            const latestOldFeed = oldVideos.length > 0 ? oldVideos[0].dateValue : 0;
 
             const newerFeeds = allItems.filter((item) => item.dateValue > latestOldFeed.dateValue);
 
-            allItems = oldFeeds.concat(newerFeeds);
+            allItems = oldVideos.concat(newerFeeds);
         }
 
         const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
