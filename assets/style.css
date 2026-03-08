@@ -38,16 +38,6 @@
     }
 }
 
-@layer fonts {
-    @font-face {
-        font-family: Moderustic;
-        src: url("/assets/fonts/Moderustic/Moderustic-VariableFont_wght.woff2") format("woff2-variations");
-        font-weight: 100 900;
-        font-style: normal;
-        font-display: swap;
-    }
-}
-
 @layer style {
     body {
         display: flex;
@@ -55,12 +45,7 @@
         min-height: 100vh;
         color: #2c2c3d;
         background-color: #fdfdfc;
-        font-family: Moderustic, sans-serif;
         font-size: 1.2rem;
-    }
-
-    h1, h2 {
-        font-family: Moderustic, sans-serif;
     }
 
     h2 {
