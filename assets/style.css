@@ -213,6 +213,9 @@
     }
 
     .conf-title {
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: inherit;
         font-weight: inherit;
         margin: 0;
@@ -246,7 +249,7 @@
 
         & td {
             white-space: nowrap;
-            padding: 0 1rem;
+            padding: 0.5rem 1rem;
             background: #f3f3f3;
         }
 
