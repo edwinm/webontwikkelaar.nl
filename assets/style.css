@@ -52,7 +52,7 @@
         width: fit-content;
         margin: 1rem;
         padding-left: 1rem;
-        font-size: clamp(2rem, 3vw, 4rem);
+        font-size: clamp(2rem, 3vw, 3rem);
         font-weight: 600;
     }
 
@@ -62,13 +62,7 @@
 
     main {
         flex: 1;
-        padding: 1rem 2rem 2rem 2rem;
-    }
-
-    @media (width < 768px) {
-        main {
-            padding: 1rem 0;
-        }
+        padding: 1rem;
     }
 
     footer {
@@ -107,8 +101,13 @@
     header {
         position: relative;
         display: grid;
-        padding: 4rem 2rem;
+        padding: 4rem;
         z-index: 20;
+    }
+
+    main, header {
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 
     header:not(:has(a)) {
@@ -141,7 +140,7 @@
     .title {
         padding: 0 2rem;
         margin: 0 0 -0.5rem;
-        font-size: min(8vw, 100px);
+        font-size: min(9vw, 100px);
         font-weight: 900;
     }
 
