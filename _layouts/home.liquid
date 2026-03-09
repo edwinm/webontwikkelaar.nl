@@ -36,8 +36,8 @@ permalink: /index.html
             <td>{{ conference.city }}</td>
             <td>
                 <a class="conf-link" href="{{ conference.url }}">
-                    <h4 class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }} • {{ conference.city }}</h4>
-                    {{ conference.title }}
+                    <p class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }} • {{ conference.city }}</p>
+                    <h3 class="conf-title">{{ conference.title }}</h3>
                 </a>
             </td>
         </tr>
@@ -61,7 +61,7 @@ permalink: /index.html
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
-                        <h4 class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></h4>
+                        <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></p>
                         <h3 class="item-title">{{ post.title }}</h3>
                 </a>
         </li>
@@ -77,7 +77,7 @@ permalink: /index.html
                 <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
                                 <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
-                                <h4 class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></h4>
+                                <p class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></p>
                                 <h3 class="video-title">{{ video.title }}</h3>
                         </a>
                 </li>
@@ -92,12 +92,12 @@ permalink: /index.html
         <ul class="podcast-list">
             {%- for podcast in feeds.podcasts -%}
                 <li class="podcast">
-                    <div class="podcast-item">
+                    <article class="podcast-item">
 
                         <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
 
                         <div class="podcast-content">
-                            <h4 class="item-feed-title podcast-creator">
+                            <span class="item-feed-title podcast-creator">
                                 {{ podcast.creator }}
                                 • <span class="podcast-duration grey">{{ podcast.duration | duration }}</span>
                                 • <span class="grey podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
@@ -109,15 +109,13 @@ permalink: /index.html
                                     <a class="podcast-apple" href="https://podcasts.apple.com/nl/podcast/id{{ podcast.feedItunesId }}"><img class="podcast-logo podcast-apple-logo" src="/assets/apple.svg" alt="Link naar Apple Podcasts"/></a>
                                 {% endif %}
                                 </div>
-
-
-                            </h4>
+                            </span>
                             <h3 class="podcast-title">{{ podcast.title }}</h3>
                             <div class="podcast-controls">
                                 <audio class="podcast-audio" controls preload="none" src="{{ podcast.enclosureUrl }}"></audio>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </li>
             {%- endfor -%}
         </ul>
