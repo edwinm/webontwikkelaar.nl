@@ -61,7 +61,7 @@ permalink: /index.html
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
-                        <h4 class="item-feed-title">{{ post.feedTitle }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></h4>
+                        <h4 class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></h4>
                         <h3 class="item-title">{{ post.title }}</h3>
                 </a>
         </li>
@@ -77,7 +77,7 @@ permalink: /index.html
                 <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
                                 <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
-                                <h4 class="item-feed-title">{{ video.author }} <span class="item-feed-date">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></h4>
+                                <h4 class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></h4>
                                 <h3 class="video-title">{{ video.title }}</h3>
                         </a>
                 </li>
@@ -99,8 +99,8 @@ permalink: /index.html
                         <div class="podcast-content">
                             <h4 class="item-feed-title podcast-creator">
                                 {{ podcast.creator }}
-                                • <span class="podcast-duration">{{ podcast.duration | duration }}</span>
-                                • <span class="item-feed-date podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
+                                • <span class="podcast-duration grey">{{ podcast.duration | duration }}</span>
+                                • <span class="grey podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
                                 <div class="podcast-icons">
                                 {% if podcast.link != "" %}
                                     <a class="podcast-link" href="{{ podcast.link }}"><img class="podcast-logo podcast-link-logo" src="/assets/link.svg" alt="Link naar podcastpagina"/></a>
@@ -121,7 +121,7 @@ permalink: /index.html
                 </li>
             {%- endfor -%}
         </ul>
-        <a class="podcast-attribution" href="https://podcastindex.org" target="_blank" rel="nofollow, noopener">
+        <a class="podcast-attribution grey" href="https://podcastindex.org" target="_blank" rel="nofollow, noopener">
             Podcastgegevens geleverd door Podcast Index
         </a>
     </div>

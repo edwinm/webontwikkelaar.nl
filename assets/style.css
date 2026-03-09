@@ -145,6 +145,11 @@
         font-weight: 900;
     }
 
+    .grey {
+        color: #525252;
+        font-weight: 400;
+    }
+
     .update {
         margin: 0;
         padding-left: 2rem;
@@ -325,7 +330,7 @@
         color: inherit;
 
         &:visited {
-            color: #757575;
+            color: #6f6f6f;
         }
 
         &:hover, &:focus {
@@ -366,10 +371,6 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
-
-    .item-feed-date {
-        color: #757575;
     }
 
     .link:hover .item-feed-date {
@@ -502,7 +503,6 @@
 
     .podcast-duration {
         margin: 0 0.25rem;
-        color: #757575;
     }
 
     .podcast-logo {
@@ -550,9 +550,8 @@
         display: block;
         margin-top: 0.2rem;
         color: inherit;
-        font-size: 1rem;
+        font-size: 0.8rem;
         text-decoration: none;
         text-align: right;
-        opacity: 0.5;
     }
 }
