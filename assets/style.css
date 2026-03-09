@@ -108,8 +108,20 @@
         position: relative;
         display: grid;
         padding: 4rem 2rem;
-        pointer-events: none;
         z-index: 20;
+    }
+
+    header:not(:has(a)) {
+        pointer-events: none;
+    }
+
+    header a {
+        color: #2c2c3d;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .circle {
