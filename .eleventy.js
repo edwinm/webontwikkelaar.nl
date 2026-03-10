@@ -70,6 +70,10 @@ export default function(eleventyConfig) {
         return new Intl.DateTimeFormat('sv-SE').format(new Date(timestamp));
     });
 
+    eleventyConfig.addFilter("isoDate", function(timestamp) {
+        return new Date(timestamp).toISOString();
+    });
+
     eleventyConfig.addFilter("duration", (seconds) => {
       const s = parseInt(seconds, 10);
       if (isNaN(s)) {

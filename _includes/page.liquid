@@ -27,7 +27,7 @@ settings:
     <meta property="og:site_name" content="webontwikkelaar.nl">
     {% endif %}
     <meta name="theme-color" content="#A9CEEB">
-    <meta name="dcterms.modified" content="{{ feeds.lastUpdated }}">
+    <meta name="dcterms.modified" content="{{ feeds.lastUpdated | isoDate }}">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
