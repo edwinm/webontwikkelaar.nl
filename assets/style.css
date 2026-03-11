@@ -149,6 +149,10 @@
         font-weight: 400;
     }
 
+    a:hover .grey {
+        color: #e1e1e1;
+    }
+
     .update {
         margin: 0;
         padding-left: 2rem;
