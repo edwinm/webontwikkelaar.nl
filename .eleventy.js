@@ -15,7 +15,7 @@ export default function(eleventyConfig) {
         if (process.env.NODE_ENV !== 'development') {
             setTimeout(() => {
                 process.exit(0); // horse remedy against hanging 11ty
-            }, 60_000)
+            }, 5 * 60_000)
         }
     });
 
