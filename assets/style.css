@@ -346,6 +346,8 @@
         &:hover, &:focus {
             color: white;
             background-color: #494949;
+            border-radius: 10px;
+            corner-shape: squircle;
         }
 
         &:active {
@@ -437,6 +439,8 @@
         gap: 0.8rem;
         height: 150px;
         padding: 6px;
+        border-radius: 10px;
+        corner-shape: squircle;
     }
 
     .podcast-thumbnail {
