@@ -1,68 +1,24 @@
 ---
 layout: page
-permalink: /index.html
-lang: nl
+permalink: /en/index.html
+lang: en
 ---
 
 <header>
     <h1 class="title" translate="no">webontwikkelaar.nl</h1>
-    <h2 class="update">{{ feeds.lastUpdated | dutchLongDate }}</h2>
+    <h2 class="update">{{ feeds.lastUpdated | englishLongDate }}</h2>
 </header>
 
 <main>
 
-{% if feeds.conferences.length > 0 %}
-
-    <style>
-    {%- for city in feeds.cities -%}
-
-        .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }}>td {
-            color: white;
-            background: #494949;
-        }
-        .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
-            outline-offset: 10px;
-        }
-
-    {%- endfor -%}
-    </style>
-
-    <h2>conferenties en bijeenkomsten</h2>
-
-<section class="container conferences">
-    <table class="conf-table">
-        {%- for conference in feeds.conferences -%}
-        <tr class="conf-row city-{{ conference.slug }}">
-            <td><a class="conf-link" href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a></td>
-            <td>{{ conference.city }}</td>
-            <td>
-                <a class="conf-link" href="{{ conference.url }}">
-                    <p class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }} • {{ conference.city }}</p>
-                    <h3 class="conf-title">{{ conference.title }}</h3>
-                </a>
-            </td>
-        </tr>
-        {%- endfor -%}
-    </table>
-    <div class="map">
-
-        {%- for city in feeds.cities -%}
-            <div class="city city-{{ city.slug }}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
-
-        {%- endfor -%}
-        <img class="map-img" width="549" height="500" src="/assets/nl-vl.svg" alt="Kaart van Nederland en Vlaanderen"/>
-    </div>
-</section>
-{% endif %}
-
 {% if feeds.posts.length > 0 %}
-<h2>blogs en nieuws</h2>
+<h2>blogs and news</h2>
 
 <ul class="container box item-box">
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
-                        <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></p>
+                        <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | englishShortDate }}</time></span></p>
                         <h3 class="item-title">{{ post.title }}</h3>
                 </a>
         </li>
@@ -71,14 +27,14 @@ lang: nl
 {% endif %}
 
 {% if feeds.videos.length > 0 %}
-<h2>video’s</h2>
+<h2>videos</h2>
 
 <ul class="container box video-box">
         {%- for video in feeds.videos -%}
                 <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
                                 <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
-                                <p class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></p>
+                                <p class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | englishShortDate }}</time></span></p>
                                 <h3 class="video-title">{{ video.title }}</h3>
                         </a>
                 </li>
@@ -101,7 +57,7 @@ lang: nl
                             <span class="item-feed-title podcast-creator">
                                 {{ podcast.creator }}
                                 • <span class="podcast-duration grey">{{ podcast.duration | duration }}</span>
-                                • <span class="grey podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
+                                • <span class="grey podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | englishShortDate }}</time></span>
                                 <div class="podcast-icons">
                                 {% if podcast.link != "" %}
                                     <a class="podcast-link" href="{{ podcast.link }}"><img class="podcast-logo podcast-link-logo" src="/assets/link.svg" alt="Link naar podcastpagina"/></a>
@@ -121,7 +77,7 @@ lang: nl
             {%- endfor -%}
         </ul>
         <a class="podcast-attribution grey" href="https://podcastindex.org" target="_blank" rel="nofollow, noopener">
-            Podcastgegevens geleverd door Podcast Index
+            Podcast data provided by Podcast Index
         </a>
     </div>
 {% endif %}

@@ -137,6 +137,33 @@
         opacity: 0.9;
     }
 
+    .lang-switch {
+        display: flex;
+        gap: 0.6rem;
+        position: absolute;
+        right: 2rem;
+        top: 0rem;
+        padding: 4px;
+        list-style: none;
+        border: 1px solid #494949;
+        border-radius: 8px;
+        corner-shape: squircle;
+        z-index: 30;
+    }
+
+    .lang {
+        padding: 2px 4px;
+    }
+
+    .lang-switch a {
+        text-decoration: none;
+    }
+
+    .lang-en .en, .lang-nl .nl {
+        color: white;
+        background-color: #494949;
+    }
+
     .title {
         padding: 0 2rem;
         margin: 0 0 -0.5rem;
@@ -163,7 +190,6 @@
         margin: 0 0 4rem;
         border-radius: 10px;
         corner-shape: squircle;
-
     }
 
     .conferences {

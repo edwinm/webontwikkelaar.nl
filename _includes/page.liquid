@@ -9,7 +9,7 @@ settings:
 ---
 
 <!doctype html>
-<html lang="nl">
+<html lang="{{ lang | default: "nl" }}">
 <head>
     <meta charset="UTF-8">
     {% if title %}
@@ -62,12 +62,17 @@ settings:
 
 {% circles 'header-background', 1600, 320, settings %}
 
+<ul class="lang-switch lang-{{ lang }}">
+    <li class="lang nl">{% if lang == 'nl' %}NL{% else %}<a href="/">NL</a>{% endif %}</li>
+    <li class="lang en">{% if lang == 'en' %}EN{% else %}<a href="/en">EN</a>{% endif %}</li>
+</ul>
+
 {{ content }}
 
 <footer>
-    <a href="/privacy">privacyverklaring</a>
+    <a href="{{ i18n[lang].privacy_url }}">{{ i18n[lang].privacy }}</a>
     •
-    <a href="/over">over deze site</a>
+    <a href="{{ i18n[lang].about_url }}">{{ i18n[lang].about }}</a>
 </footer>
 
 </body>

@@ -33,11 +33,33 @@ export default function(eleventyConfig) {
         }).replace('.', '');
     });
 
+    eleventyConfig.addFilter("englishShortDate", function(timestamp) {
+        const date = new Date(timestamp);
+
+        return date.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'short',
+            timeZone: 'Europe/Amsterdam'
+        }).replace('.', '');
+    });
+
     // Unix timestamp in ms to Dutch long date filter
     eleventyConfig.addFilter("dutchLongDate", function(timestamp) {
         const date = new Date(timestamp);
 
         return date.toLocaleString('nl-NL', {
+            weekday: 'long',
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+            timeZone: 'Europe/Amsterdam'
+        });
+    });
+
+    eleventyConfig.addFilter("englishLongDate", function(timestamp) {
+        const date = new Date(timestamp);
+
+        return date.toLocaleString('en-GB', {
             weekday: 'long',
             day: 'numeric',
             month: 'long',
