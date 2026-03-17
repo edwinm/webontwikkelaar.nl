@@ -18,8 +18,8 @@ settings:
     <title>webontwikkelaar.nl</title>
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Blijf elke dag scherp als webontwikkelaar">
-    <meta property="og:image" content="https://webontwikkelaar.nl/assets/share.png">
+    <meta name="description" content="{{ i18n[lang].description }}">
+    <meta property="og:image" content="https://webontwikkelaar.nl/assets/{{ i18n[lang].meta_img }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     {% if title %}
