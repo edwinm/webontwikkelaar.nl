@@ -42,18 +42,21 @@
     :root {
         color-scheme: light dark;
 
-        --dark: light-dark(oklch(0.301 0.031 284.412), oklch(0.67 0.031 284.412));
+        --dark: light-dark(oklch(0.301 0.031 284.412), oklch(0.721 0.023 285.809));
         --light: light-dark(oklch(0.994 0.001 106.423), oklch(0.006 0.001 106.423));
         --accent: light-dark(oklch(0.73 0.096 277.752), oklch(0.27 0.096 277.752));
         --hover: light-dark(oklch(0.405 0 89.876), oklch(0.595 0 89.876));
-        --lighthover: light-dark(oklch(0.907 0 89.876), oklch(0.25 0 89.876));
+        --lighthover: light-dark(oklch(0.907 0 89.876), oklch(0.289 0 89.876));
         --active: light-dark(oklch(0.796 0.079 69.46), oklch(0.204 0.079 69.46));
         --grey: light-dark(oklch(0.91 0 89.876), oklch(0.09 0 89.876));
         --darkgrey: light-dark(oklch(0.439 0 89.876), oklch(0.561 0 89.876));
         --lightgrey: light-dark(oklch(0.964 0 89.876), oklch(0.2 0 89.876));
         --lightgrey2: light-dark(oklch(0.928 0 89.876), oklch(0.072 0 89.876));
-        --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.597 0.113 108.173));
-        --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.597 0.113 108 / 0.6));
+        --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.471 0.085 239.771));
+        --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.471 0.085 239.771 / 0.6));
+        --title: light-dark(oklch(0.301 0.031 284.412), oklch(0.898 0 89.876));
+
+        color: oklch(0.898 0 89.876)
     }
     
     body {
@@ -198,6 +201,7 @@
         margin: 0 0 -0.5rem;
         font-size: min(9vw, 100px);
         font-weight: 900;
+        color: var(--title);
     }
 
     .grey {
@@ -249,7 +253,7 @@
 
     @media (prefers-color-scheme: dark) {
         .map-img {
-            filter: invert(1)
+            filter: invert(1);
         }
     }
 
@@ -582,6 +586,10 @@
         gap: 0.5rem;
         margin-left: auto;
         padding-right: 2px;
+    }
+
+    .podcast-icons img {
+        filter: invert(1);
     }
 
     .podcast-apple-logo {
