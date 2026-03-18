@@ -40,18 +40,20 @@
 
 @layer style {
     :root {
-        --dark: oklch(0.301 0.031 284.412);
-        --light: oklch(0.994 0.001 106.423);
-        --accent: oklch(73% 24% 277.4);
-        --hover: oklch(0.405 0 89.876);
-        --lighthover: oklch(0.907 0 89.876);
-        --active: oklch(0.796 0.079 69.46);
-        --grey: oklch(0.91 0 89.876);
-        --darkgrey: oklch(0.439 0 89.876);
-        --lightgrey: oklch(0.964 0 89.876);
-        --lightgrey2: oklch(0.928 0 89.876);
-        --city: oklch(0.579 0.131 21.998);
-        --cityradius: rgba(187 86 86 / 0.6);
+        color-scheme: light dark;
+
+        --dark: light-dark(oklch(0.301 0.031 284.412), oklch(0.67 0.031 284.412));
+        --light: light-dark(oklch(0.994 0.001 106.423), oklch(0.006 0.001 106.423));
+        --accent: light-dark(oklch(0.73 0.096 277.752), oklch(0.27 0.096 277.752));
+        --hover: light-dark(oklch(0.405 0 89.876), oklch(0.595 0 89.876));
+        --lighthover: light-dark(oklch(0.907 0 89.876), oklch(0.25 0 89.876));
+        --active: light-dark(oklch(0.796 0.079 69.46), oklch(0.204 0.079 69.46));
+        --grey: light-dark(oklch(0.91 0 89.876), oklch(0.09 0 89.876));
+        --darkgrey: light-dark(oklch(0.439 0 89.876), oklch(0.561 0 89.876));
+        --lightgrey: light-dark(oklch(0.964 0 89.876), oklch(0.2 0 89.876));
+        --lightgrey2: light-dark(oklch(0.928 0 89.876), oklch(0.072 0 89.876));
+        --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.597 0.113 108.173));
+        --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.597 0.113 108 / 0.6));
     }
     
     body {
@@ -244,6 +246,12 @@
         object-fit: contain;
     }
 
+    @media (prefers-color-scheme: dark) {
+        .map-img {
+            filter: invert(1)
+        }
+    }
+
     @media (width < 1160px) or (pointer: coarse) {
         .map {
             display: none;
@@ -262,6 +270,7 @@
         outline-offset: -4px;
         outline-width: 4px;
         transition: outline-offset 250ms ease;
+        z-index: 10;
 
         &:hover {
             outline-offset: 10px;
