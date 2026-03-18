@@ -39,12 +39,27 @@
 }
 
 @layer style {
+    :root {
+        --dark: oklch(0.301 0.031 284.412);
+        --light: oklch(0.994 0.001 106.423);
+        --accent: oklch(73% 24% 277.4);
+        --hover: oklch(0.405 0 89.876);
+        --lighthover: oklch(0.907 0 89.876);
+        --active: oklch(0.796 0.079 69.46);
+        --grey: oklch(0.91 0 89.876);
+        --darkgrey: oklch(0.439 0 89.876);
+        --lightgrey: oklch(0.964 0 89.876);
+        --lightgrey2: oklch(0.928 0 89.876);
+        --city: oklch(0.579 0.131 21.998);
+        --cityradius: rgba(187 86 86 / 0.6);
+    }
+    
     body {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        color: #2c2c3d;
-        background-color: #fdfdfc;
+        color: var(--dark);
+        background-color: var(--light);
         font-size: 1.2rem;
     }
 
@@ -68,10 +83,15 @@
     footer {
         display: flex;
         height: 6rem;
-        background-color: oklch(73% 24% 277.4);
+        background-color: var(--accent);
         justify-content: center;
         align-items: center;
         gap: 1rem;
+    }
+
+    a:active {
+        color: inherit;
+        background-color: var(--active);
     }
 
     .subpage p, .subpage h3 {
@@ -79,11 +99,11 @@
     }
 
     footer a {
-        color: black;
+        color: var(--dark);
         text-decoration: none;
 
         &:visited {
-            color: black;
+            color: var(--dark);
         }
 
         &:hover {
@@ -115,7 +135,7 @@
     }
 
     header a {
-        color: #2c2c3d;
+        color: var(--dark);
         text-decoration: none;
 
         &:hover {
@@ -145,7 +165,7 @@
         top: 0rem;
         padding: 4px;
         list-style: none;
-        border: 1px solid #494949;
+        border: 1px solid var(--dark);
         border-radius: 8px;
         corner-shape: squircle;
         z-index: 30;
@@ -157,7 +177,7 @@
         corner-shape: squircle;
 
         &:hover {
-            background-color: #e1e1e1;
+            background-color: var(--grey);
         }
     }
 
@@ -166,8 +186,8 @@
     }
 
     .lang-en .en, .lang-nl .nl {
-        color: white;
-        background-color: #494949;
+        color: var(--light);
+        background-color: var(--dark);
     }
 
     .title {
@@ -178,12 +198,12 @@
     }
 
     .grey {
-        color: #525252;
+        color: var(--darkgrey);
         font-weight: 400;
     }
 
     a:hover .grey {
-        color: #e1e1e1;
+        color: var(--grey);
     }
 
     .update {
@@ -237,8 +257,8 @@
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color: #bb5656;
-        outline: rgba(187 86 86 / 0.6) solid;
+        background-color: var(--city);
+        outline: var(--cityradius) solid;
         outline-offset: -4px;
         outline-width: 4px;
         transition: outline-offset 250ms ease;
@@ -286,7 +306,7 @@
         & td {
             white-space: nowrap;
             padding: 0.5rem 1rem;
-            background: #f3f3f3;
+            background: var(--lightgrey);
         }
 
         & td:not(:first-child) {
@@ -300,8 +320,8 @@
         }
 
         &:hover > td, &:focus-within td {
-            color: white;
-            background: #494949;
+            color: var(--light);
+            background: var(--hover);
             cursor: pointer;
         }
     }
@@ -327,7 +347,7 @@
 
     .box {
         padding: 2rem;
-        background-color: #f3f3f3;
+        background-color: var(--lightgrey);
     }
 
     @media (width < 768px) {
@@ -355,7 +375,7 @@
     .item-link {
         display: block;
         height: 70px;
-        border-left: 8px solid oklch(73% 24% 274.4674336910248);
+        border-left: 8px solid var(--accent);
         padding: 10px 10px 10px 14px;
         margin-bottom: 20px;
     }
@@ -372,20 +392,17 @@
         color: inherit;
 
         &:visited {
-            color: #6f6f6f;
+            color: var(--darkgrey);
         }
 
         &:hover, &:focus {
-            color: white;
-            background-color: #494949;
+            color: var(--light);
+            background-color: var(--hover);
             border-radius: 10px;
             corner-shape: squircle;
         }
 
-        &:active {
-            color: inherit;
-            background-color: oklch(0.796 0.079 69.46);
-        }
+
     }
 
     .item-title {
@@ -418,7 +435,7 @@
     }
 
     .link:hover .item-feed-date {
-        color: white;
+        color: var(--light);
     }
 
     .video-box {
@@ -470,7 +487,7 @@
         display: flex;
         gap: 0.8rem;
         height: 150px;
-        padding: 6px;
+        padding: 10px;
         border-radius: 10px;
         corner-shape: squircle;
     }
@@ -493,7 +510,7 @@
     }
 
     .podcast-item:hover {
-        background-color: #e0e0e0;
+        background-color: var(--lighthover);
     }
 
     .podcast-item:hover .podcast-thumbnail {
@@ -589,7 +606,7 @@
     }
 
     audio::-webkit-media-controls-panel {
-        background: #e7e7e7;
+        background: var(--lightgrey2);
     }
 
     .podcast-attribution {
