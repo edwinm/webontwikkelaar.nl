@@ -153,6 +153,12 @@
 
     .lang {
         padding: 2px 4px;
+        border-radius: 4px;
+        corner-shape: squircle;
+
+        &:hover {
+            background-color: #e1e1e1;
+        }
     }
 
     .lang-switch a {
