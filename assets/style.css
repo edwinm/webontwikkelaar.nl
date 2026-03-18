@@ -301,15 +301,6 @@
         text-decoration: none;
     }
 
-    @media not (pointer: coarse) {
-        .conf-link::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-        }
-    }
-
     .conf-row {
         position: relative;
 
