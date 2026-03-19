@@ -55,8 +55,13 @@
         --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.471 0.085 239.771));
         --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.471 0.085 239.771 / 0.6));
         --title: light-dark(oklch(0.301 0.031 284.412), oklch(0.898 0 89.876));
+    }
 
-        color: oklch(0.898 0 89.876)
+    @media (prefers-contrast: more) {
+        :root {
+            --dark: light-dark(black, white);
+            --light: light-dark(white, black);
+        }
     }
     
     body {
