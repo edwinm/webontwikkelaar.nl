@@ -52,8 +52,8 @@
         --darkgrey: light-dark(oklch(0.439 0 89.876), oklch(0.561 0 89.876));
         --lightgrey: light-dark(oklch(0.964 0 89.876), oklch(0.2 0 89.876));
         --lightgrey2: light-dark(oklch(0.928 0 89.876), oklch(0.072 0 89.876));
-        --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.471 0.085 239.771));
-        --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.471 0.085 239.771 / 0.6));
+        --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.3 0.131 21.998));
+        --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.3 0.131 21.998 / 0.6));
         --title: light-dark(oklch(0.301 0.031 284.412), oklch(0.898 0 89.876));
     }
 
@@ -254,15 +254,11 @@
 
     .map-img {
         object-fit: contain;
+        color: #075578
     }
 
-    @media (prefers-color-scheme: dark) {
-        .map-img {
-            filter: invert(1);
-        }
-    }
-
-    @media (width < 1160px) or (pointer: coarse) {
+    /*@media (width < 1160px) or (pointer: coarse) {*/
+    @media (width < 1160px) {
         .map {
             display: none;
         }
