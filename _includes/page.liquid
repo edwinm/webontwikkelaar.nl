@@ -9,7 +9,7 @@ settings:
 ---
 
 <!doctype html>
-<html lang="{{ lang | default: "nl" }}">
+<html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
     {% if title %}
@@ -32,6 +32,11 @@ settings:
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml"/>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    {% if page.url == "/" or page.url == "/en" %}
+    <link rel="alternate" hreflang="en" href="https://webontwikkelaar.nl/en" />
+    <link rel="alternate" hreflang="nl" href="https://webontwikkelaar.nl/" />
+    {% endif %}
+
     <style>
         @font-face {
             font-family: Moderustic;
