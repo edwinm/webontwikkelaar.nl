@@ -1,15 +1,5 @@
 console.log('edit');
 
-// const config = {
-//     num: 17,
-//     minsize: 5,
-//     maxsize: 30,
-//     border: 2,
-//     lightness: 73,
-//     chroma: 22,
-//     // alpha: 50,
-// };
-
 const config = {
     num: 12,
     minsize: 5,
@@ -17,7 +7,7 @@ const config = {
     border: 3,
     lightness: 73,
     chroma: 24,
-    // alpha: 50,
+    deviation: 10,
 };
 
 // https://github.com/edwinm/pringle/tree/main
@@ -143,7 +133,7 @@ function render(settings) {
         const pow = 3; // V = (4/3)πr³
         const r = Math.pow(prng.rand(Math.pow(settings.minsize, 1/pow), Math.pow(settings.maxsize, 1/pow)), pow);
         const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
-        const cx = prng.rand(0, width);
+        const cx = width * j /settings.num + prng.rand(-settings.deviation, settings.deviation) * 5;
         const cy= height/2 + (height/2 - r) * prng.rand(-cyv, cyv);
 
         // const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)} / ${settings.alpha / 100})`;

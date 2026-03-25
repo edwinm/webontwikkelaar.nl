@@ -121,7 +121,7 @@ export default function(eleventyConfig) {
             const pow = 3; // V = (4/3)πr³
             const r = Math.pow(prng.rand(Math.pow(settings.minsize, 1/pow), Math.pow(settings.maxsize, 1/pow)), pow);
             const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
-            const cx = prng.rand(0, cWidth);
+            const cx = cWidth * j /settings.num + prng.rand(-settings.deviation, settings.deviation) * 5;
             const cy= cHeight/2 + (cHeight/2 - r) * prng.rand(-cyv, cyv);
             const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360).toFixed(1)})`;
 
