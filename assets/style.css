@@ -132,7 +132,7 @@
     header {
         position: relative;
         display: grid;
-        padding: min(5rem, 10vw) 4rem 5rem;
+        padding: min(5rem, 10vw) 4rem min(4rem, 10vw - 4rem);
         z-index: 20;
     }
 
