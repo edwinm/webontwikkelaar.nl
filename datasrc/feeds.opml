@@ -146,7 +146,6 @@
             <outline type="rss" text="Frontend Masters" title="Frontend Masters" xmlUrl="https://frontendmasters.com/blog/feed/" htmlUrl="https://frontendmasters.com/blog/"/>
             <outline type="rss" text="web.dev: Blog" title="web.dev: Blog" xmlUrl="https://web.dev/static/blog/feed.xml" htmlUrl="https://web.dev/blog"/>
             <outline type="rss" text="Tim Severien - posts" title="Tim Severien - posts" xmlUrl="https://tsev.dev/feed.xml" htmlUrl="https://tsev.dev/"/>
-            <outline type="rss" text="Ariel Salminen" title="Ariel Salminen" xmlUrl="https://arielsalminen.com/atom.xml" htmlUrl="https://arielsalminen.com/writing/"/>
         </outline>
     </body>
 </opml>
