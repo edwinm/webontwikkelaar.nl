@@ -123,8 +123,9 @@
 
     .header-background {
         position: absolute;
-        width: clamp(20vw, 185%, 1600px);
-        height: auto;
+        width: clamp(20vw, 185%, 100vw - 15px);
+        height: min(320px, 36vw);
+        overflow: hidden;
         z-index: 10;
     }
 
