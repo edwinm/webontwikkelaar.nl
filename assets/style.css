@@ -375,6 +375,10 @@
         }
     }
 
+    .blog-container:not(:has(#more-blogs:checked)) .item:nth-child(n + 13) {
+        display: none;
+    }
+
     .item {
         list-style: none;
     }
@@ -443,6 +447,10 @@
 
     .link:hover .item-feed-date {
         color: var(--light);
+    }
+
+    .bottom-ui {
+        margin: 0;
     }
 
     .video-box {

@@ -62,7 +62,8 @@ lang: nl
 {% if feeds.posts.length > 0 %}
 <h2>blogs en nieuws</h2>
 
-<ul class="container box item-box">
+<div class="container blog-container box">
+<ul class="item-box">
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
@@ -71,7 +72,17 @@ lang: nl
                 </a>
         </li>
 {%- endfor -%}
+{%- for post in feeds.posts -%}
+    <li class="item" lang="{{ post.language | default: 'en' }}">
+        <a class="link item-link" href="{{ post.link }}">
+            <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></p>
+            <h3 class="item-title">{{ post.title }}</h3>
+        </a>
+    </li>
+{%- endfor -%}
 </ul>
+    <p class="bottom-ui"><label><input id="more-blogs" type="checkbox"> toon meer</label></p>
+</div>
 {% endif %}
 
 {% if feeds.videos.length > 0 %}
