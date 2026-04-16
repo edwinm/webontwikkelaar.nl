@@ -16,6 +16,10 @@ import {
 
 const USER_AGENT = 'webontwikkelaar.nl/1.0';
 
+const BLOGCOUNT = 24;
+const VIDEOCOUNT = 12;
+const PODCASTCOUNT = 12;
+
 const parseXML = promisify(parseString);
 
 const parser = new Parser({
@@ -177,7 +181,7 @@ async function getBlogs() {
 
         const processedSorted = processed.toSorted((a, b) => (b.dateValue || 0) - (a.dateValue || 0));
 
-        const sliced = processedSorted.slice(0, 12);
+        const sliced = processedSorted.slice(0, BLOGCOUNT);
 
         return sliced;
     } catch (error) {
@@ -189,7 +193,6 @@ async function getBlogs() {
 async function getVideos() {
     const response = await readFile("cache/youtube-ids.json", 'utf-8');
     const ids = JSON.parse(response);
-    const num = 12;
 
     const videoPromises = ids.map(async (idData) => {
         const videoUrl =`https://www.youtube.com/feeds/videos.xml?channel_id=${idData.id}`;
@@ -237,7 +240,7 @@ async function getVideos() {
             return [...acc, normalizedVideo];
         }, []);
 
-        if (allItems.length < num) {
+        if (allItems.length < VIDEOCOUNT) {
             console.error(`Received ${allItems.length} videos. Filling up with videos from bucket.`);
             // Now, for videos only, make more generic when needed
             const { Body } = await s3Client.send(
@@ -262,7 +265,7 @@ async function getVideos() {
 
         const allItemsSorted = allItems.sort((a, b) => b.dateValue - a.dateValue);
 
-        return allItemsSorted.slice(0, num);
+        return allItemsSorted.slice(0, VIDEOCOUNT);
     } catch (error) {
         console.error(error);
         return [];
@@ -343,7 +346,7 @@ async function getPodcasts(podcastList) {
 
     const podcastIds = Object.values(podcastList).join();
 
-    const podcastUrl = `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=12`;
+    const podcastUrl = `https://api.podcastindex.org/api/1.0/episodes/byfeedid?id=${podcastIds}&max=${PODCASTCOUNT}`;
 
     try {
         const response = await fetchWithRetry(

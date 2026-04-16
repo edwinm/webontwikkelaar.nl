@@ -375,6 +375,52 @@
         }
     }
 
+    .bottom-ui {
+        text-align: right;
+    }
+
+    .bottom-ui-label {
+        padding: 3px 6px;
+        border-radius: 8px;
+        corner-shape: squircle;
+
+        &:hover {
+            background-color: var(--grey);
+        }
+    }
+
+    #more-blogs {
+        appearance: none;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    #more-blogs-icon {
+        position: relative;
+        top: 0.4rem;
+        rotate: 180deg;
+    }
+
+    #more-blogs-text {
+        display: none;
+    }
+
+    .blog-container:not(:has(#more-blogs:checked)) {
+        & .item:nth-child(n + 13) {
+            display: none;
+        }
+
+        & #more-blogs-icon {
+            rotate: 0deg;
+        }
+        & #less-blogs-text {
+            display: none;
+        }
+        & #more-blogs-text {
+            display: initial;
+        }
+    }
+
     .item {
         list-style: none;
     }
@@ -443,6 +489,10 @@
 
     .link:hover .item-feed-date {
         color: var(--light);
+    }
+
+    .bottom-ui {
+        margin: 0;
     }
 
     .video-box {

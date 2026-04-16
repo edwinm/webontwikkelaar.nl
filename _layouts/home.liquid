@@ -62,7 +62,8 @@ lang: nl
 {% if feeds.posts.length > 0 %}
 <h2>blogs en nieuws</h2>
 
-<ul class="container box item-box">
+<div class="container blog-container box">
+<ul class="item-box">
 {%- for post in feeds.posts -%}
         <li class="item" lang="{{ post.language | default: 'en' }}">
                 <a class="link item-link" href="{{ post.link }}">
@@ -72,6 +73,15 @@ lang: nl
         </li>
 {%- endfor -%}
 </ul>
+    <p class="bottom-ui">
+        <label class="bottom-ui-label">
+            <input id="more-blogs" type="checkbox">
+            <svg id="more-blogs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+            <span id="more-blogs-text">toon meer</span>
+            <span id="less-blogs-text">toon minder</span>
+        </label>
+    </p>
+</div>
 {% endif %}
 
 {% if feeds.videos.length > 0 %}
