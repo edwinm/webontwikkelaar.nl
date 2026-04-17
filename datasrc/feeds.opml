@@ -45,7 +45,6 @@
             <outline type="rss" text="Lea Verou’s blog" title="Lea Verou’s blog" xmlUrl="http://leaverou.me/feed/" htmlUrl="https://lea.verou.me/"/>
             <outline type="rss" text="Frontend Focus" title="Frontend Focus" xmlUrl="http://html5weekly.com/rss" htmlUrl="https://frontendfoc.us/"/>
             <outline type="rss" text="React" title="React" xmlUrl="http://facebook.github.io/react/feed.xml" htmlUrl="https://reactjs.org"/>
-            <outline type="rss" text="Adactio: Links" title="Adactio: Links" xmlUrl="http://adactio.com/links/rss" htmlUrl="https://adactio.com/links/"/>
             <outline type="rss" text="Sia Karamalegos | Blog" title="Sia Karamalegos | Blog" xmlUrl="https://sia.codes/feed/feed.xml" htmlUrl="https://sia.codes"/>
             <outline type="rss" text="The Web Witch's Blog" title="The Web Witch's Blog" xmlUrl="https://blog.stephaniestimac.com/feed/feed.xml" htmlUrl="https://blog.stephaniestimac.com"/>
             <outline type="rss" text="Brittany Ellich’s Blog" title="Brittany Ellich’s Blog" xmlUrl="https://brittanyellich.com/index.xml" htmlUrl="https://brittanyellich.com"/>
@@ -132,7 +131,6 @@
             <outline type="rss" text="Stubbornella" title="Stubbornella" xmlUrl="http://www.stubbornella.org/content/feed/" htmlUrl="https://www.stubbornella.org"/>
             <outline type="rss" text="Storbeck Blog" title="Storbeck Blog" xmlUrl="https://www.storbeck.dev/feed.xml" htmlUrl="https://storbeck.dev/"/>
             <outline type="rss" text="Chi Señires" title="Chi Señires" xmlUrl="https://chisenires.design/feed.xml" htmlUrl="https://chisenires.design/"/>
-            <outline type="rss" text="A List Apart" title="A List Apart" xmlUrl="http://www.alistapart.com/site/rss" htmlUrl="https://alistapart.com"/>
             <outline type="rss" text="Bryan Anthonio" title="Bryan Anthonio" xmlUrl="https://bryananthonio.com/rss.xml" htmlUrl="https://bryananthonio.com/"/>
             <outline type="rss" text="Ahmad Shadeed" title="Ahmad Shadeed" xmlUrl="http://ishadeed.com/feed.xml" htmlUrl="https://ishadeed.com/"/>
             <outline type="rss" text="Anne’s Weblog" title="Anne’s Weblog" xmlUrl="http://annevankesteren.nl/feeds/weblog" htmlUrl="https://annevankesteren.nl/"/>
