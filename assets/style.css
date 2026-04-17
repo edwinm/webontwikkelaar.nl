@@ -384,7 +384,7 @@
         border-radius: 8px;
         corner-shape: squircle;
 
-        &:hover {
+        &:hover, &:has(:focus) {
             background-color: var(--grey);
         }
     }
@@ -403,6 +403,10 @@
 
     #more-blogs-text {
         display: none;
+    }
+
+    .blog-container .item-box {
+        margin-bottom: 0;
     }
 
     .blog-container:not(:has(#more-blogs:checked)) {
