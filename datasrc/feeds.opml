@@ -147,6 +147,13 @@
             <outline type="rss" text="web.dev: Blog" title="web.dev: Blog" xmlUrl="https://web.dev/static/blog/feed.xml" htmlUrl="https://web.dev/blog"/>
             <outline type="rss" text="Tim Severien - posts" title="Tim Severien - posts" xmlUrl="https://tsev.dev/feed.xml" htmlUrl="https://tsev.dev/"/>
             <outline type="rss" text="danielabaron.me RSS Feed" title="danielabaron.me RSS Feed" xmlUrl="https://danielabaron.me/rss.xml" htmlUrl="https://danielabaron.me/"/>
+            <outline type="rss" text="Una Kravets" title="Una Kravets" xmlUrl="https://una.im/rss.xml" htmlUrl="https://una.im"/>
+            <outline type="rss" text="Josh W. Comeau" title="Josh W. Comeau" xmlUrl="https://joshwcomeau.com/rss.xml" htmlUrl="https://joshwcomeau.com"/>
+            <outline type="rss" text="Temani Afif" title="Temani Afif" xmlUrl="https://css-articles.com/feed.xml" htmlUrl="https://css-articles.com"/>
+            <outline type="rss" text="Zach Leatherman" title="Zach Leatherman" xmlUrl="https://zachleat.com/web/feed/" htmlUrl="https://zachleat.com"/>
+            <outline type="rss" text="Ryan Mulligan" title="Ryan Mulligan" xmlUrl="https://ryanmulligan.dev/feed.xml" htmlUrl="https://ryanmulligan.dev"/>
+            <outline type="rss" text="Open Web Advocacy" title="Open Web Advocacy" xmlUrl="https://open-web-advocacy.org/feed.xml" htmlUrl="https://open-web-advocacy.org"/>
+            <outline type="rss" text="Deno Blog" title="Deno Blog" xmlUrl="https://deno.com/feed" htmlUrl="https://deno.com/blog"/>
         </outline>
     </body>
 </opml>
