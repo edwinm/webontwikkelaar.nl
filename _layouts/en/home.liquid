@@ -10,64 +10,6 @@ lang: en
 </header>
 
 <main>
-
-    {% if feeds.conferences.length > 0 %}
-
-        <style>
-            {%- for city in feeds.cities -%}
-
-            .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }} > td {
-                color: white;
-                background: #494949;
-            }
-
-            .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
-                outline-offset: 10px;
-            }
-
-            {%- endfor -%}
-        </style>
-
-        <section class="container conf-container">
-            <h2>conferences and meetups</h2>
-
-            <div class="conferences">
-                <table class="conf-table">
-                    {%- for conference in feeds.conferences -%}
-                        <tr class="conf-row city-{{ conference.slug }}">
-                            <td><a class="conf-link"
-                                   href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a>
-                            </td>
-                            <td>{{ conference.city }}</td>
-                            <td>
-                                <a class="conf-link" href="{{ conference.url }}">
-                                    <p class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }}
-                                        • {{ conference.city }}</p>
-                                    <h3 class="conf-title">{{ conference.title }}</h3>
-                                </a>
-                            </td>
-                        </tr>
-                    {%- endfor -%}
-                </table>
-                <div class="map">
-
-                    {%- for city in feeds.cities -%}
-                        <div class="city city-{{ city.slug }}"
-                             style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
-
-                    {%- endfor -%}
-
-                    <picture>
-                        <source media="(prefers-color-scheme: dark)" srcset="/assets/nl-vl-dark.svg"
-                                type="image/svg+xml">
-                        <img class="map-img" width="549" height="500" src="/assets/nl-vl.svg"
-                             alt="Map of the Netherlands and Flanders">
-                    </picture>
-                </div>
-            </div>
-        </section>
-    {% endif %}
-
     {% if feeds.posts.length > 0 %}
         <section class="container blog-container box">
             <h2>blogs and news</h2>
