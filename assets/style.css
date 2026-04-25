@@ -78,7 +78,7 @@
         position: relative;
         width: fit-content;
         margin: 1rem 0 2rem;
-        padding-left: 3rem;
+        padding-left: 1em;
         font-size: clamp(2rem, 3vw, 3rem);
         font-weight: 600;
     }
@@ -110,10 +110,10 @@
         content: '';
         display: block;
         position: absolute;
-        top: 1.4rem;
+        bottom: .2em;
         left: 0;
-        width: 1.6rem;
-        height: 1.6rem;
+        width: .6em;
+        height: .6em;
         background-color: var(--accent);
         border-radius: 10px;
         corner-shape: squircle;
