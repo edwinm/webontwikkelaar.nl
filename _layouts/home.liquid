@@ -11,133 +11,163 @@ lang: nl
 
 <main>
 
-{% if feeds.conferences.length > 0 %}
+    {% if feeds.conferences.length > 0 %}
 
-    <style>
-    {%- for city in feeds.cities -%}
+        <style>
+            {%- for city in feeds.cities -%}
 
-        .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }}>td {
-            color: white;
-            background: #494949;
-        }
-        .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
-            outline-offset: 10px;
-        }
+            .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }} > td {
+                color: white;
+                background: #494949;
+            }
 
-    {%- endfor -%}
-    </style>
+            .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
+                outline-offset: 10px;
+            }
 
-    <h2>conferenties en bijeenkomsten</h2>
+            {%- endfor -%}
+        </style>
 
-<section class="container conferences">
-    <table class="conf-table">
-        {%- for conference in feeds.conferences -%}
-        <tr class="conf-row city-{{ conference.slug }}">
-            <td><a class="conf-link" href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a></td>
-            <td>{{ conference.city }}</td>
-            <td>
-                <a class="conf-link" href="{{ conference.url }}">
-                    <p class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }} • {{ conference.city }}</p>
-                    <h3 class="conf-title">{{ conference.title }}</h3>
-                </a>
-            </td>
-        </tr>
-        {%- endfor -%}
-    </table>
-    <div class="map">
+        <section class="container conf-container">
+            <h2>conferenties en bijeenkomsten</h2>
 
-        {%- for city in feeds.cities -%}
-            <div class="city city-{{ city.slug }}" style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
+            <div class="conferences">
+                <table class="conf-table">
+                    {%- for conference in feeds.conferences -%}
+                        <tr class="conf-row city-{{ conference.slug }}">
+                            <td><a class="conf-link"
+                                   href="{{ conference.url }}">{{ conference.start_date | dateRange: conference.end_date }}</a>
+                            </td>
+                            <td>{{ conference.city }}</td>
+                            <td>
+                                <a class="conf-link" href="{{ conference.url }}">
+                                    <p class="conf-meta item-feed-title">{{ conference.start_date | dateRange: conference.end_date }}
+                                        • {{ conference.city }}</p>
+                                    <h3 class="conf-title">{{ conference.title }}</h3>
+                                </a>
+                            </td>
+                        </tr>
+                    {%- endfor -%}
+                </table>
+                <div class="map">
 
-        {%- endfor -%}
+                    {%- for city in feeds.cities -%}
+                        <div class="city city-{{ city.slug }}"
+                             style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
 
-        <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="/assets/nl-vl-dark.svg" type="image/svg+xml">
-            <img class="map-img" width="549" height="500" src="/assets/nl-vl.svg" alt="Kaart van Nederland en Vlaanderen">
-        </picture>
-    </div>
-</section>
-{% endif %}
+                    {%- endfor -%}
 
-{% if feeds.posts.length > 0 %}
-<h2>blogs en nieuws</h2>
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="/assets/nl-vl-dark.svg"
+                                type="image/svg+xml">
+                        <img class="map-img" width="549" height="500" src="/assets/nl-vl.svg"
+                             alt="Kaart van Nederland en Vlaanderen">
+                    </picture>
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
-<div class="container blog-container box">
-<ul class="item-box">
-{%- for post in feeds.posts -%}
-        <li class="item" lang="{{ post.language | default: 'en' }}">
-                <a class="link item-link" href="{{ post.link }}">
-                        <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time itemprop="datePublished" datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span></p>
-                        <h3 class="item-title">{{ post.title }}</h3>
-                </a>
-        </li>
-{%- endfor -%}
-</ul>
-    <p class="bottom-ui">
-        <label class="bottom-ui-label">
-            <input id="more-blogs" type="checkbox">
-            <svg id="more-blogs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
-            <span id="more-blogs-text">toon meer</span>
-            <span id="less-blogs-text">toon minder</span>
-        </label>
-    </p>
-</div>
-{% endif %}
+    {% if feeds.posts.length > 0 %}
+        <section class="container blog-container box">
+            <h2>blogs en nieuws</h2>
 
-{% if feeds.videos.length > 0 %}
-<h2>video’s</h2>
-
-<ul class="container box video-box">
-        {%- for video in feeds.videos -%}
-                <li class="video">
-                        <a class="link video-link" href="{{ video.link }}">
-                                <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
-                                <p class="item-feed-title">{{ video.author }} <span class="grey">• <time itemprop="datePublished" datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span></p>
-                                <h3 class="video-title">{{ video.title }}</h3>
+            <ul class="item-box">
+                {%- for post in feeds.posts -%}
+                    <li class="item" lang="{{ post.language | default: 'en' }}">
+                        <a class="link item-link" href="{{ post.link }}">
+                            <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time
+                                            itemprop="datePublished"
+                                            datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span>
+                            </p>
+                            <h3 class="item-title">{{ post.title }}</h3>
                         </a>
-                </li>
-        {%- endfor -%}
-</ul>
-{% endif %}
+                    </li>
+                {%- endfor -%}
+            </ul>
+            <p class="bottom-ui">
+                <label class="bottom-ui-label">
+                    <input id="more-blogs" type="checkbox">
+                    <svg id="more-blogs-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                         viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                        <path d="m6 9 6 6 6-6"/>
+                    </svg>
+                    <span id="more-blogs-text">toon meer</span>
+                    <span id="less-blogs-text">toon minder</span>
+                </label>
+            </p>
+        </section>
+    {% endif %}
 
-{% if feeds.podcasts.length > 0 %}
-    <h2>podcasts</h2>
+    {% if feeds.videos.length > 0 %}
+        <section class="container video-container box">
+            <h2>video’s</h2>
 
-    <div class="container box podcast-box">
-        <ul class="podcast-list">
-            {%- for podcast in feeds.podcasts -%}
-                <li class="podcast">
-                    <article class="podcast-item">
+            <ul class="container box video-box">
+                {%- for video in feeds.videos -%}
+                    <li class="video">
+                        <a class="link video-link" href="{{ video.link }}">
+                            <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
+                            <p class="item-feed-title">{{ video.author }} <span class="grey">• <time
+                                            itemprop="datePublished"
+                                            datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span>
+                            </p>
+                            <h3 class="video-title">{{ video.title }}</h3>
+                        </a>
+                    </li>
+                {%- endfor -%}
+            </ul>
+        </section>
+    {% endif %}
 
-                        <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}" alt="">
+    {% if feeds.podcasts.length > 0 %}
+        <section class="container podcast-container box podcast-box">
+            <h2>podcasts</h2>
 
-                        <div class="podcast-content">
+            <ul class="podcast-list">
+                {%- for podcast in feeds.podcasts -%}
+                    <li class="podcast">
+                        <article class="podcast-item">
+
+                            <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}"
+                                 alt="">
+
+                            <div class="podcast-content">
                             <span class="item-feed-title podcast-creator">
                                 {{ podcast.creator }}
                                 • <span class="podcast-duration grey">{{ podcast.duration | duration }}</span>
-                                • <span class="grey podcast-date"><time itemprop="datePublished" datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
+                                • <span class="grey podcast-date"><time itemprop="datePublished"
+                                                                        datetime="{{ podcast.dateValue | ymdDate }}">{{ podcast.dateValue | dutchShortDate }}</time></span>
                                 <div class="podcast-icons">
                                 {% if podcast.link != "" %}
-                                    <a class="podcast-link" href="{{ podcast.link }}"><img class="podcast-logo podcast-link-logo" src="/assets/link.svg" alt="Link naar podcastpagina"/></a>
+                                    <a class="podcast-link" href="{{ podcast.link }}"><img
+                                                class="podcast-logo podcast-link-logo" src="/assets/link.svg"
+                                                alt="Link naar podcastpagina"/></a>
                                 {% endif %}
-                                {% if podcast.feedItunesId %}
-                                    <a class="podcast-apple" href="https://podcasts.apple.com/nl/podcast/id{{ podcast.feedItunesId }}"><img class="podcast-logo podcast-apple-logo" src="/assets/apple.svg" alt="Link naar Apple Podcasts"/></a>
-                                {% endif %}
+                                    {% if podcast.feedItunesId %}
+                                        <a class="podcast-apple"
+                                           href="https://podcasts.apple.com/nl/podcast/id{{ podcast.feedItunesId }}"><img
+                                                    class="podcast-logo podcast-apple-logo" src="/assets/apple.svg"
+                                                    alt="Link naar Apple Podcasts"/></a>
+                                    {% endif %}
                                 </div>
                             </span>
-                            <h3 class="podcast-title">{{ podcast.title }}</h3>
-                            <div class="podcast-controls">
-                                <audio class="podcast-audio" controls preload="none" src="{{ podcast.enclosureUrl }}"></audio>
+                                <h3 class="podcast-title">{{ podcast.title }}</h3>
+                                <div class="podcast-controls">
+                                    <audio class="podcast-audio" controls preload="none"
+                                           src="{{ podcast.enclosureUrl }}"></audio>
+                                </div>
                             </div>
-                        </div>
-                    </article>
-                </li>
-            {%- endfor -%}
-        </ul>
-        <a class="podcast-attribution grey" href="https://podcastindex.org" target="_blank" rel="nofollow, noopener">
-            Podcastgegevens geleverd door Podcast Index
-        </a>
-    </div>
-{% endif %}
+                        </article>
+                    </li>
+                {%- endfor -%}
+            </ul>
+            <a class="podcast-attribution grey" href="https://podcastindex.org" target="_blank"
+               rel="nofollow, noopener">
+                Podcastgegevens geleverd door Podcast Index
+            </a>
+        </section>
+    {% endif %}
 
 </main>

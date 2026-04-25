@@ -44,7 +44,7 @@
 
         --dark: light-dark(oklch(0.301 0.031 284.412), oklch(0.721 0.023 285.809));
         --light: light-dark(oklch(0.994 0.001 106.423), oklch(0.006 0.001 106.423));
-        --accent: light-dark(oklch(0.73 0.096 277.752), oklch(0.27 0.096 277.752));
+        --footer: light-dark(oklch(0.73 0.096 277.752), oklch(0.27 0.096 277.752));
         --hover: light-dark(oklch(0.405 0 89.876), oklch(0.595 0 89.876));
         --lighthover: light-dark(oklch(0.907 0 89.876), oklch(0.289 0 89.876));
         --active: light-dark(oklch(0.796 0.079 69.46), oklch(0.204 0.079 69.46));
@@ -63,7 +63,7 @@
             --light: light-dark(white, black);
         }
     }
-    
+
     body {
         display: flex;
         flex-direction: column;
@@ -75,9 +75,10 @@
     }
 
     h2 {
+        position: relative;
         width: fit-content;
-        margin: 1rem 1rem 2rem;
-        padding-left: 1rem;
+        margin: 1rem 0 2rem;
+        padding-left: 3rem;
         font-size: clamp(2rem, 3vw, 3rem);
         font-weight: 600;
     }
@@ -93,16 +94,29 @@
 
     main {
         flex: 1;
-        padding: 1rem;
+        padding: 4rem 1rem 1rem;
     }
 
     footer {
         display: flex;
         height: 6rem;
-        background-color: var(--accent);
+        background-color: var(--footer);
         justify-content: center;
         align-items: center;
         gap: 1rem;
+    }
+
+    main h2::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 1.4rem;
+        left: 0;
+        width: 1.6rem;
+        height: 1.6rem;
+        background-color: var(--accent);
+        border-radius: 10px;
+        corner-shape: squircle;
     }
 
     a:active {
@@ -183,6 +197,7 @@
         top: 1rem;
         padding: 4px;
         list-style: none;
+        background-color: var(--light);
         border: 1px solid var(--dark);
         border-radius: 8px;
         corner-shape: squircle;
@@ -235,8 +250,24 @@
 
     .container {
         margin: 0 0 4rem;
-        border-radius: 10px;
-        corner-shape: squircle;
+        --accent: light-dark(oklch(0.73 0.096 var(--accentx)), oklch(0.27 0.096 var(--accentx)));
+    }
+
+    .conf-container {
+        --accentx: 128.5;
+    }
+
+    .blog-container {
+        --accentx: 277.752;
+        margin-bottom: 1rem;
+    }
+
+    .video-container {
+        --accentx: 0.8;
+    }
+
+    .podcast-container {
+        --accentx: 249.9;
     }
 
     .conferences {
@@ -372,6 +403,7 @@
 
     .bottom-ui {
         text-align: right;
+        height: 2rem;
     }
 
     .bottom-ui-label {
@@ -400,10 +432,6 @@
         display: none;
     }
 
-    .blog-container .item-box {
-        margin-bottom: 0;
-    }
-
     .blog-container:not(:has(#more-blogs:checked)) {
         & .item:nth-child(n + 13) {
             display: none;
@@ -428,7 +456,7 @@
         display: block;
         height: 70px;
         border-left: 8px solid var(--accent);
-        padding: 10px 10px 10px 14px;
+        padding: 1rem;
         margin-bottom: 20px;
     }
 
@@ -499,6 +527,7 @@
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 0.8rem 0.5rem;
         align-items: stretch;
+        margin: 0 -10px;
     }
 
     .video {
@@ -575,15 +604,11 @@
         filter: saturate(100%)  contrast(100%);
     }
 
-    .podcast-box {
-        padding-bottom: 1rem;
-    }
-
     .podcast-list {
         column-width: 500px;
         column-gap: 2rem;
         padding: 0;
-        margin: 0;
+        margin: 0 -10px;
 
         & > * {
             break-inside: avoid;
@@ -680,7 +705,7 @@
 
     .podcast-attribution {
         display: block;
-        margin-top: 0.2rem;
+        margin-top: 1rem;
         color: inherit;
         font-size: 0.8rem;
         text-decoration: none;
