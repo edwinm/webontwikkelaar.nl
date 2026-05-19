@@ -152,6 +152,7 @@
             <outline type="rss" text="Ryan Mulligan" title="Ryan Mulligan" xmlUrl="https://ryanmulligan.dev/feed.xml" htmlUrl="https://ryanmulligan.dev"/>
             <outline type="rss" text="Open Web Advocacy" title="Open Web Advocacy" xmlUrl="https://open-web-advocacy.org/feed.xml" htmlUrl="https://open-web-advocacy.org"/>
             <outline type="rss" text="Deno Blog" title="Deno Blog" xmlUrl="https://deno.com/feed" htmlUrl="https://deno.com/blog"/>
+            <outline type="rss" text="Blog posts by Jad Joubran" title="Blog posts by Jad Joubran" xmlUrl="https://jadjoubran.io/rss.xml" htmlUrl="https://jadjoubran.io/"/>
         </outline>
     </body>
 </opml>
