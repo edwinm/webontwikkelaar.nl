@@ -153,6 +153,7 @@
             <outline type="rss" text="Open Web Advocacy" title="Open Web Advocacy" xmlUrl="https://open-web-advocacy.org/feed.xml" htmlUrl="https://open-web-advocacy.org"/>
             <outline type="rss" text="Deno Blog" title="Deno Blog" xmlUrl="https://deno.com/feed" htmlUrl="https://deno.com/blog"/>
             <outline type="rss" text="Blog posts by Jad Joubran" title="Blog posts by Jad Joubran" xmlUrl="https://jadjoubran.io/rss.xml" htmlUrl="https://jadjoubran.io/"/>
+            <outline type="rss" text="Modern Web Weekly" title="Modern Web Weekly" xmlUrl="https://modernwebweekly.substack.com/feed" htmlUrl="https://modernwebweekly.substack.com/"/>
         </outline>
     </body>
 </opml>
