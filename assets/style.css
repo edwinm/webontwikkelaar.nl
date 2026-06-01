@@ -10,6 +10,10 @@
         box-sizing: inherit;
     }
 
+    @view-transition {
+        navigation: auto;
+    }
+
     body {
         font-family: sans-serif;
         margin: 0;
@@ -55,6 +59,12 @@
         --city: light-dark(oklch(0.579 0.131 21.998), oklch(0.3 0.131 21.998));
         --cityradius: light-dark(oklch(0.579 0.131 21.998 / 0.6), oklch(0.3 0.131 21.998 / 0.6));
         --title: light-dark(oklch(0.301 0.031 284.412), oklch(0.898 0 89.876));
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 400ms;
+        animation-timing-function: ease-in-out;
     }
 
     @media (prefers-contrast: more) {
