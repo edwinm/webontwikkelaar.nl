@@ -273,32 +273,37 @@ async function getVideos() {
 }
 
 async function getConferences() {
-    const today = new Intl.DateTimeFormat('sv-SE').format(new Date());
+    try {
+        const today = new Intl.DateTimeFormat('sv-SE').format(new Date());
 
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 10_000);
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 10_000);
 
-    const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey, {
-        auth: {
-            persistSession: false,
-            autoRefreshToken: false,
-        }
-    });
+        const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey, {
+            auth: {
+                persistSession: false,
+                autoRefreshToken: false,
+            }
+        });
 
-    const { data: conferences } = await supabase
-        .from('conferences_with_location')
-        .select()
-        .gte('end_date', today)
-        .order('start_date', { ascending: true })
-        .limit(10)
-        .abortSignal(controller.signal);
+        const {data: conferences} = await supabase
+            .from('conferences_with_location')
+            .select()
+            .gte('end_date', today)
+            .order('start_date', {ascending: true})
+            .limit(10)
+            .abortSignal(controller.signal);
 
-    clearTimeout(timeout);
+        clearTimeout(timeout);
 
-    const conferencesWithSlug = conferences.map((conference) =>
-        ({...conference, slug: toSlug(conference.city)}))
+        const conferencesWithSlug = conferences.map((conference) =>
+            ({...conference, slug: toSlug(conference.city)}))
 
-    return conferencesWithSlug;
+        return conferencesWithSlug;
+    } catch (error) {
+        console.error("Failed fetching conferences", error);
+        return [];
+    }
 }
 
 function getCities(conferences) {
@@ -319,6 +324,7 @@ function getCities(conferences) {
 }
 
 function toSlug(str) {
+    console.log("toSlug", str);
     return str
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '') // strip diacritics
