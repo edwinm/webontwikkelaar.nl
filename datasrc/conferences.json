@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "created_at": "2026-01-23T08:42:25.135184+00:00",
+    "title": "Fronteers Dark Mode",
+    "start_date": "2026-10-02",
+    "end_date": "2026-10-02",
+    "city": "Dordrecht",
+    "url": "https://www.fronteers.nl/nl/congres/"
+  },
+  {
+    "id": 2,
+    "created_at": "2026-01-23T08:49:02.446751+00:00",
+    "title": "CSS Day",
+    "start_date": "2026-06-11",
+    "end_date": "2026-06-12",
+    "city": "Amsterdam",
+    "url": "https://cssday.nl/"
+  },
+  {
+    "id": 3,
+    "created_at": "2026-01-23T08:57:16.315074+00:00",
+    "title": "DEVWorld",
+    "start_date": "2026-05-07",
+    "end_date": "2026-05-08",
+    "city": "Amsterdam",
+    "url": "https://devworldconference.com/"
+  },
+  {
+    "id": 4,
+    "created_at": "2026-01-23T09:07:42.606089+00:00",
+    "title": "JSWorld Conference",
+    "start_date": "2026-05-07",
+    "end_date": "2026-05-08",
+    "city": "Amsterdam",
+    "url": "https://jsworldconference.com/"
+  },
+  {
+    "id": 5,
+    "created_at": "2026-01-23T09:14:59.755767+00:00",
+    "title": "React Summit",
+    "start_date": "2026-06-12",
+    "end_date": "2026-06-16",
+    "city": "Amsterdam",
+    "url": "https://reactsummit.com/"
+  },
+  {
+    "id": 6,
+    "created_at": "2026-01-23T09:17:26.645248+00:00",
+    "title": "JSNation",
+    "start_date": "2026-06-11",
+    "end_date": "2026-06-15",
+    "city": "Amsterdam",
+    "url": "https://jsnation.com/"
+  },
+  {
+    "id": 7,
+    "created_at": "2026-01-23T09:19:46.74641+00:00",
+    "title": "performance.now() ",
+    "start_date": "2026-11-19",
+    "end_date": "2026-11-20",
+    "city": "Amsterdam",
+    "url": "https://perfnow.nl/"
+  },
+  {
+    "id": 8,
+    "created_at": "2026-01-23T09:26:12.193551+00:00",
+    "title": "VueJS Amsterdam",
+    "start_date": "2026-03-12",
+    "end_date": "2026-03-13",
+    "city": "Amsterdam",
+    "url": "https://vuejs.amsterdam/"
+  },
+  {
+    "id": 9,
+    "created_at": "2026-01-23T09:28:39.071106+00:00",
+    "title": "SmashingConf Amsterdam 2026",
+    "start_date": "2026-04-13",
+    "end_date": "2026-04-16",
+    "city": "Amsterdam",
+    "url": "https://smashingconf.com/amsterdam-2026"
+  },
+  {
+    "id": 10,
+    "created_at": "2026-01-23T09:31:22.378699+00:00",
+    "title": "SmashingConf Antwerp",
+    "start_date": "2026-10-12",
+    "end_date": "2026-10-15",
+    "city": "Antwerpen",
+    "url": "https://smashingconf.com/antwerp-2026/"
+  },
+  {
+    "id": 11,
+    "created_at": "2026-01-23T09:33:39.433891+00:00",
+    "title": "FOSDEM",
+    "start_date": "2026-01-31",
+    "end_date": "2026-02-01",
+    "city": "Brussel",
+    "url": "https://fosdem.org/2026/"
+  },
+  {
+    "id": 12,
+    "created_at": "2026-01-23T09:36:34.019867+00:00",
+    "title": "Dutch PHP Conference",
+    "start_date": "2026-03-10",
+    "end_date": "2026-03-13",
+    "city": "Amsterdam",
+    "url": "https://phpconference.nl/"
+  },
+  {
+    "id": 13,
+    "created_at": "2026-01-23T09:42:54.331634+00:00",
+    "title": "DrupalCon Europe 2026",
+    "start_date": "2026-09-28",
+    "end_date": "2026-10-01",
+    "city": "Rotterdam",
+    "url": "https://events.drupal.org/rotterdam2026"
+  },
+  {
+    "id": 14,
+    "created_at": "2026-01-23T09:47:42.093744+00:00",
+    "title": "Webdevcon",
+    "start_date": "2026-03-10",
+    "end_date": "2026-03-13",
+    "city": "Amsterdam",
+    "url": "https://webdevcon.nl/"
+  },
+  {
+    "id": 15,
+    "created_at": "2026-01-26T15:52:10.805552+00:00",
+    "title": "The web you want",
+    "start_date": "2026-06-10",
+    "end_date": "2026-06-10",
+    "city": "Amsterdam",
+    "url": "https://the-web-you-want.org/"
+  },
+  {
+    "id": 18,
+    "created_at": "2026-02-25T13:24:12.669553+00:00",
+    "title": "Meetup: Fronteers borrel",
+    "start_date": "2026-03-12",
+    "end_date": "2026-03-12",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/fronteers-nl/events/312424786/"
+  },
+  {
+    "id": 19,
+    "created_at": "2026-03-02T19:52:10.228706+00:00",
+    "title": "Meetup: Vue.js Amsterdam Community Night",
+    "start_date": "2026-03-11",
+    "end_date": "2026-03-11",
+    "city": "Amsterdam",
+    "url": "https://www.meetup.com/javascript-developer-meetup-amsterdam/events/313593457/"
+  },
+  {
+    "id": 20,
+    "created_at": "2026-03-06T10:09:24.537899+00:00",
+    "title": "Meetup: AmsterdamJS",
+    "start_date": "2026-03-26",
+    "end_date": "2026-03-26",
+    "city": "Amsterdam",
+    "url": "https://guild.host/events/amsterdamjs-meetup-instant-kd10t3"
+  },
+  {
+    "id": 21,
+    "created_at": "2026-03-06T19:46:03.942498+00:00",
+    "title": "Frontmania",
+    "start_date": "2026-10-07",
+    "end_date": "2026-10-07",
+    "city": "Utrecht",
+    "url": "https://frontmania.com/"
+  },
+  {
+    "id": 22,
+    "created_at": "2026-03-06T19:47:19.788269+00:00",
+    "title": "Frontend Festival 2026",
+    "start_date": "2026-06-10",
+    "end_date": "2026-06-10",
+    "city": "Nieuwegein",
+    "url": "https://www.eventbrite.nl/e/frontend-festival-2026-tickets-1982964181246"
+  },
+  {
+    "id": 23,
+    "created_at": "2026-03-09T08:17:06.053743+00:00",
+    "title": "Web Engineering Summit",
+    "start_date": "2026-06-11",
+    "end_date": "2026-06-15",
+    "city": "Amsterdam",
+    "url": "https://webengineeringsummit.com/"
+  },
+  {
+    "id": 24,
+    "created_at": "2026-03-14T23:06:10.748227+00:00",
+    "title": "Meetup: React Amsterdam",
+    "start_date": "2026-04-07",
+    "end_date": "2026-04-07",
+    "city": "Amsterdam",
+    "url": "https://guild.host/events/react-amsterdam-meetup-dzek85"
+  },
+  {
+    "id": 25,
+    "created_at": "2026-03-17T23:07:41.609153+00:00",
+    "title": "Meetup: Fronteers bij Abra",
+    "start_date": "2026-04-08",
+    "end_date": "2026-04-08",
+    "city": "Utrecht",
+    "url": "https://www.fronteers.nl/nl/activiteiten/2026/meetup-april-2026"
+  },
+  {
+    "id": 26,
+    "created_at": "2026-04-03T18:18:31.483254+00:00",
+    "title": "Techorama",
+    "start_date": "2026-10-27",
+    "end_date": "2026-10-28",
+    "city": "Utrecht",
+    "url": "https://techorama.nl/"
+  },
+  {
+    "id": 27,
+    "created_at": "2026-05-04T19:37:08.554374+00:00",
+    "title": "Meetup: AmsterdamJS Special Edition: A Meetup with TC39 Members",
+    "start_date": "2026-05-21",
+    "end_date": "2026-05-21",
+    "city": "Amsterdam",
+    "url": "https://guild.host/events/amsterdamjs-special-2owr4b"
+  },
+  {
+    "id": 32,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "Meetup: Fronteers België Meetup bij Axxes Antwerpen",
+    "start_date": "2026-05-21",
+    "end_date": "2026-05-21",
+    "city": "Antwerpen",
+    "url": "https://www.meetup.com/fronteers-be/events/313980328"
+  },
+  {
+    "id": 33,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "WeCode - Women in IT",
+    "start_date": "2026-05-21",
+    "end_date": "2026-05-21",
+    "city": "Utrecht",
+    "url": "https://www.linkedin.com/posts/nynkekloppenburg_wecode-womeninit-callforspeakers-activity-7432809287145484288-eynI/?originalSubdomain=nl"
+  },
+  {
+    "id": 35,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "Meetup: Fronteers Borrel in Utrecht",
+    "start_date": "2026-06-25",
+    "end_date": "2026-06-25",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/fronteers-nl/events/312424788/"
+  },
+  {
+    "id": 37,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "Meetup: Fronteers Zomerborrel in Utrecht",
+    "start_date": "2026-08-13",
+    "end_date": "2026-08-13",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/fronteers-nl/events/312424789/"
+  },
+  {
+    "id": 43,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "Meetup: Fronteers Borrel in Utrecht",
+    "start_date": "2026-11-12",
+    "end_date": "2026-11-12",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/fronteers-nl/events/312424793/"
+  },
+  {
+    "id": 47,
+    "created_at": "2026-05-04T19:45:15.632013+00:00",
+    "title": "Meetup: Fronteers Eindejaarsborrel in Utrecht",
+    "start_date": "2026-12-10",
+    "end_date": "2026-12-10",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/fronteers-nl/events/312424800/"
+  },
+  {
+    "id": 51,
+    "created_at": "2026-05-05T11:21:05.19624+00:00",
+    "title": "Meetup: React Amsterdam May Meetup",
+    "start_date": "2026-05-06",
+    "end_date": "2026-05-06",
+    "city": "Amsterdam",
+    "url": "https://www.meetup.com/react-amsterdam/events/314313833/"
+  },
+  {
+    "id": 52,
+    "created_at": "2026-05-05T11:21:05.19624+00:00",
+    "title": "TechLead Amsterdam",
+    "start_date": "2026-06-11",
+    "end_date": "2026-06-11",
+    "city": "Amsterdam",
+    "url": "https://www.meetup.com/react-amsterdam/events/313082306/"
+  },
+  {
+    "id": 53,
+    "created_at": "2026-05-05T15:38:10.174459+00:00",
+    "title": "Meetup: Devworld Community Night",
+    "start_date": "2026-05-06",
+    "end_date": "2026-05-06",
+    "city": "Amsterdam",
+    "url": "https://www.meetup.com/javascript-developers-zuid-holland/events/314634805/"
+  },
+  {
+    "id": 54,
+    "created_at": "2026-05-07T18:26:48.016922+00:00",
+    "title": "GraphQL Day @ FOST Amsterdam",
+    "start_date": "2026-06-09",
+    "end_date": "2026-06-10",
+    "city": "Amsterdam",
+    "url": "https://graphql.org/day/2026/amsterdam/"
+  },
+  {
+    "id": 55,
+    "created_at": "2026-05-21T13:50:36.768757+00:00",
+    "title": "Workshop ast-grep: deterministic control over your polyglot code base",
+    "start_date": "2026-06-03",
+    "end_date": "2026-06-03",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/front-end-focus/events/314857614/"
+  },
+  {
+    "id": 56,
+    "created_at": "2026-06-08T15:23:50.97145+00:00",
+    "title": "Meetup: Syntax Amsterdam",
+    "start_date": "2026-06-10",
+    "end_date": "2026-06-10",
+    "city": "Amsterdam",
+    "url": "https://syntax.fm/meetup"
+  },
+  {
+    "id": 57,
+    "created_at": "2026-06-08T15:23:50.97145+00:00",
+    "title": "Meetup: SonarQube: Ensuring Code Quality & Security",
+    "start_date": "2026-06-15",
+    "end_date": "2026-06-15",
+    "city": "Nieuwegein",
+    "url": "https://www.meetup.com/psgtechnauts-meetup/events/314711261/"
+  },
+  {
+    "id": 58,
+    "created_at": "2026-06-08T15:23:50.97145+00:00",
+    "title": "Meetup: From Vibe Coding to Scalable, Reviewable and Performant Engineering",
+    "start_date": "2026-06-16",
+    "end_date": "2026-06-16",
+    "city": "Utrecht",
+    "url": "https://www.meetup.com/frontvalue/events/314972778/"
+  },
+  {
+    "id": 59,
+    "created_at": "2026-06-08T15:23:50.97145+00:00",
+    "title": "Meetup: W3C Web Meetup Rotterdam",
+    "start_date": "2026-07-02",
+    "end_date": "2026-07-02",
+    "city": "Rotterdam",
+    "url": "https://ti.to/w3cab/rotterdam-web-meetup"
+  }
+]

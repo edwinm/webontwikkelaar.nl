@@ -2,10 +2,10 @@ import Parser from 'rss-parser';
 import { parseString } from 'xml2js';
 import { promisify } from 'util';
 import { readFile } from 'fs/promises';
-import { createClient } from '@supabase/supabase-js';
 import crypto from "node:crypto";
 import 'dotenv/config';
 import {podcastList} from "../datasrc/podcasts.js";
+import {readJson} from "../tools/file.js";
 import {
     S3Client,
     PutObjectCommand,
@@ -19,6 +19,7 @@ const USER_AGENT = 'webontwikkelaar.nl/1.0';
 const BLOGCOUNT = 24;
 const VIDEOCOUNT = 12;
 const PODCASTCOUNT = 12;
+const CONFERENCECOUNT = 10;
 
 const parseXML = promisify(parseString);
 
@@ -272,36 +273,48 @@ async function getVideos() {
     }
 }
 
+// Local replacement for the former Supabase `conferences_with_location` view:
+// conferences LEFT JOIN cities ON cities.name = conferences.city,
+// filtered on end_date >= today, ordered by start_date, limited to CONFERENCECOUNT.
 async function getConferences() {
     try {
         const today = new Intl.DateTimeFormat('sv-SE').format(new Date());
 
-        const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), 10_000);
+        const [conferences, cities] = await Promise.all([
+            readJson('datasrc/conferences.json'),
+            readJson('datasrc/cities.json'),
+        ]);
 
-        const supabase = createClient(process.env.SupabaseUrl, process.env.SupabaseAnonKey, {
-            auth: {
-                persistSession: false,
-                autoRefreshToken: false,
+        // First city with a given name wins (a few names occur twice, e.g. Zwijndrecht NL/BE)
+        const cityByName = new Map();
+        for (const city of cities) {
+            if (!cityByName.has(city.name)) {
+                cityByName.set(city.name, city);
             }
+        }
+
+        // ISO yyyy-mm-dd strings compare correctly as plain strings
+        const upcoming = conferences
+            .filter((conference) => conference.end_date >= today)
+            .sort((a, b) => a.start_date.localeCompare(b.start_date) || a.id - b.id)
+            .slice(0, CONFERENCECOUNT);
+
+        return upcoming.map((conference) => {
+            const city = cityByName.get(conference.city);
+
+            if (!city) {
+                console.warn(`Unknown city "${conference.city}" for conference "${conference.title}"`);
+            }
+
+            return {
+                ...conference,
+                latitude: city?.latitude ?? null,
+                longitude: city?.longitude ?? null,
+                slug: toSlug(conference.city),
+            };
         });
-
-        const {data: conferences} = await supabase
-            .from('conferences_with_location')
-            .select()
-            .gte('end_date', today)
-            .order('start_date', {ascending: true})
-            .limit(10)
-            .abortSignal(controller.signal);
-
-        clearTimeout(timeout);
-
-        const conferencesWithSlug = conferences.map((conference) =>
-            ({...conference, slug: toSlug(conference.city)}))
-
-        return conferencesWithSlug;
     } catch (error) {
-        console.error("Failed fetching conferences", error);
+        console.error("Failed reading conferences", error);
         return [];
     }
 }
@@ -324,7 +337,6 @@ function getCities(conferences) {
 }
 
 function toSlug(str) {
-    console.log("toSlug", str);
     return str
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '') // strip diacritics
