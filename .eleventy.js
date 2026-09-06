@@ -11,6 +11,9 @@ export default function(eleventyConfig) {
     const seed = getSeed();
     eleventyConfig.addGlobalData("seed", seed);
 
+    // UTC date (YYYY-MM-DD) of this build, used client-side to detect a stale page
+    eleventyConfig.addGlobalData("buildDate", new Date().toISOString().slice(0, 10));
+
     eleventyConfig.on('eleventy.after', async () => {
         if (process.env.NODE_ENV !== 'development') {
             setTimeout(() => {

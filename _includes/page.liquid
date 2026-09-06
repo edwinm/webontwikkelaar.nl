@@ -53,15 +53,35 @@ settings:
     </style>
     <script defer data-domain="webontwikkelaar.nl" src="https://data.bitstorm.org/js/script.js"></script>
     <script>
-        document.addEventListener("keypress", function ({charCode, ctrlKey, shiftKey}) {
-            if (charCode === 5 && ctrlKey && shiftKey) { // CTRL-SHIFT-E
-                var script = document.createElement('script');
-                script.src = '/assets/edit.js';
-                document.head.appendChild(script);
-            }
-        })
-        let seed = {{ seed }};
-        const settings = {{ settings | json }};
+        (function () {
+            document.addEventListener("keypress", function ({charCode, ctrlKey, shiftKey}) {
+                if (charCode === 5 && ctrlKey && shiftKey) { // CTRL-SHIFT-E
+                    var script = document.createElement('script');
+                    script.src = '/assets/edit.js';
+                    document.head.appendChild(script);
+                }
+            })
+            let seed = {{ seed }};
+            const settings = {{ settings | json }};
+
+            var buildDate = "{{ buildDate }}";
+            addEventListener("focus", function () {
+                var now = new Date();
+                if (now.toISOString().slice(0, 10) <= buildDate) {
+                    return;
+                }
+                if (now.getUTCHours() * 60 + now.getUTCMinutes() < 4 * 60 + 23) {
+                    return;
+                }
+                try {
+                    if (Date.now() - sessionStorage.reloadCheck < 600000) {
+                        return;
+                    }
+                    sessionStorage.reloadCheck = Date.now();
+                } catch (e) {}
+                location.reload();
+            });
+        })();
     </script>
 </head>
 <body>
