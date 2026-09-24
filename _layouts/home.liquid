@@ -17,8 +17,8 @@ lang: nl
             {%- for city in feeds.cities -%}
 
             .conferences:has(.city.city-{{ city.slug }}:hover) .conf-row.city-{{ city.slug }} > td {
-                color: white;
-                background: #494949;
+                color: var(--background);
+                background: var(--city);
             }
 
             .conferences:has(.conf-row.city-{{ city.slug }}:hover) .city.city-{{ city.slug }} {
