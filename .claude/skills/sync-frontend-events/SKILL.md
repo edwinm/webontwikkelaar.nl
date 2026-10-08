@@ -11,6 +11,7 @@ All paths in this skill are relative to the repository root.
 1. https://guild.host/amsterdamjs/events
 2. https://www.fronteers.nl/nl/activiteiten/
 3. https://www.smashingmagazine.com/events/
+4. https://gitnation.com/events
 3. https://www.meetup.com/react-amsterdam/
 4. https://www.meetup.com/javascript-developers-zuid-holland/
 5. https://www.meetup.com/front-end-focus/events/
