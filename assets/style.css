@@ -102,11 +102,7 @@
     h1, h2, h3, h4 {
         text-rendering: optimizeLegibility;
         text-wrap: balance;
-        letter-spacing: clamp(
-                -0.05em,
-                calc((1em - 1rem) / -10),
-                0em
-        );
+        letter-spacing: calc((1em - 1rem) / -16);
     }
     p {
         text-wrap: pretty;
@@ -328,7 +324,7 @@
     }
 
     .container {
-        margin: 0 0 4rem;
+        margin: 0 0 5rem;
         --accent: light-dark(oklch(0.7 0.096 var(--accentx)), oklch(0.5 0.096 var(--accentx)));
     }
 
@@ -785,7 +781,7 @@
     .podcast-attribution {
         display: block;
         margin-top: 1rem;
-        color: inherit;
+        color: var(--gray-6);
         font-size: 0.8rem;
         text-decoration: none;
         text-align: right;
