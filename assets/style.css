@@ -112,6 +112,7 @@
 @layer style {
     :root {
         color-scheme: light dark;
+        interpolate-size: allow-keywords;
 
         --footer: var(--iris-3);
         --hover: var(--gray-9);
@@ -185,13 +186,50 @@
         content: '';
         display: block;
         position: absolute;
-        bottom: .2em;
+        bottom: .1em;
         left: 0;
-        width: .6em;
-        height: .6em;
+        width: .8em;
+        height: .8em;
         background-color: var(--accent);
-        border-radius: 10px;
-        corner-shape: squircle;
+        mask: url(/assets/chevron.svg) center / contain no-repeat;
+        rotate: 90deg;
+    }
+
+    main h2:has(.fold:checked)::before {
+        rotate: 0deg;
+    }
+
+    main h2 label::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+    }
+
+    main h2:has(.fold:focus-visible) {
+        outline: 2px solid;
+        outline-offset: 4px;
+    }
+
+    .container > h2 ~ * {
+        overflow: clip;
+    }
+
+    .container:has(> h2 .fold:checked) > h2 ~ * {
+        height: 0;
+        margin-block: 0;
+        visibility: hidden;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        main h2::before {
+            transition: rotate 300ms ease;
+        }
+
+        .container > h2 ~ * {
+            transition: 300ms ease;
+            transition-property: height, margin-block, visibility;
+        }
     }
 
     a:active {
@@ -491,7 +529,7 @@
         }
     }
 
-    #more-blogs {
+    #more-blogs, .fold {
         appearance: none;
         position: absolute;
         pointer-events: none;

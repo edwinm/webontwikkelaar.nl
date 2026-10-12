@@ -12,7 +12,7 @@ lang: en
 <main>
     {% if feeds.posts.length > 0 %}
         <section class="container blog-container box">
-            <h2>blogs and news</h2>
+            <h2><label><input class="fold" type="checkbox">blogs and news</label></h2>
 
             <ul class="item-box">
                 {%- for post in feeds.posts -%}
@@ -44,7 +44,7 @@ lang: en
 
     {% if feeds.videos.length > 0 %}
         <section class="container video-container box">
-            <h2>videos</h2>
+            <h2><label><input class="fold" type="checkbox">videos</label></h2>
 
             <ul class="container box video-box">
                 {%- for video in feeds.videos -%}
@@ -65,7 +65,7 @@ lang: en
 
     {% if feeds.podcasts.length > 0 %}
         <section class="container podcast-container box podcast-box">
-            <h2>podcasts</h2>
+            <h2><label><input class="fold" type="checkbox">podcasts</label></h2>
 
             <ul class="podcast-list">
                 {%- for podcast in feeds.podcasts -%}
