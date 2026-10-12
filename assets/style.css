@@ -302,42 +302,6 @@
         opacity: 0.9;
     }
 
-    .lang-switch {
-        display: flex;
-        gap: 0.6rem;
-        position: absolute;
-        right: 2rem;
-        top: 1rem;
-        padding: 4px;
-        list-style: none;
-        background-color: var(--background);
-        border: 1px solid var(--text);
-        border-radius: 8px;
-        corner-shape: squircle;
-        z-index: 30;
-    }
-
-    .lang {
-        padding: 2px 4px;
-        border-radius: 4px;
-        corner-shape: squircle;
-        transition: all 200ms ease;
-
-        &:hover {
-            background-color: var(--grey);
-        }
-    }
-
-    .lang-switch a {
-        color: var(--text);
-        text-decoration: none;
-    }
-
-    .lang-en .en, .lang-nl .nl {
-        color: var(--background);
-        background-color: var(--text);
-    }
-
     .title {
         padding: 0 2rem;
         margin: 0 0 -0.5rem;
