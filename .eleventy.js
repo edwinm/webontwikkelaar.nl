@@ -71,14 +71,14 @@ export default function(eleventyConfig) {
         });
     });
 
-    eleventyConfig.addFilter("dateRange", function(timestamp1, timestamp2) {
+    eleventyConfig.addFilter("dateRange", function(timestamp1, timestamp2, locale = 'nl-NL') {
         const date1 = new Date(timestamp1);
         const date2 = new Date(timestamp2);
 
-        const month1 = date1.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
-        const month2 = date2.toLocaleDateString('nl-NL', { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
-        const day1 = date1.toLocaleDateString('nl-NL', { day: 'numeric', timeZone: 'Europe/Amsterdam' });
-        const day2 = date2.toLocaleDateString('nl-NL', { day: 'numeric', timeZone: 'Europe/Amsterdam' });
+        const month1 = date1.toLocaleDateString(locale, { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
+        const month2 = date2.toLocaleDateString(locale, { month: 'short', timeZone: 'Europe/Amsterdam' }).replace('.', '');
+        const day1 = date1.toLocaleDateString(locale, { day: 'numeric', timeZone: 'Europe/Amsterdam' });
+        const day2 = date2.toLocaleDateString(locale, { day: 'numeric', timeZone: 'Europe/Amsterdam' });
 
         if (month1 === month2) {
             if (day1 === day2) {
