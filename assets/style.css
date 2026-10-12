@@ -226,7 +226,7 @@
             transition: rotate 300ms ease;
         }
 
-        .container > h2 ~ * {
+        .container > h2 ~ *, .blog-container {
             transition: 300ms ease;
             transition-property: height, margin-block, visibility;
         }
@@ -373,6 +373,10 @@
     .blog-container {
         --accentx: 277.752;
         margin-bottom: 1rem;
+
+        &:has(> h2 .fold:checked) {
+            margin-bottom: 5rem;
+        }
     }
 
     .video-container {
