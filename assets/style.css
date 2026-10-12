@@ -186,13 +186,17 @@
         content: '';
         display: block;
         position: absolute;
-        bottom: .1em;
-        left: 0;
-        width: .8em;
-        height: .8em;
+        bottom: -.3em;
+        left: -.4em;
+        width: 1.6em;
+        height: 1.6em;
         background-color: var(--accent);
         mask: url(/assets/chevron.svg) center / contain no-repeat;
         rotate: 90deg;
+    }
+
+    main h2:has(.fold) {
+        padding-left: 1.4em;
     }
 
     main h2:has(.fold:checked)::before {
