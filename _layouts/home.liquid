@@ -29,7 +29,7 @@ lang: nl
         </style>
 
         <section class="container conf-container">
-            <h2><label><input class="fold" type="checkbox">Conferenties en bijeenkomsten</label></h2>
+            <h2><label><input class="fold" type="checkbox" name="conferences">Conferenties en bijeenkomsten</label></h2>
 
             <div class="conferences">
                 <table class="conf-table">
@@ -70,7 +70,7 @@ lang: nl
 
     {% if feeds.posts.length > 0 %}
         <section class="container blog-container box">
-            <h2><label><input class="fold" type="checkbox">Blogs en nieuws</label></h2>
+            <h2><label><input class="fold" type="checkbox" name="blogs">Blogs en nieuws</label></h2>
 
             <ul class="item-box">
                 {%- for post in feeds.posts -%}
@@ -102,7 +102,7 @@ lang: nl
 
     {% if feeds.videos.length > 0 %}
         <section class="container video-container box">
-            <h2><label><input class="fold" type="checkbox">Video’s</label></h2>
+            <h2><label><input class="fold" type="checkbox" name="videos">Video’s</label></h2>
 
             <ul class="container box video-box">
                 {%- for video in feeds.videos -%}
@@ -123,7 +123,7 @@ lang: nl
 
     {% if feeds.podcasts.length > 0 %}
         <section class="container podcast-container box podcast-box">
-            <h2><label><input class="fold" type="checkbox">Podcasts</label></h2>
+            <h2><label><input class="fold" type="checkbox" name="podcasts">Podcasts</label></h2>
 
             <ul class="podcast-list">
                 {%- for podcast in feeds.podcasts -%}

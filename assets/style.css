@@ -196,7 +196,7 @@
     }
 
     main h2:has(.fold) {
-        padding-left: 1.4em;
+        padding-left: 1.15em;
     }
 
     main h2:has(.fold:checked)::before {

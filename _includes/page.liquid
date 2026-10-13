@@ -82,6 +82,36 @@ settings:
                 location.reload();
             });
         })();
+        (function () {
+            let folds = {};
+            try {
+                folds = JSON.parse(localStorage.folds || "{}");
+            } catch (e) {}
+
+            // Restore each fold as the parser inserts it, before the first paint
+            const observer = new MutationObserver(function (records) {
+                for (const {addedNodes} of records) {
+                    for (const node of addedNodes) {
+                        if (node.className === "fold" && node.name in folds) {
+                            node.checked = folds[node.name];
+                        }
+                    }
+                }
+            });
+            observer.observe(document, {childList: true, subtree: true});
+            document.addEventListener("DOMContentLoaded", function () {
+                observer.disconnect();
+            });
+
+            document.addEventListener("change", function ({target}) {
+                if (target.className === "fold") {
+                    folds[target.name] = target.checked;
+                    try {
+                        localStorage.folds = JSON.stringify(folds);
+                    } catch (e) {}
+                }
+            });
+        })();
     </script>
 </head>
 <body>
