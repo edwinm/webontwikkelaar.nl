@@ -88,11 +88,13 @@ settings:
                 folds = JSON.parse(localStorage.folds || "{}");
             } catch (e) {}
 
+            const isFold = (node) => node.className === "fold" || node.id === "more-blogs";
+
             // Restore each fold as the parser inserts it, before the first paint
             const observer = new MutationObserver(function (records) {
                 for (const {addedNodes} of records) {
                     for (const node of addedNodes) {
-                        if (node.className === "fold" && node.name in folds) {
+                        if (isFold(node) && node.name in folds) {
                             node.checked = folds[node.name];
                         }
                     }
@@ -104,7 +106,7 @@ settings:
             });
 
             document.addEventListener("change", function ({target}) {
-                if (target.className === "fold") {
+                if (isFold(target)) {
                     folds[target.name] = target.checked;
                     try {
                         localStorage.folds = JSON.stringify(folds);

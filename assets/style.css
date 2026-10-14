@@ -219,10 +219,14 @@
         overflow: clip;
     }
 
-    .container:has(> h2 .fold:checked) > h2 ~ * {
-        height: 0;
-        margin-block: 0;
-        visibility: hidden;
+    .container:has(> h2 .fold:checked) {
+        margin-bottom: 1.5rem;
+
+        & > h2 ~ * {
+            height: 0;
+            margin-block: 0;
+            visibility: hidden;
+        }
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -230,7 +234,7 @@
             transition: rotate 300ms ease;
         }
 
-        .container > h2 ~ *, .blog-container {
+        .container, .container > h2 ~ * {
             transition: 300ms ease;
             transition-property: height, margin-block, visibility;
         }
@@ -341,10 +345,6 @@
     .blog-container {
         --accentx: 277.752;
         margin-bottom: 1rem;
-
-        &:has(> h2 .fold:checked) {
-            margin-bottom: 5rem;
-        }
     }
 
     .video-container {
