@@ -76,11 +76,11 @@ lang: nl
                 {%- for post in feeds.posts -%}
                     <li class="item" lang="{{ post.language | default: 'en' }}">
                         <a class="link item-link" href="{{ post.link }}">
-                            <p class="item-feed-title">{{ post.feedTitle }} <span class="grey">• <time
+                            <p class="item-feed-title">{{ post.feedTitle | escape_once }} <span class="grey">• <time
                                             itemprop="datePublished"
                                             datetime="{{ post.dateValue | ymdDate }}">{{ post.dateValue | dutchShortDate }}</time></span>
                             </p>
-                            <h3 class="item-title">{{ post.title }}</h3>
+                            <h3 class="item-title">{{ post.title | escape_once }}</h3>
                         </a>
                     </li>
                 {%- endfor -%}
@@ -109,11 +109,11 @@ lang: nl
                     <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
                             <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
-                            <p class="item-feed-title">{{ video.author }} <span class="grey">• <time
+                            <p class="item-feed-title">{{ video.author | escape_once }} <span class="grey">• <time
                                             itemprop="datePublished"
                                             datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span>
                             </p>
-                            <h3 class="video-title">{{ video.title }}</h3>
+                            <h3 class="video-title">{{ video.title | escape_once }}</h3>
                         </a>
                     </li>
                 {%- endfor -%}
@@ -153,7 +153,7 @@ lang: nl
                                     {% endif %}
                                 </div>
                             </span>
-                                <h3 class="podcast-title">{{ podcast.title }}</h3>
+                                <h3 class="podcast-title">{{ podcast.title | escape_once }}</h3>
                                 <div class="podcast-controls">
                                     <audio class="podcast-audio" controls preload="none"
                                            src="{{ podcast.enclosureUrl }}"></audio>
