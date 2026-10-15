@@ -1,4 +1,5 @@
 import {Prng} from "pringle";
+import {raster} from "./assets/header.js";
 
 function getSeed(date = new Date()) {
     const d = date.getDate();
@@ -113,43 +114,11 @@ export default function(eleventyConfig) {
         : `${m}m`;
     });
 
-    function circles(className, width, height, settings) {
-        const prng = new Prng(seed);
-
-        let circles = "";
-
-        for (let j = 0; j < settings.num; j++) {
-            const cHeight = 100;
-            const cWidth = 100 * width / height;
-            const pow = 3; // V = (4/3)πr³
-            const r = Math.pow(prng.rand(Math.pow(settings.minsize, 1/pow), Math.pow(settings.maxsize, 1/pow)), pow);
-            const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
-            const cx = cWidth * j /settings.num + prng.rand(-settings.deviation, settings.deviation) * 5;
-            const cy= cHeight/2 + (cHeight/2 - r) * prng.rand(-cyv, cyv);
-            const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360).toFixed(1)})`;
-
-            circles += `<circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}" fill="none" stroke="${color}" stroke-width="${settings.border}" class="circle"></circle>\n`;
-        }
-
-        return `
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 100 100"
-            width="${width}"
-            height="${height}"
-            preserveAspectRatio="xMinYMid meet"
-            class="${className}"
-        >
-        ${circles}
-        </svg>
-        `;
-    }
-
     eleventyConfig.addFilter("json", function(data) {
         return JSON.stringify(data, null, 2);
     });
 
-    eleventyConfig.addShortcode('circles', circles);
+    eleventyConfig.addShortcode('raster', (className, settings) => raster(new Prng(seed), settings, className));
 
     return {
         dir: {

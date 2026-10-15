@@ -1,13 +1,17 @@
 console.log('edit');
 
+// Slider ranges per setting; the start values come from the page (settings in page.liquid)
 const config = {
-    num: 12,
-    minsize: 5,
-    maxsize: 30,
-    border: 3,
-    lightness: 73,
-    chroma: 24,
-    deviation: 10,
+    spacing: {min: 8, max: 40},
+    dotsize: {min: 10, max: 70},
+    threshold: {min: 0, max: 60},
+    contrast: {min: 10, max: 100},
+    zoom: {min: 10, max: 120},
+    huespread: {min: 0, max: 180},
+    lightness: {min: 30, max: 95},
+    chroma: {min: 0, max: 37},
+    bands: {min: 1, max: 12},
+    fade: {min: 0, max: 100},
 };
 
 // https://github.com/edwinm/pringle/tree/main
@@ -55,19 +59,19 @@ class Prng {
     }
 }
 
-edit();
+import('/assets/header.js').then(({raster}) => edit(raster));
 
 
-function edit() {
+function edit(raster) {
     const box = document.createElement('aside');
-    box.style = "position: fixed; width: 100%; bottom: 0; background: lightgrey; padding: 10px; z-index:1000";
+    box.style = "position: fixed; width: 100%; bottom: 0; background: lightgrey; color: black; padding: 10px; z-index:1000";
 
     const button = document.createElement('button');
     button.innerText = `seed ${seed}`;
     button.onclick = () => {
         seed++;
         button.innerText = `seed ${seed}`;
-        set();
+        set(raster);
     };
     box.appendChild(button);
 
@@ -75,7 +79,7 @@ function edit() {
     controls.style = "column-width: 300px; column-gap: 1rem";
     box.appendChild(controls);
 
-    for (j in config) {
+    for (const j in config) {
         const control = document.createElement('div');
         control.style = "padding: 10px; margin-bottom: 10px; border: 1px solid grey; border-radius: 5px; background: white; break-inside: avoid";
 
@@ -88,7 +92,7 @@ function edit() {
 
         const value = document.createElement('div');
         value.className = 'value';
-        value.innerText = config[j];
+        value.innerText = settings[j];
         text.appendChild(value);
 
         control.appendChild(text);
@@ -96,11 +100,13 @@ function edit() {
         const input = document.createElement('input');
         input.type = 'range';
         input.id = j;
-        input.value = config[j];
+        input.min = config[j].min;
+        input.max = config[j].max;
+        input.value = settings[j];
         input.style = "width: 100%";
         input.oninput = ({target}) => {
             value.innerText = target.value;
-            set();
+            set(raster);
         };
         control.appendChild(input);
         controls.appendChild(control);
@@ -108,49 +114,19 @@ function edit() {
 
     document.body.appendChild(box);
 
-    set();
+    set(raster);
 }
 
-function set() {
-    const settings = Object.keys(config).reduce((acc, curr) => {
-        return { ...acc, [curr]: document.getElementById(curr).value };
+function set(raster) {
+    const current = Object.keys(config).reduce((acc, curr) => {
+        return { ...acc, [curr]: Number(document.getElementById(curr).value) };
     }, {});
 
-    render(settings);
+    render(raster, current);
 }
 
-function render(settings) {
+function render(raster, current) {
     console.log('render');
-    const prng = new Prng(seed);
-
     const svg = document.querySelector('svg.header-background');
-    const height = 100;
-    const width = 500; // 100 * w / h;
-    svg.replaceChildren();
-    for (let j = 0; j < settings.num; j++) {
-        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-
-        const pow = 3; // V = (4/3)πr³
-        const r = Math.pow(prng.rand(Math.pow(settings.minsize, 1/pow), Math.pow(settings.maxsize, 1/pow)), pow);
-        const cyv = (settings.maxsize - r) / (settings.maxsize - settings.minsize);
-        const cx = width * j /settings.num + prng.rand(-settings.deviation, settings.deviation) * 5;
-        const cy= height/2 + (height/2 - r) * prng.rand(-cyv, cyv);
-
-        // const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)} / ${settings.alpha / 100})`;
-        const color = `oklch(${settings.lightness}% ${settings.chroma}% ${prng.rand(360)})`;
-
-        Object.entries({
-            cx,
-            cy,
-            r,
-            fill: 'none',
-            stroke: color,
-            'stroke-width': settings.border,
-            'class': 'circle'
-        }).forEach(([k, v]) => circle.setAttribute(k, v));
-
-        svg.appendChild(circle);
-    }
+    svg.outerHTML = raster(new Prng(seed), current, 'header-background');
 }
-
-

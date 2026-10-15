@@ -1,12 +1,15 @@
 ---
 settings:
-    num: 12
-    minsize: 5
-    maxsize: 30
-    border: 3
-    lightness: 73
-    chroma: 24
-    deviation: 10
+    spacing: 20
+    dotsize: 46
+    threshold: 30
+    contrast: 30
+    zoom: 45
+    huespread: 65
+    lightness: 68
+    chroma: 13
+    bands: 6
+    fade: 18
 ---
 
 <!doctype html>
@@ -53,6 +56,10 @@ settings:
     </style>
     <script defer data-domain="webontwikkelaar.nl" src="https://data.bitstorm.org/js/script.js"></script>
     <script>
+        // Global, so the header editor (assets/edit.js) can use them
+        let seed = {{ seed }};
+        const settings = {{ settings | json }};
+
         (function () {
             document.addEventListener("keypress", function ({charCode, ctrlKey, shiftKey}) {
                 if (charCode === 5 && ctrlKey && shiftKey) { // CTRL-SHIFT-E
@@ -61,8 +68,6 @@ settings:
                     document.head.appendChild(script);
                 }
             })
-            let seed = {{ seed }};
-            const settings = {{ settings | json }};
 
             var buildDate = "{{ buildDate }}";
             addEventListener("focus", function () {
@@ -117,8 +122,6 @@ settings:
     </script>
 </head>
 <body>
-
-{% circles 'header-background', 1600, 320, settings %}
 
 {{ content }}
 
