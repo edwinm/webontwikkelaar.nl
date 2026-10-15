@@ -301,6 +301,7 @@
 
     .title {
         padding: 0 2rem;
+        padding-left: calc(1.15 * clamp(2rem, 3vw, 3rem));
         margin: 0 0 -0.5rem;
         font-size: min(9vw, 80px);
         font-weight: 900;
@@ -318,7 +319,7 @@
 
     .update {
         margin: 0;
-        padding-left: 2rem;
+        padding-left: calc(1.15 * clamp(2rem, 3vw, 3rem));
         font-size: 1.4rem;
     }
 
