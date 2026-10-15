@@ -119,6 +119,67 @@ settings:
                 }
             });
         })();
+        (function () {
+            // Dots in the header background swell slightly around the mouse pointer
+            if (!matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)").matches) {
+                return;
+            }
+
+            const RADIUS = 140; // in svg units
+            const GROW = 0.4;
+            let svg, dots = [], active = new Set(), pointer = null, frame = 0;
+
+            // The editor replaces the svg, so look it up again when it's gone
+            function getSvg() {
+                if (!svg || !svg.isConnected) {
+                    svg = document.querySelector("svg.header-background");
+                    dots = svg ? [...svg.querySelectorAll("circle")].map(el => ({
+                        el,
+                        x: el.cx.baseVal.value,
+                        y: el.cy.baseVal.value
+                    })) : [];
+                    active.clear();
+                }
+                return svg;
+            }
+
+            function update() {
+                frame = 0;
+                if (!getSvg()) {
+                    return;
+                }
+                const next = new Set();
+                if (pointer) {
+                    const p = new DOMPoint(pointer.x, pointer.y).matrixTransform(svg.getScreenCTM().inverse());
+                    for (const dot of dots) {
+                        const d = Math.hypot(dot.x - p.x, dot.y - p.y);
+                        if (d < RADIUS) {
+                            const t = 1 - d / RADIUS;
+                            dot.el.style.scale = 1 + GROW * t * t;
+                            next.add(dot);
+                        }
+                    }
+                }
+                for (const dot of active) {
+                    if (!next.has(dot)) {
+                        dot.el.style.scale = "";
+                    }
+                }
+                active = next;
+            }
+
+            function schedule(value) {
+                pointer = value;
+                frame ||= requestAnimationFrame(update);
+            }
+
+            document.addEventListener("pointermove", function ({target, clientX, clientY}) {
+                schedule(target.closest?.("header") ? {x: clientX, y: clientY} : null);
+            });
+            document.documentElement.addEventListener("pointerleave", function () {
+                schedule(null);
+            });
+        })();
     </script>
 </head>
 <body>

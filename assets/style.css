@@ -269,6 +269,12 @@
         height: 100%;
         z-index: -1;
         pointer-events: none;
+
+        circle {
+            transform-box: fill-box;
+            transform-origin: center;
+            transition: scale 600ms ease-out;
+        }
     }
 
     header {
