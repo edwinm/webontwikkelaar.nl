@@ -1,5 +1,5 @@
 import {Prng} from "pringle";
-import {raster} from "./assets/header.js";
+import {raster, rasterHue, headerTint} from "./assets/header.js";
 
 function getSeed(date = new Date()) {
     const d = date.getDate();
@@ -119,6 +119,9 @@ export default function(eleventyConfig) {
     });
 
     eleventyConfig.addShortcode('raster', (className, settings) => raster(new Prng(seed), settings, className));
+    eleventyConfig.addShortcode('rasterHue', settings => rasterHue(new Prng(seed), settings));
+    // mode is 'light' or 'dark'
+    eleventyConfig.addShortcode('headerTint', (settings, mode) => headerTint(new Prng(seed), settings)[mode]);
 
     return {
         dir: {

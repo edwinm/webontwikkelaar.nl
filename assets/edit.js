@@ -59,7 +59,13 @@ class Prng {
     }
 }
 
-import('/assets/header.js').then(({raster}) => edit(raster));
+let rasterHue, headerTint;
+
+import('/assets/header.js').then(module => {
+    rasterHue = module.rasterHue;
+    headerTint = module.headerTint;
+    edit(module.raster);
+});
 
 
 function edit(raster) {
@@ -129,4 +135,11 @@ function render(raster, current) {
     console.log('render');
     const svg = document.querySelector('svg.header-background');
     svg.outerHTML = raster(new Prng(seed), current, 'header-background');
+    document.body.style.setProperty('--raster-hue', rasterHue(new Prng(seed), current));
+
+    const tint = headerTint(new Prng(seed), current);
+    document.body.style.setProperty('--header-tint', `light-dark(${tint.light}, ${tint.dark})`);
+    for (const meta of document.querySelectorAll('meta[name="theme-color"]')) {
+        meta.content = meta.media.includes('dark') ? tint.dark : tint.light;
+    }
 }

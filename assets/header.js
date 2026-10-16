@@ -33,6 +33,48 @@ function valueNoise(prng) {
         noise((x * 0.26 + y * 0.97) * 2 + 17.3, (y * 0.26 - x * 0.97) * 2 + 31.7) * 0.35;
 }
 
+// The random choices behind a raster, so rasterHue() can make the same ones as raster()
+function draw(prng, settings) {
+    const noise = valueNoise(prng);
+    const scale = settings.zoom / 10000 * prng.rand(0.7, 1.4);
+    const ox = prng.rand(50), oy = prng.rand(50);
+    const hue = prng.rand(360);
+    const hueSpread = settings.huespread * (prng.rand() < 0.5 ? -1 : 1);
+    return {noise, scale, ox, oy, hue, hueSpread};
+}
+
+// Hue in the middle of the raster, for colors that go with it
+export function rasterHue(prng, settings) {
+    const {hue, hueSpread} = draw(prng, settings);
+    const bands = Math.max(1, Math.round(settings.bands));
+    return round((hue + (bands > 1 ? hueSpread / 2 : 0) + 360) % 360);
+}
+
+// oklch to an sRGB hex color (https://bottosson.github.io/posts/oklab/), clamped to the gamut
+function oklchToHex(lightness, chroma, hue) {
+    const a = chroma * Math.cos(hue * Math.PI / 180);
+    const b = chroma * Math.sin(hue * Math.PI / 180);
+    const l = (lightness + 0.3963377774 * a + 0.2158037573 * b) ** 3;
+    const m = (lightness - 0.1055613458 * a - 0.0638541728 * b) ** 3;
+    const s = (lightness - 0.0894841775 * a - 1.2914855480 * b) ** 3;
+    const linear = [
+        4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+        -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+        -0.0041960863 * l - 0.7034186147 * m + 1.7076147010 * s,
+    ];
+    return "#" + linear.map(v => {
+        const srgb = v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055;
+        return Math.round(Math.min(1, Math.max(0, srgb)) * 255).toString(16).padStart(2, "0");
+    }).join("");
+}
+
+// Background of header and footer (and the theme-color) in the hue of the raster, for light and dark mode.
+// In hex, because not every browser takes oklch() for the theme-color.
+export function headerTint(prng, settings) {
+    const hue = rasterHue(prng, settings);
+    return {light: oklchToHex(0.95, 0.03, hue), dark: oklchToHex(0.23, 0.02, hue)};
+}
+
 export function raster(prng, settings, className) {
     const spacing = Number(settings.spacing);
     const dotsize = settings.dotsize / 100;
@@ -40,11 +82,7 @@ export function raster(prng, settings, className) {
     const contrast = Math.max(0.01, settings.contrast / 100);
     const bands = Math.max(1, Math.round(settings.bands));
 
-    const noise = valueNoise(prng);
-    const scale = settings.zoom / 10000 * prng.rand(0.7, 1.4);
-    const ox = prng.rand(50), oy = prng.rand(50);
-    const hue = prng.rand(360);
-    const hueSpread = settings.huespread * (prng.rand() < 0.5 ? -1 : 1);
+    const {noise, scale, ox, oy, hue, hueSpread} = draw(prng, settings);
 
     const groups = Array.from({length: bands}, () => "");
 

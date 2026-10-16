@@ -1,15 +1,15 @@
 ---
 settings:
-    spacing: 20
-    dotsize: 46
-    threshold: 30
-    contrast: 30
-    zoom: 45
-    huespread: 65
-    lightness: 68
-    chroma: 13
-    bands: 6
-    fade: 18
+    spacing: 28
+    dotsize: 50
+    threshold: 16
+    contrast: 42
+    zoom: 28
+    huespread: 100
+    lightness: 72
+    chroma: 15
+    bands: 10
+    fade: 0
 ---
 
 <!doctype html>
@@ -30,7 +30,8 @@ settings:
     <meta property="og:title" content="{{ title }}">
     <meta property="og:site_name" content="webontwikkelaar.nl">
     {% endif %}
-    <meta name="theme-color" content="#e8f2f6">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="{% headerTint settings, 'light' %}">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{% headerTint settings, 'dark' %}">
     <meta name="dcterms.modified" content="{{ feeds.lastUpdated | isoDate }}">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
@@ -118,6 +119,15 @@ settings:
                     } catch (e) {}
                 }
             });
+
+            // Unfold a folded section when the header menu jumps to it
+            document.addEventListener("click", function ({target}) {
+                const link = target.closest?.(".menu a");
+                const fold = link && document.querySelector(`${link.hash} .fold:checked`);
+                if (fold) {
+                    fold.click();
+                }
+            });
         })();
         (function () {
             // Dots in the header background swell slightly around the mouse pointer
@@ -182,7 +192,7 @@ settings:
         })();
     </script>
 </head>
-<body>
+<body style="--raster-hue: {% rasterHue settings %}; --header-tint: light-dark({% headerTint settings, 'light' %}, {% headerTint settings, 'dark' %})">
 
 {{ content }}
 

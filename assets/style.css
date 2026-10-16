@@ -114,7 +114,6 @@
         color-scheme: light dark;
         interpolate-size: allow-keywords;
 
-        --footer: var(--iris-3);
         --hover: var(--gray-9);
         --backgroundhover: var(--gray-1);
         --active: var(--amber-3);
@@ -141,6 +140,7 @@
     }
 
     body {
+        /* The colors of the day, --raster-hue and --header-tint (for header and footer), are set on body (see header.js) */
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -176,7 +176,7 @@
     footer {
         display: flex;
         height: 6rem;
-        background-color: var(--footer);
+        background-color: var(--header-tint);
         justify-content: center;
         align-items: center;
         gap: 1rem;
@@ -277,15 +277,7 @@
         }
     }
 
-    header {
-        position: relative;
-        display: grid;
-        padding: min(5rem, 10vw) 4rem min(4rem, 10vw - 4rem);
-        z-index: 20;
-        background-color: oklch(0.73 0.08 230.35 / 0.15);
-    }
-
-    main, header {
+    main {
         padding-left: 2vw;
         padding-right: 2vw;
     }
@@ -299,15 +291,6 @@
         }
     }
 
-    .title {
-        padding: 0 2rem;
-        padding-left: calc(1.15 * clamp(2rem, 3vw, 3rem));
-        margin: 0 0 -0.5rem;
-        font-size: min(9vw, 80px);
-        font-weight: 900;
-        color: var(--title);
-    }
-
     .grey {
         color: var(--textgrey);
         font-weight: 400;
@@ -317,31 +300,237 @@
         color: var(--grey);
     }
 
-    .update {
-        margin: 0;
-        padding-left: calc(1.15 * clamp(2rem, 3vw, 3rem));
-        font-size: 1.4rem;
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+
+    main > section {
+        scroll-margin-top: 1rem;
+    }
+
+    /*
+     * Header: title and tagline. The home pages add the date and a tab per section on the bottom edge.
+     * The left edge lines up with the text of the section headings.
+     */
+    header {
+        --inset: calc(2vw + 1.15 * clamp(2rem, 3vw, 3rem));
+        --title-size: clamp(1.8rem, 9.4vw, 6rem);
+        position: relative;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "title title"
+            "tagline update"
+            "menu menu";
+        align-items: baseline;
+        column-gap: .6em;
+        padding: min(5rem, 9vw) 2vw min(4rem, 8vw) var(--inset);
+        background-color: var(--header-tint);
+
+        /* The tabs sit on the bottom edge */
+        &:has(> .menu) {
+            padding-bottom: 0;
+        }
+
+        /* The large dots run faintly behind the title and come in full where it ends (it's about 9 times its font size wide) */
+        .header-background {
+            mask-image: linear-gradient(to right,
+                #0002 calc(var(--inset) + 6 * var(--title-size)),
+                #000 calc(var(--inset) + 11.5 * var(--title-size)));
+        }
+
+        .title {
+            grid-area: title;
+            margin: 0 0 .75rem;
+            padding: 0;
+            font-size: var(--title-size);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.025em;
+            color: var(--title);
+
+            /* On the other pages the title links to the home page */
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        .title-tld {
+            color: light-dark(oklch(0.58 0.13 var(--raster-hue)), oklch(0.8 0.12 var(--raster-hue)));
+        }
+
+        .tagline {
+            grid-area: tagline;
+            margin: 0;
+            font-size: 1.45rem;
+            font-weight: 600;
+        }
+
+        .update {
+            grid-area: update;
+            width: auto;
+            padding: 0;
+            font-size: 1.45rem;
+            font-weight: 400;
+            color: var(--gray-10);
+
+            &::before {
+                content: '•';
+                margin-right: .6em;
+            }
+        }
+
+        .menu {
+            grid-area: menu;
+            margin-top: min(3.25rem, 7vw);
+
+            ul {
+                display: flex;
+                gap: .4rem;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                -webkit-hyphens: none;
+                hyphens: none;
+            }
+
+            a {
+                --accent-ink: light-dark(oklch(0.5 0.11 var(--accentx)), oklch(0.8 0.1 var(--accentx)));
+                position: relative;
+                display: flex;
+                align-items: center;
+                gap: .55em;
+                padding: .85rem 1.25rem .9rem 1.1rem;
+                border-radius: 20px 20px 0 0;
+                corner-shape: squircle;
+                background: var(--background);
+                font-size: 1.05rem;
+                font-weight: 600;
+                white-space: nowrap;
+                transition: background-color 200ms ease;
+
+                /* The section color as a small bar along the top */
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 1.1rem;
+                    right: 1.1rem;
+                    height: 3px;
+                    border-radius: 0 0 3px 3px;
+                    background: oklch(0.7 0.11 var(--accentx));
+                    transition: 200ms ease;
+                    transition-property: left, right, height;
+                }
+
+                &:hover {
+                    background: color-mix(in oklch, var(--accent) 12%, var(--background));
+                    text-decoration: none;
+
+                    &::before {
+                        left: .6rem;
+                        right: .6rem;
+                        height: 4px;
+                    }
+                }
+            }
+        }
+
+        .menu-icon {
+            flex: none;
+            width: 1.15em;
+            height: 1.15em;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            color: var(--accent-ink);
+        }
+
+        @media (width < 768px) {
+            grid-template-columns: minmax(0, 1fr);
+            grid-template-areas: "title" "tagline" "update" "menu";
+
+            /* The title fills the width here, so the dots stay faint behind it */
+            .header-background {
+                mask-image: linear-gradient(to right, #0002 35%, #0009 100%);
+            }
+
+            .title {
+                margin-bottom: .5rem;
+            }
+
+            .tagline, .update {
+                font-size: 1.15rem;
+            }
+
+            .update::before {
+                content: none;
+            }
+
+            /* Equal tabs across the full width, with the icon above the label */
+            .menu {
+                margin-left: calc(2vw - var(--inset));
+
+                ul {
+                    gap: .25rem;
+                }
+
+                li {
+                    flex: 1;
+                    min-width: 0;
+                }
+
+                a {
+                    flex-direction: column;
+                    gap: .3rem;
+                    padding: .75rem .2rem .6rem;
+                    border-radius: 14px 14px 0 0;
+                    font-size: min(.8rem, 3.2vw);
+
+                    &::before {
+                        left: .75rem;
+                        right: .75rem;
+                    }
+                }
+
+                .menu-icon {
+                    width: 1.4rem;
+                    height: 1.4rem;
+                }
+            }
+        }
     }
 
     .container {
         margin: 0 0 5rem;
+    }
+
+    .container, .menu a {
         --accent: light-dark(oklch(0.7 0.096 var(--accentx)), oklch(0.5 0.096 var(--accentx)));
     }
 
-    .conf-container {
+    .conf-container, .menu-conf {
         --accentx: 128.5;
     }
 
-    .blog-container {
+    .blog-container, .menu-blogs {
         --accentx: 277.752;
+    }
+
+    .blog-container {
         margin-bottom: 1rem;
     }
 
-    .video-container {
+    .video-container, .menu-videos {
         --accentx: 0.8;
     }
 
-    .podcast-container {
+    .podcast-container, .menu-podcasts {
         --accentx: 249.9;
     }
 
