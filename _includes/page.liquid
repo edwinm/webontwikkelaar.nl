@@ -120,12 +120,18 @@ settings:
                 }
             });
 
-            // Unfold a folded section when the header menu jumps to it
+            // Unfold a folded section when the header menu jumps to it. Without the unfold animation,
+            // so the section has its full height when the browser scrolls to it after this click
             document.addEventListener("click", function ({target}) {
                 const link = target.closest?.(".menu a");
-                const fold = link && document.querySelector(`${link.hash} .fold:checked`);
+                const section = link && document.querySelector(link.hash);
+                const fold = section?.querySelector(".fold:checked");
                 if (fold) {
+                    const animated = [section, ...section.querySelectorAll(":scope > h2 ~ *")];
+                    animated.forEach(el => el.style.transition = "none");
                     fold.click();
+                    section.offsetHeight; // apply the unfolded height now
+                    animated.forEach(el => el.style.transition = "");
                 }
             });
         })();
