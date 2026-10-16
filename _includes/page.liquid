@@ -116,8 +116,6 @@ settings:
                 }
             });
 
-            // Unfold a folded section when the header menu jumps to it. Without the unfold animation,
-            // so the section has its full height when the browser scrolls to it after this click
             document.addEventListener("click", function ({target}) {
                 const link = target.closest?.(".menu a");
                 const section = link && document.querySelector(link.hash);
@@ -126,7 +124,7 @@ settings:
                     const animated = [section, ...section.querySelectorAll(":scope > h2 ~ *")];
                     animated.forEach(el => el.style.transition = "none");
                     fold.click();
-                    section.offsetHeight; // apply the unfolded height now
+                    section.offsetHeight;
                     animated.forEach(el => el.style.transition = "");
                 }
             });

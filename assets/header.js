@@ -33,7 +33,6 @@ function valueNoise(prng) {
         noise((x * 0.26 + y * 0.97) * 2 + 17.3, (y * 0.26 - x * 0.97) * 2 + 31.7) * 0.35;
 }
 
-// The random choices behind a raster, so rasterHue() can make the same ones as raster()
 function draw(prng, settings) {
     const noise = valueNoise(prng);
     const scale = settings.zoom / 10000 * prng.rand(0.7, 1.4);
@@ -43,14 +42,12 @@ function draw(prng, settings) {
     return {noise, scale, ox, oy, hue, hueSpread};
 }
 
-// Hue in the middle of the raster, for colors that go with it
 export function rasterHue(prng, settings) {
     const {hue, hueSpread} = draw(prng, settings);
     const bands = Math.max(1, Math.round(settings.bands));
     return round((hue + (bands > 1 ? hueSpread / 2 : 0) + 360) % 360);
 }
 
-// oklch to an sRGB hex color (https://bottosson.github.io/posts/oklab/), clamped to the gamut
 function oklchToHex(lightness, chroma, hue) {
     const a = chroma * Math.cos(hue * Math.PI / 180);
     const b = chroma * Math.sin(hue * Math.PI / 180);
@@ -68,8 +65,6 @@ function oklchToHex(lightness, chroma, hue) {
     }).join("");
 }
 
-// Background of header and footer (and the theme-color) in the hue of the raster, for light and dark mode.
-// In hex, because not every browser takes oklch() for the theme-color.
 export function headerTint(prng, settings) {
     const hue = rasterHue(prng, settings);
     return {light: oklchToHex(0.95, 0.03, hue), dark: oklchToHex(0.23, 0.02, hue)};

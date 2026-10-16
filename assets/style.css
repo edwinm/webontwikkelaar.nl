@@ -140,7 +140,6 @@
     }
 
     body {
-        /* The colors of the day, --raster-hue and --header-tint (for header and footer), are set on body (see header.js) */
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -310,10 +309,6 @@
         scroll-margin-top: 1rem;
     }
 
-    /*
-     * Header: title and tagline. The home pages add the date and a tab per section on the bottom edge.
-     * The left edge lines up with the text of the section headings.
-     */
     header {
         --inset: calc(2vw + 1.15 * clamp(2rem, 3vw, 3rem));
         --title-size: clamp(1.8rem, 9.4vw, 6rem);
@@ -330,12 +325,10 @@
         padding: min(5rem, 9vw) 2vw min(4rem, 8vw) var(--inset);
         background-color: var(--header-tint);
 
-        /* The tabs sit on the bottom edge */
         &:has(> .menu) {
             padding-bottom: 0;
         }
 
-        /* The large dots run faintly behind the title and come in full where it ends (it's about 9 times its font size wide) */
         .header-background {
             mask-image: linear-gradient(to right,
                 #0002 calc(var(--inset) + 6 * var(--title-size)),
@@ -352,7 +345,6 @@
             letter-spacing: -0.025em;
             color: var(--title);
 
-            /* On the other pages the title links to the home page */
             a:hover {
                 text-decoration: none;
             }
@@ -412,7 +404,6 @@
                 white-space: nowrap;
                 transition: background-color 200ms ease;
 
-                /* The section color as a small bar along the top */
                 &::before {
                     content: '';
                     position: absolute;
@@ -455,7 +446,6 @@
             grid-template-columns: minmax(0, 1fr);
             grid-template-areas: "title" "tagline" "update" "menu";
 
-            /* The title fills the width here, so the dots stay faint behind it */
             .header-background {
                 mask-image: linear-gradient(to right, #0002 35%, #0009 100%);
             }
@@ -472,7 +462,6 @@
                 content: none;
             }
 
-            /* Equal tabs across the full width, with the icon above the label */
             .menu {
                 margin-left: calc(2vw - var(--inset));
 
@@ -568,7 +557,6 @@
     }
 
     .city {
-        /* East of this longitude the name goes on the left of the dot, so it stays on the map */
         --east: clamp(0, (var(--lon) - 5.35) * 1000, 1);
         --side: calc(1 - 2 * var(--east));
         position: absolute;
@@ -590,13 +578,11 @@
         }
     }
 
-    /* On hover the name of the city appears next to the ring, in the color of its highlighted conferences */
     .city-name {
         position: absolute;
         top: 50%;
         left: calc(50% + var(--side) * 28px);
         translate: calc(var(--east) * -100% - var(--side) * 6px) -50%;
-        /* Long names wrap, so even the cities closest to the edge stay on the map */
         width: max-content;
         max-width: 190px;
         padding: .35rem .8rem;
@@ -614,7 +600,6 @@
         opacity: 0;
         visibility: hidden;
 
-        /* A point towards the dot */
         &::before {
             content: '';
             position: absolute;
