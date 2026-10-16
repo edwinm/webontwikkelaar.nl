@@ -78,7 +78,8 @@ lang: en
 
                     {%- for city in feeds.cities -%}
                         <div class="city city-{{ city.slug }}"
-                             style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"></div>
+                             style="--lat: {{ city.latitude }}; --lon: {{ city.longitude }};"><span
+                                    class="city-name">{{ city.city }}</span></div>
 
                     {%- endfor -%}
 

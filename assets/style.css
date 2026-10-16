@@ -568,6 +568,9 @@
     }
 
     .city {
+        /* East of this longitude the name goes on the left of the dot, so it stays on the map */
+        --east: clamp(0, (var(--lon) - 5.35) * 1000, 1);
+        --side: calc(1 - 2 * var(--east));
         position: absolute;
         left: calc(-235.36px + 104.98px * var(--lon) - 5px);
         top: calc(8951.90px - 166.80px * var(--lat) - 5px);
@@ -582,7 +585,60 @@
         z-index: 10;
 
         &:hover {
+            z-index: 11;
             outline-offset: 10px;
+        }
+    }
+
+    /* On hover the name of the city appears next to the ring, in the color of its highlighted conferences */
+    .city-name {
+        position: absolute;
+        top: 50%;
+        left: calc(50% + var(--side) * 28px);
+        translate: calc(var(--east) * -100% - var(--side) * 6px) -50%;
+        /* Long names wrap, so even the cities closest to the edge stay on the map */
+        width: max-content;
+        max-width: 190px;
+        padding: .35rem .8rem;
+        border-radius: 10px;
+        corner-shape: squircle;
+        color: var(--background);
+        background: var(--city);
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        text-wrap: balance;
+        -webkit-hyphens: none;
+        hyphens: none;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
+
+        /* A point towards the dot */
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: calc(var(--east) * 100%);
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: inherit;
+            translate: -50% -50%;
+            rotate: 45deg;
+        }
+
+        .city:hover > & {
+            translate: calc(var(--east) * -100%) -50%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .city-name {
+            transition: 250ms ease;
+            transition-property: translate, opacity, visibility;
         }
     }
 
