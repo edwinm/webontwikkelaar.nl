@@ -9,15 +9,6 @@
     "url": "https://perfnow.nl/"
   },
   {
-    "id": 10,
-    "created_at": "2026-01-23T09:31:22.378699+00:00",
-    "title": "SmashingConf Antwerp",
-    "start_date": "2026-10-12",
-    "end_date": "2026-10-15",
-    "city": "Antwerpen",
-    "url": "https://smashingconf.com/antwerp-2026/"
-  },
-  {
     "id": 26,
     "created_at": "2026-04-03T18:18:31.483254+00:00",
     "title": "Techorama",
@@ -52,5 +43,32 @@
     "end_date": "2027-10-01",
     "city": "Dordrecht",
     "url": "https://www.fronteersconf.org"
+  },
+  {
+    "id": 63,
+    "created_at": "2026-10-16T19:34:32.000000+00:00",
+    "title": "SmashingConf Amsterdam",
+    "start_date": "2027-05-18",
+    "end_date": "2027-05-21",
+    "city": "Amsterdam",
+    "url": "https://smashingconf.com/amsterdam-2027/"
+  },
+  {
+    "id": 64,
+    "created_at": "2026-10-16T19:34:32.000000+00:00",
+    "title": "React Summit 2027",
+    "start_date": "2027-05-21",
+    "end_date": "2027-05-25",
+    "city": "Amsterdam",
+    "url": "https://gitnation.com/events/react-summit-2027"
+  },
+  {
+    "id": 65,
+    "created_at": "2026-10-16T19:34:32.000000+00:00",
+    "title": "JSNation 2027",
+    "start_date": "2027-05-21",
+    "end_date": "2027-05-25",
+    "city": "Amsterdam",
+    "url": "https://jsnation.com"
   }
 ]
