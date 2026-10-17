@@ -1,0 +1,47 @@
+{
+  "generator": "Woffle",
+  "version": 2,
+  "fonts": [
+    {
+      "file": "Bigshot_One/BigshotOne-Regular.woff2"
+    },
+    {
+      "file": "Moderustic/Moderustic-VariableFont_wght.woff2"
+    },
+    {
+      "file": "Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.woff2",
+      "source": "../../../../Library/Containers/org.bitstorm.woffle/Data/Library/Application Support/org.bitstorm.woffle/Google Fonts/Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf",
+      "subsetFile": "Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght-subset.woff2",
+      "subset": "20-7E,A0,A7,AB,B2-B3,BB,C0-C2,C4-CB,CD-CF,D3-D4,D6,D8-DC,E0-E2,E4-EB,ED-EF,F3-F4,F6,F8-FC,FF,152-153,178,301,2010,2013-2014,2018-2019,201C-201D,2020-2022,2026,2030,2032-2033,2212",
+      "trim": {
+        "axes": {
+          "CASL": [
+            0.0,
+            0.0
+          ],
+          "CRSV": [
+            0.0,
+            0.0
+          ],
+          "MONO": [
+            0.0,
+            0.0
+          ],
+          "slnt": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "subsetSources": [
+        {
+          "country": "NL"
+        },
+        {
+          "region": "021"
+        }
+      ],
+      "subsetCharacters": "20-21,23-24,26-3A,3C,3E-5B,5D,61-7A,7C,A0,2013-2014,2019,2022"
+    }
+  ]
+}
