@@ -185,7 +185,8 @@
         content: '';
         display: block;
         position: absolute;
-        bottom: -.3em;
+        /* center the chevron on the cap height of the first line */
+        top: -.2em;
         left: -.4em;
         width: 1.6em;
         height: 1.6em;
