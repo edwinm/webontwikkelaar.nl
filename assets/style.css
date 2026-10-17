@@ -312,7 +312,7 @@
 
     header {
         --inset: calc(2vw + 1.15 * clamp(2rem, 3vw, 3rem));
-        --title-size: clamp(1.8rem, 9.4vw, 6rem);
+        --title-size: clamp(1.44rem, 7.52vw, 4.8rem);
         position: relative;
         z-index: 20;
         display: grid;
@@ -323,7 +323,7 @@
             "menu menu";
         align-items: baseline;
         column-gap: .6em;
-        padding: min(5rem, 9vw) 2vw min(4rem, 8vw) var(--inset);
+        padding: min(4rem, 7.2vw) 2vw min(3.2rem, 6.4vw) var(--inset);
         background-color: var(--header-tint);
 
         &:has(> .menu) {
@@ -338,7 +338,7 @@
 
         .title {
             grid-area: title;
-            margin: 0 0 .75rem;
+            margin: 0 0 .6rem;
             padding: 0;
             font-size: var(--title-size);
             font-weight: 850;
@@ -358,15 +358,16 @@
         .tagline {
             grid-area: tagline;
             margin: 0;
-            font-size: 1.45rem;
+            font-size: 1.16rem;
             font-weight: 600;
         }
 
         .update {
             grid-area: update;
             width: auto;
+            margin: .8rem 0 1.6rem;
             padding: 0;
-            font-size: 1.45rem;
+            font-size: 1.16rem;
             font-weight: 400;
             color: var(--gray-10);
 
@@ -378,7 +379,7 @@
 
         .menu {
             grid-area: menu;
-            margin-top: min(3.25rem, 7vw);
+            margin-top: min(2.6rem, 5.6vw);
 
             ul {
                 display: flex;
@@ -396,11 +397,11 @@
                 display: flex;
                 align-items: center;
                 gap: .55em;
-                padding: .85rem 1.25rem .9rem 1.1rem;
-                border-radius: 20px 20px 0 0;
+                padding: .68rem 1rem .72rem .88rem;
+                border-radius: 16px 16px 0 0;
                 corner-shape: squircle;
                 background: var(--background);
-                font-size: 1.05rem;
+                font-size: .84rem;
                 font-weight: 600;
                 white-space: nowrap;
                 transition: background-color 200ms ease;
@@ -409,8 +410,8 @@
                     content: '';
                     position: absolute;
                     top: 0;
-                    left: 1.1rem;
-                    right: 1.1rem;
+                    left: .88rem;
+                    right: .88rem;
                     height: 3px;
                     border-radius: 0 0 3px 3px;
                     background: oklch(0.7 0.11 var(--accentx));
@@ -423,8 +424,8 @@
                     text-decoration: none;
 
                     &::before {
-                        left: .6rem;
-                        right: .6rem;
+                        left: .48rem;
+                        right: .48rem;
                         height: 4px;
                     }
                 }
@@ -452,11 +453,11 @@
             }
 
             .title {
-                margin-bottom: .5rem;
+                margin-bottom: .4rem;
             }
 
             .tagline, .update {
-                font-size: 1.15rem;
+                font-size: .92rem;
             }
 
             .update::before {
@@ -477,9 +478,9 @@
 
                 a {
                     flex-direction: column;
-                    gap: .3rem;
-                    padding: .75rem .2rem .6rem;
-                    border-radius: 14px 14px 0 0;
+                    gap: .24rem;
+                    padding: .6rem .16rem .48rem;
+                    border-radius: 11px 11px 0 0;
                     font-size: min(.8rem, 3.2vw);
 
                     &::before {
@@ -489,8 +490,8 @@
                 }
 
                 .menu-icon {
-                    width: 1.4rem;
-                    height: 1.4rem;
+                    width: 1.12rem;
+                    height: 1.12rem;
                 }
             }
         }
