@@ -1,5 +1,5 @@
 import {Prng} from "pringle";
-import {raster, rasterHue, headerTint} from "./assets/header.js";
+import {raster, rasterHue, headerTint, specialDayStyle, specialThemeColor} from "./assets/header.js";
 
 function getSeed(date = new Date()) {
     const d = date.getDate();
@@ -122,6 +122,9 @@ export default function(eleventyConfig) {
     eleventyConfig.addShortcode('rasterHue', settings => rasterHue(new Prng(seed), settings));
     // mode is 'light' or 'dark'
     eleventyConfig.addShortcode('headerTint', (settings, mode) => headerTint(new Prng(seed), settings)[mode]);
+    eleventyConfig.addShortcode('specialDayStyle', specialDay => specialDayStyle(specialDay));
+    // mode is 'light' or 'dark'
+    eleventyConfig.addShortcode('specialThemeColor', (specialDay, mode) => specialThemeColor(specialDay, mode));
 
     return {
         dir: {

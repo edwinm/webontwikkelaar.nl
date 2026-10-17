@@ -65,9 +65,60 @@ function oklchToHex(lightness, chroma, hue) {
     }).join("");
 }
 
+function hexToOklch(hex) {
+    const [r, g, b] = [1, 3, 5].map(i => {
+        const srgb = parseInt(hex.slice(i, i + 2), 16) / 255;
+        return srgb <= 0.04045 ? srgb / 12.92 : ((srgb + 0.055) / 1.055) ** 2.4;
+    });
+    const l = Math.cbrt(0.4122214708 * r + 0.5363325363 * g + 0.0514459929 * b);
+    const m = Math.cbrt(0.2119034982 * r + 0.6806995451 * g + 0.1073969566 * b);
+    const s = Math.cbrt(0.0883024619 * r + 0.2817188376 * g + 0.6299787005 * b);
+    const a = 1.9779984951 * l - 2.4285922050 * m + 0.4505937099 * s;
+    const bb = 0.0259040371 * l + 0.7827717662 * m - 0.8086757660 * s;
+    return {
+        lightness: 0.2104542553 * l + 0.7936177850 * m - 0.0040720468 * s,
+        chroma: Math.hypot(a, bb),
+        hue: (Math.atan2(bb, a) * 180 / Math.PI + 360) % 360,
+    };
+}
+
 export function headerTint(prng, settings) {
     const hue = rasterHue(prng, settings);
     return {light: oklchToHex(0.95, 0.03, hue), dark: oklchToHex(0.23, 0.02, hue)};
+}
+
+// Same tint as headerTint, but derived from a fixed color. The chroma is capped, so grey stays grey.
+export function specialTint(hex) {
+    const {chroma, hue} = hexToOklch(hex);
+    return {
+        hue: round(hue),
+        chroma: Math.round(chroma * 1000) / 1000,
+        light: oklchToHex(0.95, Math.min(chroma, 0.03), hue),
+        dark: oklchToHex(0.23, Math.min(chroma, 0.02), hue),
+    };
+}
+
+// CSS variables for the header on a special day, or an empty string on other days
+export function specialDayStyle(specialDay) {
+    if (!specialDay) {
+        return "";
+    }
+    if (specialDay.colors) {
+        const tint = specialTint("#808080");
+        // One band per color on the right, the left bands (faded out behind the title) get the first color
+        const {colors} = specialDay;
+        const bands = Array.from({length: 10}, (_, i) =>
+            `--special-color-${i}: ${colors[Math.max(0, i - (10 - colors.length))]}`);
+        return `${bands.join("; ")}; --header-tint: light-dark(${tint.light}, ${tint.dark})`;
+    }
+    const tint = specialTint(specialDay.color);
+    return `--special-color: ${specialDay.color}; --raster-hue: ${tint.hue}; --raster-chroma: ${tint.chroma}; ` +
+        `--header-tint: light-dark(${tint.light}, ${tint.dark})`;
+}
+
+// Theme color for a special day, mode is 'light' or 'dark'
+export function specialThemeColor(specialDay, mode) {
+    return specialTint(specialDay.color ?? "#808080")[mode];
 }
 
 export function raster(prng, settings, className) {
@@ -97,7 +148,9 @@ export function raster(prng, settings, className) {
 
     const dots = groups.map((circles, band) => {
         const h = (hue + hueSpread * band / Math.max(1, bands - 1) + 360) % 360;
-        return `<g fill="oklch(${settings.lightness}% ${settings.chroma / 100} ${h.toFixed(1)})">${circles}</g>`;
+        // On special days, the fill is overridden by --special-color, or per band by --special-color-n
+        const fill = `oklch(${settings.lightness}% ${settings.chroma / 100} ${h.toFixed(1)})`;
+        return `<g style="fill: var(--special-color-${band}, var(--special-color, ${fill}))">${circles}</g>`;
     }).join("\n");
 
     // Fade out to the left, so the title stays readable

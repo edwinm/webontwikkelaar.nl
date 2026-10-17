@@ -30,8 +30,13 @@ settings:
     <meta property="og:title" content="{{ title }}">
     <meta property="og:site_name" content="webontwikkelaar.nl">
     {% endif %}
+    {% if specialDay %}
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="{% specialThemeColor specialDay, 'light' %}">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{% specialThemeColor specialDay, 'dark' %}">
+    {% else %}
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="{% headerTint settings, 'light' %}">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="{% headerTint settings, 'dark' %}">
+    {% endif %}
     <meta name="dcterms.modified" content="{{ feeds.lastUpdated | isoDate }}">
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="icon" href="/favicon.ico" sizes="48x48"/>
@@ -218,7 +223,7 @@ settings:
         })();
     </script>
 </head>
-<body style="--raster-hue: {% rasterHue settings %}; --header-tint: light-dark({% headerTint settings, 'light' %}, {% headerTint settings, 'dark' %})">
+<body style="--raster-hue: {% rasterHue settings %}; --header-tint: light-dark({% headerTint settings, 'light' %}, {% headerTint settings, 'dark' %}){% if specialDay %}; {% specialDayStyle specialDay %}{% endif %}">
 
 {{ content }}
 
