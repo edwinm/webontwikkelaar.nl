@@ -144,7 +144,7 @@
         flex-direction: column;
         min-height: 100vh;
         color: var(--text);
-        background-color: var(--background);
+        background-color: var(--header-tint);
         font-size: 1.2rem;
         font-weight: 350;
     }
@@ -170,12 +170,12 @@
     main {
         flex: 1;
         padding: 4rem 1rem 1rem;
+        background-color: var(--background);
     }
 
     footer {
         display: flex;
         height: 6rem;
-        background-color: var(--header-tint);
         justify-content: center;
         align-items: center;
         gap: 1rem;
