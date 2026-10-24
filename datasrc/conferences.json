@@ -70,5 +70,32 @@
     "end_date": "2027-05-25",
     "city": "Amsterdam",
     "url": "https://jsnation.com"
+  },
+  {
+    "id": 66,
+    "created_at": "2026-10-24T06:56:28.000000+00:00",
+    "title": "Bouw een whimsical website in één avond",
+    "start_date": "2026-11-05",
+    "end_date": "2026-11-05",
+    "city": "Amsterdam",
+    "url": "https://www.whimsical-workshop.org/nl/"
+  },
+  {
+    "id": 67,
+    "created_at": "2026-10-24T06:56:28.000000+00:00",
+    "title": "AI Coding Summit Amsterdam 2027",
+    "start_date": "2027-05-20",
+    "end_date": "2027-05-24",
+    "city": "Amsterdam",
+    "url": "https://aicodingsummit.com/"
+  },
+  {
+    "id": 68,
+    "created_at": "2026-10-24T06:56:28.000000+00:00",
+    "title": "TechLead Conf Amsterdam 2027: Adopting AI in Orgs",
+    "start_date": "2027-05-20",
+    "end_date": "2027-05-20",
+    "city": "Amsterdam",
+    "url": "http://techleadconf.com/"
   }
 ]
