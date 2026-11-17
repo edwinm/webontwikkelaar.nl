@@ -15,6 +15,7 @@ All paths in this skill are relative to the repository root.
 3. https://www.meetup.com/react-amsterdam/
 4. https://www.meetup.com/javascript-developers-zuid-holland/
 5. https://www.meetup.com/front-end-focus/events/
+6. https://luma.com/web-eng-amsterdam
 
 ## Data file
 Events live in a plain JSON file in this repo — there is no database, and Supabase is no longer used. Do not use the Supabase MCP tools.

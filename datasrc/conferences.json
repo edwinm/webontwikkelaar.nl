@@ -9,24 +9,6 @@
     "url": "https://perfnow.nl/"
   },
   {
-    "id": 26,
-    "created_at": "2026-04-03T18:18:31.483254+00:00",
-    "title": "Techorama",
-    "start_date": "2026-10-27",
-    "end_date": "2026-10-28",
-    "city": "Utrecht",
-    "url": "https://techorama.nl/"
-  },
-  {
-    "id": 43,
-    "created_at": "2026-05-04T19:45:15.632013+00:00",
-    "title": "Meetup: Fronteers Borrel in Utrecht",
-    "start_date": "2026-11-12",
-    "end_date": "2026-11-12",
-    "city": "Utrecht",
-    "url": "https://www.meetup.com/fronteers-nl/events/312424793/"
-  },
-  {
     "id": 47,
     "created_at": "2026-05-04T19:45:15.632013+00:00",
     "title": "Meetup: Fronteers Eindejaarsborrel in Utrecht",
@@ -72,15 +54,6 @@
     "url": "https://jsnation.com"
   },
   {
-    "id": 66,
-    "created_at": "2026-10-24T06:56:28.000000+00:00",
-    "title": "Bouw een whimsical website in één avond",
-    "start_date": "2026-11-05",
-    "end_date": "2026-11-05",
-    "city": "Amsterdam",
-    "url": "https://www.whimsical-workshop.org/nl/"
-  },
-  {
     "id": 67,
     "created_at": "2026-10-24T06:56:28.000000+00:00",
     "title": "AI Coding Summit Amsterdam 2027",
@@ -97,5 +70,14 @@
     "end_date": "2027-05-20",
     "city": "Amsterdam",
     "url": "http://techleadconf.com/"
+  },
+  {
+    "id": 69,
+    "created_at": "2026-11-16T14:56:40.000000+00:00",
+    "title": "Meetup: Web Engineering Amsterdam: AI Coding, Code Review & Developer Growth",
+    "start_date": "2026-11-25",
+    "end_date": "2026-11-25",
+    "city": "Amsterdam",
+    "url": "https://luma.com/pt141ea9"
   }
 ]
