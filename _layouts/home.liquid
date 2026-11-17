@@ -135,7 +135,7 @@ lang: nl
                 {%- for video in feeds.videos -%}
                     <li class="video">
                         <a class="link video-link" href="{{ video.link }}">
-                            <img class="video-thumbnail" src="{{ video.thumbnail.url }}" alt="">
+                            <img class="video-thumbnail" src="{{ video.localThumbnail }}" width="480" height="360" alt="">
                             <p class="item-feed-title">{{ video.author | escape_once }} <span class="grey">• <time
                                             itemprop="datePublished"
                                             datetime="{{ video.dateValue | ymdDate }}">{{ video.dateValue | dutchShortDate }}</time></span>
@@ -157,7 +157,7 @@ lang: nl
                     <li class="podcast">
                         <article class="podcast-item">
 
-                            <img class="podcast-thumbnail" src="{{ podcast.image | default: podcast.feedImage }}"
+                            <img class="podcast-thumbnail" src="{{ podcast.localImage }}" width="280" height="280"
                                  alt="">
 
                             <div class="podcast-content">

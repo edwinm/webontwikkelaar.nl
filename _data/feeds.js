@@ -6,6 +6,7 @@ import crypto from "node:crypto";
 import 'dotenv/config';
 import {podcastList} from "../datasrc/podcasts.js";
 import {readJson} from "../tools/file.js";
+import {localizeFeedImages} from "../tools/feed-images.js";
 import {
     S3Client,
     PutObjectCommand,
@@ -65,7 +66,11 @@ export default async function() {
 
         const feedsStr = await Body.transformToString();
 
-        return JSON.parse(feedsStr);
+        const data = JSON.parse(feedsStr);
+
+        await localizeFeedImages(data, USER_AGENT);
+
+        return data;
     }
 
     console.log('>> Fetching all urls');
@@ -112,6 +117,9 @@ export default async function() {
             console.error("Writing to S3 bucket failed", error);
         }
     }
+
+    // After the S3 write, so the bucket keeps the original image URLs
+    await localizeFeedImages(data, USER_AGENT);
 
     return data;
 }
